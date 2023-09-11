@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃b-4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%
+        }
+        #header {
+            width: 100%;
+            background-color: #ccc;
+        }
+        #header .logo {
+            width: 20%;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: rgb(73, 106, 95);
+        }
+        #slider {
+            width: 100%;
+            height: 300px;
+        }
+        #contents {
+            width: 100%;
+            height: 200px;
+        }
+        #contents .contents1 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #bcbcbc;
+        }
+        #contents .contents2 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #524444;
+        }
+        #contents .contents3 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #884a4a;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #2e8580;
+        }
+        #footer .footer1 {
+            width: 80%;
+        }
+        #footer .footer1 .footer1-1 {
+            width: 100%;
+            height: 50px;
+            background-color: aqua;
+        }
+        #footer .footer1 .footer1-2 {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(25, 74, 74);
+        }
+        #footer .footer2 {
+            width: 20%;
+            height: 100px;
+
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            height: inherit;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+
+        <article id="slider">
+            <div class="container"></div>
+        </article>
+
+        <main id="contents">
+            <div class="container">
+                <section class="contents1"></section>
+                <section class="contents2"></section>
+                <section class="contents3"></section>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer1">
+                    <div class="footer1-1"></div>
+                    <div class="footer1-2"></div>
+                </div>
+                <div class="footer2"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

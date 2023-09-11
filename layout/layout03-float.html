@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+           background-color: #E1F5FE; 
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #main {
+            width: 100%;
+            
+        }
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: #4FC3F7;
+        }
+        #contents {
+            width: 70%;
+            height: 780px;            
+        }
+        #article1 {
+            width: 100%;
+            height: 260px;
+            background-color: #29B6F6;
+        }
+        #article2 {
+            width: 100%;
+            height: 260px;
+            background-color: #03A9F4;
+        }
+        #article3 {
+            width: 100%;
+            height: 260px;
+            background-color: #039BE5;
+        }
+        /* clear flex */
+        .clear flex::before,
+        .clear flex::after {
+            content: '';
+            display: block;
+            line-height: 0;
+            
+        .clear flex::after {
+            clear: both;
+        }
+        }     
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #0288D1;
+        }
+        @medea (max-width:1220px){
+            #wrap {
+                width: 90%;
+            }
+            #contents { 
+                width: 100%;               
+            }
+            #article1 {
+                width: 100%;
+                height: 260px;
+            }
+            #article2 {
+                width: 50%;
+                height: 260px;
+            }
+            #article3 {
+                width: 50%;
+                height: 260px;
+            }
+        }
+        @medea (max-width: 780px){
+            #article1 {
+                height: 390px;
+            }
+            #article2 {
+                height: 390px;
+            }
+            #article3 {
+                display : block;
+            }
+
+
+
+        }
+        @medea (max-width:1220px){
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="contents">
+                <article id="article1"></article>
+                <article id="article2"></article>
+                <article id="article3"></article>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

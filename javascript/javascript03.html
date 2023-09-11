@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 실행하기</title>
+
+    <link rel="stylesheet" href="https://webfontworld.github.io/gmarket/GmarketSans.css">
+    <link rel="stylesheet" href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/default.min.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1>
+                <a href="index.html">javascript</a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li class="active"><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">브라우저 객체</a></li>
+                    <li><a href="javascript09.html">요소 객체</a></li>
+                    <li><a href="javascript10.html">이벤트 객체</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript11.html">데이터 효과</a></li>
+                    <li><a href="javascript12.html">퀴즈 효과</a></li>
+                    <li><a href="javascript13.html">마우스 효과</a></li>
+                    <li><a href="javascript14.html">슬라이드 효과</a></li>
+                </ul>               
+            </nav>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#sample01">01. 함수: 선언적 함수</a></li>
+                    <li><a href="#sample02">02. 함수: 익명 함수</a></li>
+                    <li><a href="#sample03">03. 함수: 매개변수 함수</a></li>
+                    <li><a href="#sample04">04. 함수: 리턴값(결과/종료) 함수</a></li>
+                    <li><a href="#sample05">05. 함수: 매개변수 + 리턴값 함수</a></li>
+                    <li><a href="#sample06">06. 화살표 함수 : 선언적 함수</a></li>
+                    <li><a href="#sample07">07. 화살표 함수 : 익명함수</a></li>
+                    <li><a href="#sample08">08. 화살표 함수 : 매개함수</a></li>
+                    <li><a href="#sample09">09. 화살표 함수 : 리턴값 함수</a></li>
+                    <li><a href="#sample10">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수</a></li>
+                </ul>
+            </div>
+            <!-- //main__menu -->
+
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. 함수 : 선언적 함수</h3>
+                    <p>함수 선언문은 function 키워드로 함수를 정의하는 방법입니다. function 키워드 다음에 함수를 식별할 수 있도록 식별자를 붙이면 됩니다.
+                        이때 식별자 뒤에는 () 소괄호를 붙입니다. 그리고 식별자 뒤에오는 중괄호{}에는 함수가 호출되면 실행할 코드를 적어줍니다.</p>
+                    <pre><code class="language-js">{      
+    function func(){
+        console.log("실행되었습니다.");
+    }
+    func();    
+}
+</pre></code>
+                    <p class="desc">선언함수는 한번만 실행하는 함수며 함수를 정의하면서 동시에 실행할수 있습니다.
+                        함수를 실행하는 순간에 자바스크립트 해석기에서 함수를 해석합니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                100<br>
+                                200<br>
+                                javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>02. 함수 : 익명 함수</h3>
+                    <p>익명 함수는 이름이 없는 함수로, 익명 함수를 선언할 때는 이름을 붙이지 않습니다.
+                        익명 함수는 주로 다른 함수의 매개변수로 전달하거나 변수에 할당되어 사용되는 경우가 많습니다</p>
+                    <pre><code class="language-js">{
+    const func = function(){
+        console.log("실행되었습니다.");
+    }
+    func();
+}
+</pre></code>
+                    <p class="desc">함수는 객체에서 파생된 자료형입니다. 자바스크립트에서 자료형은 변수에 할당할 수 있어야 합니다. 따라서 함수도 변수에 할당할 수 있는데,
+                        이를 이용한 함수 정의 방법을 함수표현이라고 합니다. 함수 표현식은 변수에 할당하는 함수에 식별자가 있으면 네이밍함수, 없으면 익명함수로 다시 구분합니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>03. 함수 : 매개함수 변수</h3>
+                    <p>변수를 통해 함수의 값을 전달하는 함수입니다.</p>
+                    <pre><code class="language-js">{  
+    function func(str){
+        console.log(str);
+    }
+    func("실행되었습니다");      
+}
+</pre></code>
+                    <p class="desc">매개변수 함수를 사용함으로써 코드의 재사용성과 가독성을 향상시킬 수 있습니다. 이를테면, 정렬 기능을 수행하는 함수를 작성할 때, 어떤 방식으로 정렬할
+                        것인지를 결정하는 함수를 매개변수로 전달할 수 있습니다.</p>
+
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--  //sample03-->
+
+                <div id="sample04" class="sample">
+                    <h3>04. 함수 : 리턴값 함수</h3>
+                    <p>리턴값(결과/종료)이 있는 함수는 return 제어문을 사용해서 함수의 연산 결과 중 원하는 값을 지정해서 호출위로 복구시키는 기능을 말합니다.</p>
+<pre><code class="language-js">{  
+    function func() {
+        return "실행되었습니다.";
+    }
+    console.log(func());   
+}
+</pre></code>
+                    <p class="desc">함수는 종종 호출한 코드에 어떤 작업을 수행한 결과를 돌려주기 위해 리턴값을 사용합니다. 이 리턴값은 함수 내부에서 계산된 값이며, 호출한 코드는 이
+                        리턴값을 변수에 할당하거나 다른 연산에 활용할 수 있습니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--//sample04  -->
+
+                <div id="sample05" class="sample">
+                    <h3>05.함수: 매개변수 + 리턴값 함수</h3>
+                    <p>리턴값(결과/종료)이 있는 함수는 return 제어문을 사용해서 함수의 연산 결과 중 원하는 값을 지정해서 호출위로 복구시키는 기능을 말합니다.</p>
+<pre><code class="language-js">{  
+    function func(str){
+        return str;
+    }    
+    console.log(func("실행되었습니다."));
+}
+</pre></code>
+                    <p class="desc">두 개의 함수를 정의하고 호출하여 함수의 작동 방식과 매개변수, 리턴값의 개념을 보여주는 예제입니다. 두 함수 모두 입력된 값을 그대로 반환하는 역할을
+                        합니다. 매개변수를 통해 함수에 필요한 데이터를 전달하고, 함수 내부에서 해당 데이터를 활용하여 계산 또는 처리를 수행한 후, 그 결과를 리턴값으로 반환합니다. 이를 통해
+                        코드의 재사용성과 모듈화가 높아집니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 화살표 함수 : 선언적 함수</h3>
+                    <p>화살표 함수는 ES6 버전부터 =>(화살표 표기법)을 사용해 함수 선언을 좀더 간단하게 작성할 수 있습니다.</p>
+<pre><code class="language-js">{            
+    func = () => {
+        console.log("실행되었습니다");
+    }
+    func();
+}
+</pre></code>
+                    <p class="desc">선언적 함수를 화살표 함수로 변경하였습니다. </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- 06. 화살표 함수 (선언적함수) -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 화살표 함수 :익명 함수</h3>
+                    <p>화살표 함수는 함수를 간결하게 표현하며, 주로 익명 함수를 대체하는 용도로 사용됩니다.</p>
+<pre><code class="language-js">{
+    func = () => {
+        console.log("실행되었습니다.");
+    }
+    func();        
+}
+</pre></code>
+                    <p class="desc">익명 함수를 화살표 함수로 변경하였습니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--  //07 화살표함수(익명함수)-->
+
+                <div id="sample08" class="sample">
+                    <h3>08. 화살표 함수 : 매개변수 함수</h3>
+                    <p>화살표 함수는 함수를 간결하게 표현하며, 주로 익명 함수를 대체하는 용도로 사용됩니다.</p>
+<pre><code class="language-js">{
+    func = (str) => {
+        console.log(str);
+    }
+    func("실행되었습니다");
+}
+</pre></code>
+                    <p class="desc">매개변수 함수를 화살표 함수로 변경하였습니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--  //08. 화살표함수(매개변수 함수)-->
+
+                <div id="sample09" class="sample">
+                    <h3>09. 화살표 함수 : 리턴값 함수</h3>
+                    <p>화살표 함수는 함수를 간결하게 표현하며, 주로 익명 함수를 대체하는 용도로 사용됩니다.</p>
+<pre><code class="language-js">{        
+    func = () => {
+        return "실행되었습니다.";
+    }
+    console.log(func());       
+}
+</pre></code>
+                    <p class="desc">매개변수 함수를 화살표 함수로 변경하였습니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행되었습니다.<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--  //09. 화살표 함수(리턴값 함수)-->
+
+                <div id="sample10" class="sample">
+                    <h3>10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수</h3>
+                    <p>화살표 함수는 생략이 가능합니다.</p>
+<pre><code class="language-js">{       
+    //익명 함수
+    const func = (str) => {
+        return str;
+    }
+    console.log(func("실행되었습니다.1"));
+
+    //괄호 함수
+    const func2 = (str) => {
+        return str;
+    }
+    console.log(func2("실행되었습니다.2"));
+
+    // 리턴 생략
+    const func3 = str => str;
+
+    console.log(func3("실행되었습니다.3"));
+
+    // 선언적(가독성x)
+    func4 = str => str;
+
+    console.log(func4("실행되었습니다.4"));       
+}
+</pre></code>
+                    <p class="desc">익명 함수 + 매개변수 + 리턴값 함수를 화살표 함수로 변경했습니다.</p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기 </summary>
+                            <div>
+                                실행 되었습니다.1<br>
+                                실행 되었습니다.2<br>
+                                실행 되었습니다.3<br>
+                                실행 되었습니다.4<br>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!--  //10.화살표 함수(익명함수 + 매개변수 + 리턴값 함수)-->
+
+            </div>
+            <!-- //main__sample -->
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kmdojs@gmail.com">kmdojs@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- script -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        // 01. 선언 함수
+        {
+            function func() {
+                console.log("실행되었습니다.");
+            }
+            func();
+        }
+
+        // 02. 익명 함수
+        {
+            const func = function () {
+                console.log("실행되었습니다.");
+            }
+            func();
+        }
+        // 03. 매개변수 함수
+        {
+            function func(str) {
+                console.log(str);
+            }
+            func("실행되었습니다")
+        }
+
+        // 04. 리턴값 함수
+        {
+            function func() {
+                return "실행되었습니다.";
+            }
+            console.log(func());
+        }
+
+        //05. 매개변수 + 리턴값 함수
+        {
+            function func(str) {
+                return str;
+            }
+            console.log(func("실행되었습니다."));
+        }
+
+        //06. 화살표 함수 : 선언 함수
+        {
+            func = () => {
+                console.log("실행되었습니다");
+            }
+            func();
+        }
+
+        //07. 화살표 함수 : 익명 함수
+        {
+            func = () => {
+                console.log("실행되었습니다.");
+            }
+            func();
+        }
+        // 08. 화살표 함수 : 매개변수 함수
+        {
+            func = (str) => {
+                console.log(str);
+            }
+            func("실행되었습니다")
+        }
+        // 09. 화살표 함수 : 리턴값 함수
+        {
+            func = () => {
+                return "실행되었습니다.";
+            }
+            console.log(func());
+        }
+
+        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수
+        {
+            //익명 함수
+            const func = (str) => {
+                return str;
+            }
+            console.log(func("실행되었습니다.1"));
+
+            //괄호 함수
+            const func2 = str => {
+                return str;
+            }
+            console.log(func2("실행되었습니다.2"));
+
+            // 리턴 생략
+            const func3 = str => str;
+
+            console.log(func3("실행되었습니다.3"));
+
+            // 선언적(가독성x)
+            func4 = str => str;
+
+            console.log(func4("실행되었습니다.4"));
+        }
+    </script>
+
+</body>
+
+</html>

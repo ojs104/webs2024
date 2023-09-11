@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃a-4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            display: flex;
+        }
+        #header .logo {
+            width: 20%;
+            height: 100px;
+            background-color: violet;
+        }
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: blue;
+        }
+        #article {
+            width: 100%;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+        #main {
+            width: 100%;
+            display: flex;
+        }
+        #main .contents1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #564b4b;
+        }
+        #main .contents2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #572525;
+        }
+        #main .contents3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #c62525;
+        }
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+        #footer .footer1 {
+            width: 80%;
+        }
+        #footer .footer1 .footer1-1 {
+            width: 100%;
+            height: 50px;
+            background-color: wheat;
+        }
+        #footer .footer1 .footer1-2 {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(40, 39, 38);
+        }
+        #footer .footer2 {
+            width: 20%;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="logo"></div>
+            <nav class="nav"></nav>
+        </header>
+        <article id="article"></article>
+        <main id="main">
+            <section class="contents1"></section>
+            <section class="contents2"></section>
+            <section class="contents3"></section>
+        </main>
+        <footer id="footer">
+            <div class="footer1">
+                <div class="footer1-1"></div>
+                <div class="footer1-2"></div>
+            </div>
+            <div class="footer2"></div>
+        </footer>
+    </div>
+</body>
+</html>

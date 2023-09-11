@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 연습</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        #header {
+            height: 100px;
+        }
+        #nav {
+            height: 100px;
+        }
+        #main {
+            height: 780px;
+        }
+        #footer {
+            height: 100px;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+        .contents {
+            display: grid;
+            grid-template-areas:
+                "cont1 cont1"
+                "cont2 cont2"
+                "cont3 cont4"
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100px 200px 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container"></div>
+        </nav>
+        <main id="main">
+            <div class="container contents">
+                <article class="cont1"></article>
+                <article class="cont2"></article>
+                <article class="cont3"></article>
+                <article class="cont4"></article>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>    
+</body>
+</html>

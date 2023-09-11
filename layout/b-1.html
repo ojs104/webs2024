@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃b-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            background-color: #ccc;
+        }
+        #header .header_container {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+        #header .header_container .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #b62929;
+        }
+        #header .header_container .nav {
+            width: 80%;
+            height: 100px;
+            background-color: black;
+        }
+        #aside {
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+        #contents {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+        #contents .contents1 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #371664;
+        }
+        #contents .contents2 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #372b2b;
+        }
+        #contents .contents3 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #a44848;
+        }
+        #footer {
+            width: 100%;
+            background-color: aqua;
+        }
+        #footer .footer_container {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+        #footer .footer_container .footer1{
+            width: 20%;
+            height: 100px;
+            background-color: #b62929;
+        }
+        #footer .footer_container .footer2{
+            width: 80%;
+        }
+        #footer .footer_container .footer2 .footer2-1 {
+            width: 100%;
+            height: 50px;
+            background-color: #664e4e;
+        }
+        #footer .footer_container .footer2 .footer2-2 {
+            width: 100%;
+            height: 50px;
+            background-color: #3e2121;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header_container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+        <aside id="aside"></aside>
+        <main id="contents">
+            <section class="contents1"></section>
+            <section class="contents2"></section>
+            <section class="contents3"></section>
+        </main>
+        <footer id="footer">
+            <div class="footer_container">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

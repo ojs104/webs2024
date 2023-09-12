@@ -420,9 +420,7 @@
         console.log(index);
     });
 
-    arr.filter(function(el, index, arr){
-        console.log(arr);
-    });
+    
 }
 </code></pre>
                     <p class="desc">
@@ -432,8 +430,8 @@
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                <br>
-                               
+                                100,200,300,400,500,600,700,800,900<br>
+                               0,1,2,3,4,5,6,7,8
                             </div>
                         </details>
                     </div>
@@ -442,7 +440,7 @@
 
                 <div id="sample12" class="sample">
                     <h3>12. 배열 :  데이터 불러오기 : 배열 구조 분해 할당</h3>
-                    <p> </p>
+                    <p>데이터를 불러오는 데 filter() 메서드를 사용하는 것은 해당 배열에서 조건에 맞는 요소만을 추출할 때 유용합니다. filter() 메서드는 새로운 배열을 반환하며, 주어진 함수에 의해 참인 요소만을 포함합니다.</p>
 <pre><code class="language-js">{
     const arr = [100, 200, 320, 400, 500, 600, 700, 800, 900];
 
@@ -475,7 +473,7 @@
 
                 <div id="sample13" class="sample">
                     <h3>13.객체 : 데이터 불러오기 </h3>
-                    <p> </p>
+                    <p>객체에서 데이터를 불러오는 방법은 해당 객체의 속성을 사용하여 데이터에 접근하는 것입니다. </p>
 <pre><code class="language-js">
 {
     const obj = {
@@ -621,8 +619,7 @@
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                {a: 100, b: 200, c: 'javascript', d: 300, e: 400, … }<br>
-                               
+                                {a: 100, b: 200, c: 'javascript', d: 300, e: 400, … }<br>                               
                             </div>
                         </details>
                     </div>
@@ -631,7 +628,7 @@
 
                 <div id="sample18" class="sample">
                     <h3>18.객체 : 데이터 불러오기 : hasOwnProperty()</h3>
-                    <p> </p>
+                    <p>hasOwnProperty()는 자바스크립트에서 사용되는 메서드로, 객체가 특정한 이름을 가진 속성을 가지고 있는지를 확인하는데 사용됩니다.</p>
 <pre><code class="language-js">
 {
     const obj = {
@@ -698,7 +695,7 @@
 
                 <div id="sample20" class="sample">
                     <h3>20.객체 : 데이터 불러오기 : 객체 펼침 연산자() </h3>
-                    <p> </p>
+                    <p>for...in 루프를 사용하여 객체의 속성을 반복적으로 가져올 수 있습니다. for...in 루프는 객체의 열거 가능한 속성을 반복하면서 해당 속성의 이름 또는 키를 가져옵니다 </p>
 <pre><code class="language-js">
 {
     const obj1 = {
@@ -722,8 +719,7 @@
 }
 
 </code></pre>
-                    <p class="desc">
-                        <br>
+                    <p class="desc">                        
                     </p>
                     <div class="result">
                         <details>
@@ -742,7 +738,7 @@
 
                 <div id="sample21" class="sample">
                     <h3>21.객체 : 데이터 불러오기 : 객체 구조 분해 할당() </h3>
-                    <p> </p>
+                    <p>객체 구조 분해 할당은 JavaScript에서 객체의 속성 값을 추출하여 변수에 할당하는 방법입니다. 이를 통해 객체의 특정 속성을 쉽게 변수로 가져와서 사용할 수 있습니다 </p>
 <pre><code class="language-js">
 {
     const obj1 = {
@@ -1007,6 +1003,10 @@
 
         }
 
+
+        {
+ 
+}
     </script>
 </body>
 

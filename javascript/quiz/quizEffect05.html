@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트05</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="../index.html">Quiz05</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect08.html">8</a></li>
+                <li><a href="quizEffect09.html">9</a></li>
+                <li><a href="quizEffect10.html">10</a></li>
+                <li><a href="quizEffect100.html">11</a></li>
+                <li><a href="quizEffect12.html">12</a></li>
+                <li><a href="quizEffect13.html">13</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="0000mar@naver.com">0000mar@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자 
+        const quizWrap = document.querySelector(".quiz__wrap")
+
+        //문제 정보
+
+        const quizInfo = [
+            {
+                infoDate: "17년 상시",
+                infoType: "정보처리기능사",
+                infoQuestion: "피변조파로부터 원래의 신호파를 만드는 것을 무엇이라 하는가?",
+                infoChoice: ["발진", "정류", "증폭", "복조"],
+                infoAnswer: "4",
+                infoDesc: "피변조파는 변조된 신호를 의미합니다. 변조된 신호를 원래의 신호로 만드는 것을 복조라고 합니다.",
+            },
+            {
+                infoDate: "17년 상시",
+                infoType: "정보처리기능사",
+                infoQuestion: "변,복조기의 역할과 거리가 먼 것은?",
+                infoChoice: ["통신 신호의 변환기라고 볼 수 있다.", "디지털 신호를 아날로그 신호로 변환한다.", "공중 전화 통신망에 적합한 통신 신호로 변환한다.", "컴퓨터 신호를 광 케이블에 적합한 광 신호로 변환한다."],
+                infoAnswer: "4",
+                infoDesc: "모뎀의 역할은 디지털 데이터를 아날로그 신호로 변조하고, 아날로그 신호를 디지털 데이터로 복조하는 역할을 한다. ",
+            },
+            {
+                infoDate: "20년 2월",
+                infoType: "정보처리기능사",
+                infoQuestion: "인터넷 도메인 네임을 IP Address로 바꿔주는 시스템을 무엇이라 하는가?",
+                infoChoice: ["HTTP", "TCP/IP", "URL", "DNS"],
+                infoAnswer: "4",
+                infoDesc: "사람이 인식할 수 있는 도메인 네임을 컴퓨터가 이해할 수 있도록 숫자로 된 IP 주소로 변환할 때 사용하는 시스템은 DNS이다.",
+            },
+        ];
+
+        let currentIndex = 0;  // 현재 문제 변수값(현재 풀고 있는 문제)
+
+        //문제 출력 
+        const updataQuiz = (index) => {
+            let quizWrapTag = `
+                    <div class="quiz">
+                        <div class="quiz__header">
+                            ${quizInfo[index].infoDate} ${quizInfo[index].infoType}
+                        </div>
+                        <div class="quiz__main">
+                            <div class="quiz__question">${index + 1}.${quizInfo[index].infoQuestion}</div>
+                            <div class="quiz__choice">
+                                <label for="choice1">
+                                    <input type="radio" id="choice1" name="choice" value="1">
+                                    <span>${quizInfo[index].infoChoice[0]}</span>
+                                </label>
+                                <label for="choice2">
+                                    <input type="radio" id="choice2" name="choice" value="2">
+                                    <span>${quizInfo[index].infoChoice[1]}</span>
+                                </label>
+                                <label for="choice3">
+                                    <input type="radio" id="choice3" name="choice" value="3">
+                                    <span>${quizInfo[index].infoChoice[2]}</span>
+                                </label>
+                                <label for="choice4">
+                                    <input type="radio" id="choice4" name="choice" value="4">
+                                    <span>${quizInfo[index].infoChoice[3]}</span>
+                                </label>
+                            </div>
+                            <div class="quiz__answer none">
+                                ${quizInfo[index].infoAnswer}
+                                </div>
+                            <div class="quiz__desc none">
+                                ${quizInfo[index].infoDesc}
+                                </div>
+                        </div>
+                        <div class="quiz__footer">
+                            <button class="quiz__confirm" >정답확인하기</button>
+                            <button class="quiz__next none">다음 문제</button>
+                        </div>
+                    </div>
+                `;
+
+            quizWrap.innerHTML = quizWrapTag;
+
+            //선택자
+            const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+            const quizNext = quizWrap.querySelector(".quiz__next");
+
+            //정답 확인 방법
+            quizConfirm.addEventListener("click", () => {
+                checkAnswer();
+                quizConfirm.classList.add("none"); // 정답 버튼 삭제
+                quizNext.classList.remove("none"); // 다음 버튼 추가
+            });
+            //다음 문제 버튼
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    quizNext.classList.add("none");         // 다음 버튼 삭제
+                    quizConfirm.classList.remove("none")    //다음 버튼 추가
+                    currentIndex++;                         // 문제 번호 추가
+                    updataQuiz(currentIndex);               //퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.");
+                }                
+            });
+
+            
+            
+        }
+
+
+        //정답 확인
+        const checkAnswer = () => {
+            const selectedChoice = quizWrap.querySelector("input[name='choice']:checked");
+            const userAnswer = selectedChoice.value;        //사용자가 클릭한  정답.
+            const correctAnswer = quizInfo[currentIndex].infoAnswer;    //정답지의 정답.
+            const quizElement = quizWrap.querySelector(".quiz");
+            const descElement = quizWrap.querySelector(".quiz__desc");
+            const answerElement = quizWrap.querySelector(".quiz__answer");
+
+            if (userAnswer === correctAnswer) {
+                quizElement.classList.add("good");
+
+            } else {
+                quizElement.classList.add("bad");
+                answerElement.classList.remove("none")
+            }
+
+            descElement.classList.remove("none");
+        }
+
+        //페이작 로드 된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updataQuiz(currentIndex);
+        });
+    </script>
+</body>
+
+</html>

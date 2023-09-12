@@ -307,7 +307,8 @@ body::after {
     content: "🧐 설명 : ";
 }
 .quiz__footer {}
-.quiz__confirm {
+.quiz__confirm,
+.quiz__next {
     background-color: #412E91;
     color: #fff;
     text-align: center;
@@ -319,7 +320,8 @@ body::after {
     border: 1px dashed transparent;
     border-radius: 3px;
 }
-.quiz__confirm:hover {
+.quiz__confirm:hover,
+.quiz__next:hover {
     border: 1px dashed #412E91;
     background-color: transparent;
     color: #412E91;

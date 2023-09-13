@@ -82,6 +82,7 @@
     }
     .header__logo img {
         width: 110px;
+        padding-top: 5px;
     }   
 } 
 /* slider */
@@ -108,6 +109,7 @@
     color: #fff;
     font-weight: 300;
     margin-bottom: 120px;
+    ;
 }
 .slider__text h3 em {
     font-weight: 800;
@@ -162,12 +164,14 @@
     }
     .slider__text h3 {
         font-size: 5vw;
+        word-break: keep-all;
+        padding: 0 40px;
     }
 }
 @media (max-width: 800px) {
     .slider__inner > .slider {
         background-color: 60%;
-        background-position: center bottom 50px;
+        background-position: center bottom 80px;
     }  
     
     .slider__text h3 {
@@ -181,7 +185,7 @@
     }
     .slider__dot {
         position: absolute;
-        bottom: 30px;
+        bottom: 50px;
         left: 50px;
         transform: translateX(-50%);
     }

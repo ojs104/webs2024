@@ -158,9 +158,9 @@
     background-position: 0 -70px;
 }
 @media (max-width: 1290px){
-    .slider__inner > .slier {
+    .slider__inner > .slider {
         width: 100%; 
-        padding: 100px 16px;       
+        padding: 80px 16px;       
     }
     .slider__text h3 {
         font-size: 5vw;
@@ -170,7 +170,7 @@
 }
 @media (max-width: 800px) {
     .slider__inner > .slider {
-        background-color: 60%;
+        background-size: 60%;
         background-position: center bottom 80px;
     }  
     
@@ -183,6 +183,7 @@
     .slider__arrow {
         display: none;
     }
+    
     .slider__dot {
         position: absolute;
         bottom: 50px;
@@ -194,7 +195,7 @@
             font-size: 34px;
         }
         .slider__inner > .slider {
-        background-color: 340px;
+        background-size: 340px;
         }
     }
 }

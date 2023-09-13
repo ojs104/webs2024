@@ -47,16 +47,26 @@
         <main id="main">
             <div class="main__menu">
                 <ul>
-                    <li><a href="#sample01">01. 함수: 선언적 함수</a></li>
-                    <li><a href="#sample02">02. 함수: 익명 함수</a></li>
-                    <li><a href="#sample03">03. 함수: 매개변수 함수</a></li>
-                    <li><a href="#sample04">04. 함수: 리턴값(결과/종료) 함수</a></li>
-                    <li><a href="#sample05">05. 함수: 매개변수 + 리턴값 함수</a></li>
-                    <li><a href="#sample06">06. 화살표 함수 : 선언적 함수</a></li>
-                    <li><a href="#sample07">07. 화살표 함수 : 익명함수</a></li>
-                    <li><a href="#sample08">08. 화살표 함수 : 매개함수</a></li>
-                    <li><a href="#sample09">09. 화살표 함수 : 리턴값 함수</a></li>
-                    <li><a href="#sample10">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수</a></li>
+                    <li><a href="#">01. 함수: 선언적 함수</a></li>
+                    <li><a href="#">02. 함수: 익명 함수</a></li>
+                    <li><a href="#">03. 함수: 매개변수 함수</a></li>
+                    <li><a href="#">04. 함수: 리턴값(결과/종료) 함수</a></li>
+                    <li><a href="#">05. 함수: 매개변수 + 리턴값 함수</a></li>
+                    <li><a href="#">06. 화살표 함수 : 선언적 함수</a></li>
+                    <li><a href="#">07. 화살표 함수 : 익명함수</a></li>
+                    <li><a href="#">08. 화살표 함수 : 매개함수</a></li>
+                    <li><a href="#">09. 화살표 함수 : 리턴값 함수</a></li>
+                    <li><a href="#">10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수</a></li>
+                    <li><a href="#">11. 화살표 함수 : 함수와 매개변수를 이용한 형태</a></li>
+                    <li><a href="#">12. 함수 유형 : 함수와 변수를 이용한 형태</a></li>
+                    <li><a href="#">13. 함수 유형 : 함수와 배열을 이용한 형태</a></li>
+                    <li><a href="#">14. 함수 유형 : 함수와 객체를 이용한 형태</a></li>
+                    <li><a href="#">15. 함수 유형 : 함수와 객체 및 배열을 이용한 형태</a></li>
+                    <li><a href="#">16. 함수 유형 : 객체안에 함수를 이용한 형태</a></li>
+                    <li><a href="#">17. 함수 유형 : 객체 생성자 함수</a></li>
+                    <li><a href="#">18. 함수 유형 : 프로토타입 함수</a></li>
+                    <li><a href="#">19. 함수 유형 : 객체 리터럴 함수</a></li>
+                    <li><a href="#">20. 클래스</a></li>
                 </ul>
             </div>
             <!-- //main__menu -->
@@ -327,99 +337,88 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script>
-        // 01. 선언 함수
+        // 01. 함수: 선언적 함수
         {
-            function func() {
-                console.log("실행되었습니다.");
+            function func(){               
+                console.log("함수가 실행되었습니다.1");
             }
             func();
         }
-
-        // 02. 익명 함수
+        // 02. 함수: 익명 함수
         {
-            const func = function () {
-                console.log("실행되었습니다.");
-            }
-            func();
-        }
-        // 03. 매개변수 함수
-        {
-            function func(str) {
-                console.log(str);
-            }
-            func("실행되었습니다")
-        }
-
-        // 04. 리턴값 함수
-        {
-            function func() {
-                return "실행되었습니다.";
-            }
-            console.log(func());
-        }
-
-        //05. 매개변수 + 리턴값 함수
+            const func = function(){           
+                console.log("함수가 실행되었습니다.2");
+            }   
+             func();
+        } 
+        // 03. 함수: 매개변수 함수
         {
             function func(str) {
+                console.log(str)             
+            }
+            func("함수가 실행되었습니다.3");
+        };
+        // 04. 함수: 리턴값(결과/종료) 함수
+        {
+            function func(str){
+                return "함수가 실행되었습니다.4";
+            }
+            console.log(func())
+        }
+        // 05. 함수: 매개변수 + 리턴값 함수
+        {
+            function func(str){
                 return str;
             }
-            console.log(func("실행되었습니다."));
+            console.log(func("함수가 실행되었습니다.5"));
         }
-
-        //06. 화살표 함수 : 선언 함수
+        // 06. 화살표 함수 : 선언적 함수
         {
-            func = () => {
-                console.log("실행되었습니다");
+            func = () => {               
+                console.log("함수가 실행되었습니다.6");
             }
             func();
         }
-
-        //07. 화살표 함수 : 익명 함수
+        // 07. 화살표 함수 : 익명함수
         {
-            func = () => {
-                console.log("실행되었습니다.");
+            const func = () => {
+                console.log("함수가 실행되었습니다.7")
             }
             func();
         }
-        // 08. 화살표 함수 : 매개변수 함수
+        // 08. 화살표 함수 : 매개함수
         {
-            func = (str) => {
-                console.log(str);
+           func = (str) => {
+                console.log(str)             
             }
-            func("실행되었습니다")
+            func("함수가 실행되었습니다.8");
         }
+
         // 09. 화살표 함수 : 리턴값 함수
         {
             func = () => {
-                return "실행되었습니다.";
+                return "함수가 실행되었습니다.9";
             }
-            console.log(func());
+            console.log(func())
         }
-
-        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수
+        // 10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수
         {
-            //익명 함수
             const func = (str) => {
                 return str;
             }
-            console.log(func("실행되었습니다.1"));
+            console.log(func("함수가 실행되었습니다.10"));
 
-            //괄호 함수
-            const func2 = str => {
-                return str;
-            }
-            console.log(func2("실행되었습니다.2"));
-
-            // 리턴 생략
-            const func3 = str => str;
-
-            console.log(func3("실행되었습니다.3"));
-
-            // 선언적(가독성x)
-            func4 = str => str;
-
-            console.log(func4("실행되었습니다.4"));
         }
+        // 11. 화살표 함수 : 함수와 매개변수를 이용한 형태
+        // 12. 함수 유형 : 함수와 변수를 이용한 형태
+        // 13. 함수 유형 : 함수와 배열을 이용한 형>
+        // 14. 함수 유형 : 함수와 객체를 이용한 형태
+        // 15. 함수 유형 : 함수와 객체 및 배열을 이용한 형태
+        // 16. 함수 유형 : 객체안에 함수를 이용한 형태
+        // 17. 함수 유형 : 객체 생성자 함수
+        // 18. 함수 유형 : 프로토타입 함수
+        // 19. 함수 유형 : 객체 리터럴 함수
+        // 20. 클래스
     </script>
 
 </body>

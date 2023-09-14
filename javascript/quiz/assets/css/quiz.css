@@ -216,15 +216,15 @@ body::after {
 }
 .quiz__question span {
     font-size: 24px;
-    line-height: 1.4;
+    line-height: 1.5;
     font-weight: 400;
 }
 .quiz__img {   
     margin-bottom: 10px;
 }
 .quiz__img img {
-    display: block;
     width: 100%;
+    border: 1px solid #eee;
 }
 .quiz__choice {
     margin-bottom: 20px;

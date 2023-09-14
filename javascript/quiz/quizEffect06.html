@@ -71,10 +71,10 @@
 
     <script>
         const quizInfo = () => {
-            fetch("http://kmdojs.github.io/webs2024/gineungsa.jason")
+            fetch("https://ojs104.github.io/webs2024/json/gineungsaJC2011_05.json")
                 .then(res => res.json().json())
                 .then(items => {
-                    console.log(items)
+                    console.log(items[0].question);
                 })
                 .catch((error) => console.log(error));
         }    

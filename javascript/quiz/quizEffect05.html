@@ -156,6 +156,11 @@
         //정답 확인
         const checkAnswer = () => {
             const selectedChoice = quizWrap.querySelector("input[name='choice']:checked");
+
+            if (!selectedChoice){
+                alter("답을 선택하세요.");
+                return;
+            }
             const userAnswer = selectedChoice.value;        //사용자가 클릭한  정답.
             const correctAnswer = quizInfo[currentIndex].infoAnswer;    //정답지의 정답.
             const quizElement = quizWrap.querySelector(".quiz");
@@ -173,7 +178,7 @@
             descElement.classList.remove("none");
         }
 
-        //페이작 로드 된 후 실행
+        //페이지 로드 된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             updataQuiz(currentIndex);
         });

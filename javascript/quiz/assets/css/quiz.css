@@ -527,6 +527,7 @@ body::after {
         line-height: 1.4;
         display: inline-block;
     }
+    
     .quiz__input input {
         padding: 14px;
     }

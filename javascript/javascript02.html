@@ -493,7 +493,14 @@
 
 </code></pre>
                     <p class="desc">
-                        <br>
+                        console.log(obj.a);a: 이 줄은 점 표기법을 사용하여 객체 의 속성 값에 액세스하고 기록합니다.<br>
+                        console.log(obj.b);b: 이 줄은 점 표기법을 사용하여 객체 의 속성 값에 액세스하고 기록합니다.<br>                        
+                        console.log(obj.c);c: 이 줄은 점 표기법을 사용하여 객체 의 속성 값에 액세스하고 기록합니다.<br>                         
+                        console.log(obj["a"]);a: 이 줄은 대괄호 표기법을 사용하여 개체 의 속성 값에 액세스하고 기록합니다. 대괄호 표기법을 사용하면 속성 이름을 나타내는 문자열을 사용하여 객체 속성에 액세스할 수 있습니다.<br>
+                        
+                        console.log(obj["b"]);b: 이 줄은 대괄호 표기법을 사용하여 개체 의 속성 값에 액세스하고 기록합니다.<br>                        
+                        console.log(obj["c"]);c: 이 줄은 대괄호 표기법을 사용하여 개체 의 속성 값에 액세스하고 기록합니다.<br>                        
+                        점 표기법과 대괄호 표기법은 모두 JavaScript에서 객체 속성에 액세스하는 유효한 방법입니다. 특정 사용 사례에 더 편리한 것을 선택하거나 프로젝트의 코딩 규칙을 따를 수 있습니다. <br>
                     </p>
                     <div class="result">
                         <details>
@@ -527,7 +534,7 @@
 
 </code></pre>
                     <p class="desc">
-                        <br>
+                        Object.keys(obj)메서드는 객체의 키(속성 이름)가 포함된 배열을 반환합니다. obj의 세 가지 속성이 있습니다. 따라서  결과를 기록하면 다음 속성 이름이 포함된 배열을 얻게 됩니다.abcObject.keys(obj)  <br>
                     </p>
                     <div class="result">
                         <details>
@@ -555,7 +562,7 @@
 
 </code></pre>
                     <p class="desc">
-                        <br>
+                        Object.values(obj)메소드는 객체를 반환합니다. <br>
                     </p>
                     <div class="result">
                         <details>
@@ -570,7 +577,7 @@
 
                 <div id="sample16" class="sample">
                     <h3>16.객체 : 데이터 불러오기 Object.entries() </h3>
-                    <p>Object.entries() 메서드는 객체의 속성을 [키, 값] 형태의 배열로 반환합니다. 이를 통해 객체의 속성을 순회하고 데이터를 불러올 수 있습니다. </p>
+                    <p>자바스크립트의 타입중 객체는 배열처럼 하나가 아닌 여러 개의 값을 키, 밸류 형태로 가지고 있습니다. 만약 객체가 가진 모든 키와 값을 확인하길 원하는 경우라면 entries()를 사용하면 편리합니다. entries()는 객체가 가지고 있는 모든 프로퍼티를 키와 값 쌍으로 배열 형태로 반환하여 주기 때문에 어떤 프로퍼티와 값으로 이루어졌는지 한 눈에 확인할 수 있습니다. </p>
 <pre><code class="language-js">
 {
     const obj = {
@@ -584,15 +591,16 @@
 
 </code></pre>
                     <p class="desc">
-                        <br>
+                        가지고 있는 값들이 모두 key, value 형태의 배열로 변환되어 출력됩니다. <br>
                     </p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                100<br>
-                                200<br>
-                                "javascript"<br>                               
+                                0 : (2) ['a', 100]                                
+                                1 : (2) ['b', 200]
+                                2 : (2) ['c', 'javascript']
+                                length :  3                              
                             </div>
                         </details>
                     </div>
@@ -602,7 +610,7 @@
 
                 <div id="sample17" class="sample">
                     <h3>17.객체 : 데이터 불러오기 Object.assign()</h3>
-                    <p> 메서드는 한 객체에서 다른 객체로 속성(프로퍼티)을 복사할 때 사용합니다. 이 메서드를 사용하면 여러 객체의 속성을 결합하거나 하나의 객체에서 다른 객체로 데이터를 복사할 수 있습니다. </p>
+                    <p> Object.assign을 이용해서 객체를 합치는 것이 가능하다. 또한 합칠 때는 2개의 객체가 같은 프로퍼티를 가지고 있다면 그 값을 덮어쓰기 해주며, 객체의 복제에서도 사용될 수 있습니다. </p>
 <pre><code class="language-js">
 {
     const obj1 = { a:100, b: 200, c: "javascript" };
@@ -614,18 +622,31 @@
 
 </code></pre>
                     <p class="desc">
-                        <br>
+                        const obj3 = Object.assign(obj1, obj2);을 통해서 obj1과 obj2를 합치는게 가능하다.<br>
                     </p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
                             <div>
-                                {a: 100, b: 200, c: 'javascript', d: 300, e: 400, … }<br>                               
+                                {a: 100, b: 200, c: 'javascript', d: 300, e: 400, … }<br>
+                                a : 100
+                                b : 200
+                                c : "javascript"    
+                                d : 300
+                                e :  400 
+                                f  : "jquery"            
+                                                                              
                             </div>
                         </details>
                     </div>
                 </div>
-                <!-- //sample17 -->
+                <!-- //sample17 -->         
+                                    
+                                    
+                                    
+                                    
+                                    
+                 
 
                 <div id="sample18" class="sample">
                     <h3>18.객체 : 데이터 불러오기 : hasOwnProperty()</h3>
@@ -719,7 +740,12 @@
 }
 
 </code></pre>
-                    <p class="desc">                        
+                    <p class="desc">
+                       1.obj의 세 가지 속성으로 명명된 개체가 있으며 각각 해당 값이 있습니다.<br>
+                       2. 루프 는 객체 for...in의 키(속성 이름)를 반복하는 데 사용됩니다 obj. 각 반복에서 변수는 el현재 속성 이름(키)을 보유합니다.<br>
+                       3. 루프 내에서 obj[el]현재 속성 name 과 연결된 값에 액세스하는 데 사용됩니다 el. 그런 다음 속성 이름, 콜론과 공백( : ), 값을 단일 문자열로 연결합니다.<br>
+                       4. 결과적으로 for...in루프는 개체의 모든 속성을 반복 obj하고 각 속성에 대해 형식으로 문자열을 기록합니다 "property : value".
+
                     </p>
                     <div class="result">
                         <details>
@@ -738,7 +764,7 @@
 
                 <div id="sample21" class="sample">
                     <h3>21.객체 : 데이터 불러오기 : 객체 구조 분해 할당() </h3>
-                    <p>객체 구조 분해 할당은 JavaScript에서 객체의 속성 값을 추출하여 변수에 할당하는 방법입니다. 이를 통해 객체의 특정 속성을 쉽게 변수로 가져와서 사용할 수 있습니다 </p>
+                    <p>객체 구조 분해 할당은 JavaScript에서 객체의 속성 값을 추출하여 변수에 할당하는 방법입니다. 이를 통해 객체의 특정 속성을 쉽게 변수로 가져와서 사용할 수 있습니다.</p>
 <pre><code class="language-js">
 {
     const obj1 = {
@@ -752,7 +778,7 @@
     console.log(b);
     console.log(c);
 
-    const { a: x, b: y, c: z } = obj1;   // (많이씀) 키값을 이렇게 바꿀 수 있음
+    const { a: x, b: y, c: z } = obj1;   // (많이씀) 키 값을 이렇게 바꿀 수 있음
 
     console.log(x);
     console.log(y);
@@ -782,6 +808,8 @@
 }
 </code></pre>
                     <p class="desc">
+                        1. 다음의 속성을 파괴합니다 obj1: const { a, b, c} = obj1;
+                        2. 구조화되지 않은 속성 이름 바꾸기: const { a: x, b: y, c: z } = obj1;                        
                         <br>
                     </p>
                     <div class="result">

@@ -2,7 +2,7 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+    box-sizing: border-box;   
 }
 /* 여백 초기화 */
 body,
@@ -26,6 +26,7 @@ form,
 legend,
 p,
 blockquote,
+table,
 th,
 tr,
 td,
@@ -33,7 +34,7 @@ input,
 select,
 button,
 figure,
-figcaption{
+figcaption {
     margin: 0;
     padding: 0;
 }
@@ -45,7 +46,7 @@ input,
 select,
 table,
 textarea {
-    font-family: "nanumSquareNeo", "Malgun Gothice", "맑은 고딕", Arial, Helvetica, sans-serif;
+    font-family: "nanumSquareNeo" , "Malgun Gothic", "맑은 고딕", Arial, Helvetica, sans-serif;
 }
 
 /* 링크 초기화 */
@@ -64,18 +65,16 @@ h6 {
     font-weight: normal;
     font-size: 16px;
 }
-
 /* 리스트 스타일 초기화 */
 ul, ol, li {
     list-style: none;
 }
 
 /* 폰트 스타일 초기화 */
-
-em,
+em, 
 address {
     font-style: normal;
-} 
+}
 
 /* 이미지 대체(IR) 효과 */
 .ir {

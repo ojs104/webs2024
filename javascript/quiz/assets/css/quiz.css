@@ -498,15 +498,16 @@ body::after {
         padding: 7px;
     }
     .quiz__wrap {
-        padding: 0 16px;
+        padding: 0 6px;
         margin-top: 0;
     }
     .quiz__wrap > .quiz {
         width: 100%;
-        padding: 20px;
+        padding: 30px 20px;
     }
     .quiz__header {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 14px;
     }
     .quiz__date {
         font-size: 14px;
@@ -515,7 +516,7 @@ body::after {
         font-size: 14px;
     }
     .quiz__question {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         line-height: 1.5;
         font-size: 20px;
     }
@@ -524,10 +525,7 @@ body::after {
     }
     .quiz__question span {
         font-size: 20px;
-        line-height: 1.4;
-        display: inline-block;
-    }
-    
+    }    
     .quiz__input input {
         padding: 14px;
     }
@@ -538,6 +536,9 @@ body::after {
         padding: 14px;
     }
     .quiz__choice label span {
+        padding: 13px;
+    }
+    .quiz__confirm {
         padding: 13px;
     }
 }

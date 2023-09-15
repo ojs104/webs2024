@@ -28,7 +28,8 @@
 }
 
 .card-container {
-    position: relative;    
+    position: relative;
+    width: 100%;    
     margin: auto;   
     padding-top: 125px;
     border-radius: 3%;  

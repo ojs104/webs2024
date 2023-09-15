@@ -674,8 +674,18 @@
     console.log(obj.hasOwnProperty("javascript"));  
 }
 
+// in 연산자
+
+    console.log("a" in obj);//t
+    console.log("b" in obj);//t
+    console.log("c" in obj);//t
+    console.log("d" in obj);//f
+
 </code></pre>
-                    <p class="desc">   
+                    <p class="desc">
+                        hasOwnProperty 메서드: obj.hasOwnProperty("a"): 객체 obj가 a라는 속성을 가지고 있는지 확인하고 결과를 출력합니다.<br>
+                        true는 해당 속성이 객체에 존재함을 나타냅니다.<br>
+                        false는 해당 속성이 객체에 존재하지 않음을 나타냅니다.<br>
                     </p>
                     <div class="result">
                         <details>
@@ -686,6 +696,10 @@
                                 true <br>
                                 false <br>
                                 false <br>  
+                                true <br>  
+                                true <br>  
+                                true <br>  
+                                false <br>  
                             </div>
                         </details>
                     </div>
@@ -694,7 +708,7 @@
 
                 <div id="sample19" class="sample">
                     <h3>19.객체 : 데이터 불러오기 : for in() </h3>
-                    <p> </p>
+                    <p>for...in 반복문을 사용하여 객체 obj의 모든 속성과 각 속성의 값을 출력하는 예제입니다. </p>
 <pre><code class="language-js">
 {
     const obj = {
@@ -708,7 +722,10 @@
 }
 </code></pre>
                     <p class="desc">
-                        <br>
+                        const obj = { a: 100, b: 200, c: "javascript" }: obj라는 객체를 생성하고 세 개의 속성(a, b, c)을 초기화합니다.<br>
+                        for...in 루프를 사용하여 obj 객체의 속성을 반복합니다. for (let el in obj)은 obj 객체의 속성을 하나씩 순회하는 반복문입니다.
+                        반복문 내부에서 console.log(el + " : " + obj[el]);를 사용하여 현재 순회 중인 속성 이름(el)과 해당 속성의 값을 출력합니다.
+                        이것은 객체의 속성 이름과 값을 콘솔에 출력합니다. <br>
                     </p>
                     <div class="result">
                         <details>

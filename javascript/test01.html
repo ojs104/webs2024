@@ -3,229 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ddsdfs</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        #header {
-            height: 100px;
-            background-color: #EEEBE9;
-        }
-
-        #nav {
-            height: 100px;
-            background-color: #B9AAA5;
-        }
-
-        #main {
-            height: 780px;
-            background-color: #886F65;
-        }
-
-        #footer {
-            height: 100px;
-            background-color: #4E342E;
-        }
-
-        .container {
-            width: 1200px;
-            height: inherit;
-            background-color: rgba(0, 0, 0, 0.3);
-            margin: 0 auto;
-
-        }
-    </style>
-</head>
-<body>
-    <div id="wrap">
-        <header id="header">
-            <div class="container"></div>
-        </header>
-        <nav id="nav">
-            <div class="container"></div>
-        </nav>
-        <main id="main">
-            <div class="container contents">
-                <article class="cont1"></article>
-                <article class="cont2"></article>
-                <article class="cont3"></article>
-                <article class="cont4"></article>
-            </div>
-        </main>
-        <footer id="footer">
-            <div class="container"></div>
-
-        </footer>
-    </div>
-    
-</body>
-</html>
-        
-        
-    
+    <title>Document</title>
 </head>
 <body>
     <script>
-         const arr = [1,2,3,4,5,6,7,8,9,10];
-        //01. for()문
-        for(let i=0; i<arr.length; i++){
-            document.write(arr[i],", ");
+
+        {
+            
+        }
+        {//08
+            const arr1=[100,200,300];
+            const arr2= [400,500,600];
+
+            console.log(arr1);
+            console.log(...arr1);
+            console.log(arr1 + arr2);
+            console.log(...arr1, ...arr2);
+            console.log(...arr1, 400);
+            console.log(...arr1.slice(0,2));
+            
+        }
+        {//09
+            function addNum(a,b,c){
+                return a+b+c;
+            }
+            const num = [100,250,350]
+            const sum = addNum(...num)
+
+            console.log(sum)
+        }
+
+        {//10
+            const[a, b, c] = [100, 200, 300]
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        {//11
+            const arr = [100,200,300];
+            const [x,y,z]=arr;
+
+            
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+
+        {//12번
+            const num = [100, 200, 300, 400, 500, 600];
+            const [num1, num2, ...rest] = num;
+
+            console.log(num1);
+            console.log(num2);
+            console.log(...rest);
+            console.log(rest);
+
+        }
+        {//13번
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log(obj.a);
+            console.log(obj.b);
+            console.log(obj.c);
+        }
+        {//14qjs
+            const obj1 = { 
+                a: 100, 
+                b: 200, 
+                c: "javascript" 
         };
-        document.write("<br>");       
-
-        //02. forEach()문
-        arr.forEach((el) => {
-            document.write(el, " ,");
-        });
-        document.write("<br>");
-        //03. for of 
-        for(let el of arr){
-            document.write(el, " ,");
+             const obj2 = { 
+                d: 300, 
+                e: 400, 
+                f: "jquery" 
         };
-        document.write("<br>");
-        //04. for in
-        for(let el in arr){
-            document.write(arr(el)," ,");
+            const obj3 = Object.assign(obj1, obj2);
+
+            document.write(obj3);
+        }
+        {//15qjs
+            const obj1 = { 
+                a: 100, 
+                b: 200, 
+                c: "javascript" 
         };
-        document.write("<br>");
-        //05. map()
-        arr.map((el) => {
-            document.write(el, " ,");
-        });
-        //06. filter 
-        arr.filter((el) => {
-            document.write(el, " ,");
-        });
-        //07. 1부터 100까지 합
-        let sum = 1;
-        for(let i=1; i<=100; i++){            
-            sum += i;
-        };        
-        document.write(sum);
-
-        //08. 8단 구구단
-        for(let i=8; i<9; i++){
-            for(j=1; j<10;)
-            document.write(i+"X"+j+"="+i*j+"<br>")
+            const obj2 = { 
+                    d: 300, 
+                    e: 400, 
+                    f: "jquery" 
         };
-       
-        //09. 테이블만들기
-        let num =1;
-        let table = "<table class = 'table'>"
-        for(let i=1; i<=10; i++){
-            table += "<tr>"
-            for(let j=1; j<=10; j++){
-                table += "<td>" + num + "</td>"
-            }
-           
-            table += "</tr>"
+            const obj3 = Object.assign(obj1, obj2);
+
+            console.log(obj3);
         }
-        table += "</table>"
+        {//16번
+            const obj = {
+                a: 100,
+                b: 200,
+                c:"javascript"
+        }
 
-
-        // 01. 선언 함수
+            console.log(obj.hasOwnProperty("a"));
+            console.log(obj.hasOwnProperty("b"));
+            console.log(obj.hasOwnProperty("c"));
+            console.log(obj.hasOwnProperty("d"));
+        }
+        {//17번
+            const obj = {
+                a: 100,
+                b: 200,
+                c:"javascript"
+        }
+        
+            console.log("a" in obj);
+            console.log("b" in obj);
+            console.log("c" in obj);
+            console.log("d" in obj);
+        }
+        {//18번
+            const obj = {
+                a: 100,
+                b: 200,
+                c:"javascript"
+            }
+            for(let el in obj){
+                console.log(el+":"+obj[el]);
+            }
+        }
         {
-            function func() {
-                console.log("실행되었습니다.");
-            }
-            func();
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript",
+         }
+            const obj2 = {
+                    d: 300,
+                    e: 400,
+                    f: "jquery",
         }
+        const obj3 = {...obj1, ...obj2}
+        const obj4 = {...obj1, d: "jquery"}
+        const obj5 = {...obj1, b: 300}
 
-        // 02. 익명 함수
+        console.log(obj3); 
+        console.log(obj4); 
+        console.log(obj5); 
+        }
         {
-            const func = function () {
-                console.log("실행되었습니다.");
-            }
-            func();
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript",
         }
-        // 03. 매개변수 함수
-        {
-            function func(str) {
-                console.log(str);
-            }
-            func("실행되었습니다")
-        }
+        const { a, b, c } = obj1;
 
-        // 04. 리턴값 함수
-        {
-            function func() {
-                return "실행되었습니다.";
-            }
-            console.log(func());
-        }
+        console.log(a);
+        console.log(b);
+        console.log(c);
 
-        //05. 매개변수 + 리턴값 함수
-        {
-            function func(str) {
-                return str;
-            }
-            console.log(func("실행되었습니다."));
+        const { a: x, b: y, c: z } = obj1;
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+
+        const obj2 = {
+                d: 100,
+                e: 200,
+                f: "javascript",
         }
 
-        //06. 화살표 함수 : 선언 함수
-        {
-            func = () => {
-                console.log("실행되었습니다");
-            }
-            func();
+        const { d, e, f, g = "jquery"} = obj2;
+
+        console.log(g);
+
+        const obj3 = {
+                x1: 100,
+                y1: {a1: 100, b1: 200},
+                z1: "javascript",
         }
+        const { x1, y1: {a1, b1}, z1} = obj3;
 
-        //07. 화살표 함수 : 익명 함수
-        {
-            func = () => {
-                console.log("실행되었습니다.");
-            }
-            func();
+        console.log(x1);
+        console.log(a1);
+        console.log(b1);
+        console.log(z1);
         }
-        // 08. 화살표 함수 : 매개변수 함수
-        {
-            func = (str) => {
-                console.log(str);
-            }
-            func("실행되었습니다")
-        }
-        // 09. 화살표 함수 : 리턴값 함수
-        {
-            func = () => {
-                return "실행되었습니다.";
-            }
-            console.log(func());
-        }
-
-        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수
-        {
-            //익명 함수
-            const func = (str) => {
-                return str;
-            }
-            console.log(func("실행되었습니다.1"));
-
-            //괄호 함수
-            const func2 = str => {
-                return str;
-            }
-            console.log(func2("실행되었습니다.2"));
-
-            // 리턴 생략
-            const func3 = str => str;
-
-            console.log(func3("실행되었습니다.3"));
-
-            // 선언적(가독성x)
-            func4 = str => str;
-
-            console.log(func4("실행되었습니다.4"));
-        }
-
-
-
-
-
-        //
-
-    </script>
+        
+        
+        
+        </script>
     
 </body>
 </html>

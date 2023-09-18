@@ -1,89 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주관식 인물 퀴즈</title>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap
+        }
+        #header {
+            width: 100%; 
+            height: 100px;
+            background-color: #feccbe;          
+        }
+        #main {
+            height: 1000px;
+        }
+        #contents {
+
+        }
+        #content1
+        #content2
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #feccbe;
+        }
+    </style>
 </head>
 <body>
-    <h1>주관식 인물 퀴즈</h1>
-    <div id="question"></div>
-    <input type="text" id="answer" placeholder="답을 입력하세요">
-    <button id="check">정답 확인</button>
-    <button id="next">다음 문제</button>
-
-    <script src="quiz.js"></script>
-
-    <script>
-        const quizData = [
-  {
-    question: "1. 아인슈타인의 출생 연도는?",
-    answer: "1879", // 정답
-  },
-  {
-    question: "2. 마리 캐리의 본명은?",
-    answer: "Mariah Carey", // 정답
-  },
-];
-
-let currentQuestion = 0;
-const questionElement = document.getElementById("question");
-const answerElement = document.getElementById("answer");
-const checkButton = document.getElementById("check");
-const nextButton = document.getElementById("next");
-
-// 퀴즈 초기화 함수
-function initQuiz() {
-  showQuestion(currentQuestion);
-}
-
-// 다음 문제로 이동하는 함수
-function nextQuestion() {
-  currentQuestion++;
-  if (currentQuestion < quizData.length) {
-    showQuestion(currentQuestion);
-  } else {
-    endQuiz();
-  }
-}
-
-// 문제 표시 함수
-function showQuestion(index) {
-  questionElement.textContent = quizData[index].question;
-  answerElement.value = "";
-}
-
-// 정답 확인 함수
-function checkAnswer() {
-  const userAnswer = answerElement.value.trim();
-  const correctAnswer = quizData[currentQuestion].answer;
-
-  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-    alert("정답입니다!");
-  } else {
-    alert("틀렸습니다. 다음 문제로 넘어갑니다.");
-  }
-
-  answerElement.value = "";
-  nextQuestion();
-}
-
-// 퀴즈 종료 함수
-function endQuiz() {
-  questionElement.textContent = "퀴즈가 종료되었습니다!";
-  answerElement.style.display = "none";
-  checkButton.style.display = "none";
-  nextButton.style.display = "none";
-}
-
-// 초기 퀴즈 설정
-initQuiz();
-
-// "정답 확인" 버튼 클릭 시 정답 확인
-checkButton.addEventListener("click", checkAnswer);
-
-// "다음 문제" 버튼 클릭 시 다음 문제로 이동
-nextButton.addEventListener("click", nextQuestion);
-    </script>
+     <div id="wrap">
+        <div id="header">           
+        </div>       
+        <main id="main">
+            <section id="contents">
+                <div class="content1"></div>
+                <div class="content2"></div>                        
+                <div class="content3"></div>
+            </section>
+        </main>
+        <div id="footer">  </div>
 </body>
 </html>

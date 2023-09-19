@@ -1,0 +1,188 @@
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 300;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot?#iefix") format("embedded-opentype"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff2") format("woff2"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff") format("woff"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.ttf") format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 400;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot?#iefix") format("embedded-opentype"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff2") format("woff2"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff") format("woff"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.ttf") format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot?#iefix") format("embedded-opentype"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff2") format("woff2"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff") format("woff"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.ttf") format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 800;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot?#iefix") format("embedded-opentype"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff2") format("woff2"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff") format("woff"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.ttf") format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 900;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot?#iefix") format("embedded-opentype"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff2") format("woff2"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff") format("woff"),
+         url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.ttf") format("truetype");
+    font-display: swap;
+} 
+.nanumSquareNeo {
+    font-family: "nanumSquareNeo";
+}
+.nanumSquareNeo300 {
+    font-family: "nanumSquareNeo";
+    font-weight: 300;
+}
+.nanumSquareNeo400 {
+    font-family: "nanumSquareNeo";
+    font-weight: 400;
+}
+.nanumSquareNeo700 {
+    font-family: "nanumSquareNeo";
+    font-weight: 700;
+}
+.nanumSquareNeo800 {
+    font-family: "nanumSquareNeo";
+    font-weight: 800;
+}
+.nanumSquareNeo900 {
+    font-family: "nanumSquareNeo";
+    font-weight: 900;
+}
+
+reset
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "nanumSquareNeo";
+    box-sizing: border-box;
+    font-size: 16px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+body {
+    background-color: #FECCBE;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* header */
+#header {
+    width: 194px;
+    height: auto;
+    font-family: "nanumSquareNeo";
+}
+#header h1 {
+    color: #000;
+    margin: 5px 0 0 10px;
+    padding: 10px;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+/* main */
+#main {
+    min-height: 85vh;
+    margin: 20px auto;
+    max-width: 1600px;
+}
+.quiz__wrap {}
+.quiz {}
+.quiz__header {
+    width: 100%;
+    height: 210px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.9;
+}
+.quiz__header span {
+    width: 405px;
+    height: 120px;
+    font-size: 100px;
+    font-weight: 900;
+    text-align: center;
+}
+.quiz__main {
+    display: flex;
+    justify-content: space-between;
+}
+.quiz_img {
+    width: 750px;
+    height: 500px;
+    margin-bottom: 100px;
+    border: 1px solid #FECCBE;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.quiz_img > img {
+    width: 750px;
+    height: 500px;
+    border-radius: 20px;
+}
+.quiz__box {
+    width: 750px;
+    height: 500px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 20px;
+}
+.quiz__question {
+    font-size: 70px;
+    font-weight: bolder;
+    margin: 70px 0 20px 0;
+}
+.quiz__start a {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    border: 1px solid #FECCBE;
+    background-color: #FECCBE;
+    color: #fff;
+    border-radius: 30px;
+}
+.quiz__start a:hover {
+    background-color: #fff;
+    color: #FECCBE;
+    cursor: pointer;
+
+}

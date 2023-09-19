@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인물퀴즈</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Jua", sans-serif;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        form {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #guess {
+            background-color: rgb(255, 216, 144);
+            padding: 10px;
+            box-shadow: 1px 1px 1px rgb(224, 197, 226);
+        }
+
+        #guess a {
+            text-decoration: underline;
+            color: rgb(54, 54, 54);
+        }
+
+        #together {
+            border: 2px solid black;
+            margin: 10px auto;
+            width: 5rem;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 201);
+        }
+
+        #together:hover {
+            scale: 1.1;
+        }
+
+        .together#together {
+            background-color: #ffd7ca;
+        }
+
+        #choice {
+            padding: 5px;
+            width: 200px;
+            font: inherit;
+        }
+
+        /* 
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+} */
+
+        section p {
+            text-align: center;
+            background-color: whitesmoke;
+            margin: 10px 0;
+        }
+
+        section #pick {
+            background-color: whitesmoke;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        section button {
+            font-family: "Jua", sans-serif;
+            padding: 2px;
+            border: 2px solid black;
+            border-radius: 2px;
+            font-size: 1rem;
+        }
+
+        section button:hover {
+            scale: 1.1;
+            background-color: rgb(180, 178, 178);
+        }
+
+        #side {
+            position: absolute;
+            left: 2px;
+            top: 12vh;
+        }
+
+        #no2 {
+            position: absolute;
+            right: 2px;
+            top: 12vh;
+        }
+
+        .level {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(227, 204, 167);
+            margin: 10px auto;
+            border-radius: 10%;
+            border: 2px solid rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .selected {
+            background-color: rgb(222, 118, 73);
+        }
+
+        .type {
+            background-color: rgb(221, 230, 220);
+        }
+
+        .select {
+            background-color: rgb(91, 214, 77);
+        }
+
+        h2 p {
+            font-size: 1rem;
+            text-align: left;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        #screen {
+            position: fixed;
+            width: 100vw;
+            height: 150vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-around;
+            visibility: hidden;
+        }
+
+        #screen h2 {
+            color: rgb(32, 32, 32);
+            font-size: 2rem;
+        }
+
+        section p {
+            font-size: 1.5rem;
+        }
+
+        section p span {
+            font-size: 1rem;
+            color: rgb(239, 89, 89);
+            text-align: left;
+        }
+
+        select:hover {
+            background-color: whitesmoke;
+        }
+
+        #aaa {
+            font-size: 15px;
+        }
+
+        #instagram {
+            line-height: 10px;
+            position: absolute;
+            top: 13px;
+            right: 20px;
+            font-size: 1.25rem;
+            padding-top: 0;
+        }
+
+        #instagram img {
+            width: 25px;
+            height: 25px;
+        }
+
+        #topleft {
+            position: absolute;
+            left: 30px;
+            top: 0px;
+            font-size: 20px;
+        }
+
+        #p {
+            font-size: 12px;
+            left: 154px;
+            top: 15px;
+            position: absolute;
+        }
+
+        #wrap {
+            max-width: 1080px;
+            margin: 20px auto 100px;
+            width: auto;
+            min-height: 1000px;
+        }
+
+        #limit {
+            font-size: 1rem;
+        }
+
+        #name {
+            width: 49%;
+            height: auto;
+            /* max-height: 600px; */
+            float: left;
+            padding: 20px;
+            font-size: 200px;
+            line-height: auto;
+            box-sizing: border-box;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        #container2 {
+            width: 48%;
+            height: auto;
+            float: right;
+            padding: 20px;
+            margin-left: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        #time-limit {
+            font-family: "Jua", sans-serif;
+            padding: 3px;
+        }
+
+        #record {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #title {
+            margin-bottom: 20px;
+            border: 2px solid black;
+            border-radius: 15px;
+            background-color: white;
+            padding-bottom: 20px;
+        }
+
+        #title h1 {
+            font-size: 80px;
+        }
+
+        #introduction {
+            width: 350px;
+            /* border: 1px solid black; */
+            margin: 0 auto 20px;
+            font-size: 20px;
+            height: 40px;
+        }
+
+        #explain {
+            font-size: 20px;
+        }
+
+        #input {
+            width: auto;
+            /* border: 1px solid black; */
+            margin: 10px auto 50px;
+        }
+
+        #koreanName {
+            font-size: 30px;
+            margin: 5px;
+        }
+
+        #options {
+            display: flex;
+            flex-direction: column;
+            pointer-events: none;
+        }
+
+        .option {
+            margin-top: 10px;
+            background-color: rgba(213, 213, 213, 0.658);
+            border-radius: 15px;
+            font-size: 25px;
+            border: 2px solid rgb(156, 156, 156);
+        }
+
+        .option:hover {
+            border: 2px solid rgb(1, 1, 1);
+        }
+
+        .selected {
+            border: 2px solid rgb(1, 1, 1);
+        }
+
+        .correct {
+            background-color: rgb(155, 242, 128);
+            border: 2px solid rgb(1, 1, 1);
+        }
+
+        .wrong {
+            background-color: rgb(255, 129, 122);
+            border: 2px solid rgb(1, 1, 1);
+        }
+
+        #answer {
+            width: auto;
+            height: 25px;
+            font-size: 20px;
+            /* font-family: 'Jua', sans-serif; */
+            font-weight: lighter;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #result {
+            font-size: 40px;
+            line-height: auto;
+        }
+
+        #loading {
+            background-color: white;
+        }
+
+        #loading img {
+            width: 1px;
+            height: 1px;
+        }
+
+        #start {
+            font-size: 30px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 1%;
+            height: 100px;
+            width: 100px;
+            font-family: "Jua", sans-serif;
+            text-align: center;
+            background-color: rgba(230, 230, 230, 0.918);
+        }
+
+        #button {
+            margin-top: 80px;
+        }
+
+        #img {
+            object-fit: cover;
+            border-radius: 15px;
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+        }
+
+        #reset {
+            font-size: 30px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 1%;
+            height: 100px;
+            width: 100px;
+            font-family: "Jua", sans-serif;
+            text-align: center;
+            background-color: rgba(230, 230, 230, 0.918);
+            margin: 0 10px 20px;
+            display: none;
+        }
+
+        #start:hover {
+            background-color: rgb(122, 133, 143);
+        }
+
+        #reset:hover {
+            background-color: rgb(122, 133, 143);
+        }
+
+        #footer {
+            clear: both;
+            border-top: 1px solid rgb(72, 72, 72);
+            height: 50px;
+            text-align: left;
+            background-color: white;
+        }
+
+        .game:hover {
+            transform: scale(1.1);
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        #a {
+            clear: both;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #restart,
+        #resume {
+            font-size: 30px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 1%;
+            height: 100px;
+            width: 100px;
+            font-family: "Jua", sans-serif;
+            text-align: center;
+            background-color: rgba(230, 230, 230, 0.918);
+            margin: 0 auto 20px;
+            display: none;
+            margin: 0 10px 20px;
+        }
+
+        #resume {
+            margin: 10px auto;
+        }
+
+        #resume:hover {
+            background-color: rgb(122, 133, 143);
+        }
+
+        #restart:hover {
+            background-color: rgb(122, 133, 143);
+        }
+
+        #next {
+            font-size: 30px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 1%;
+            height: 100px;
+            width: 100px;
+            font-family: "Jua", sans-serif;
+            text-align: center;
+            background-color: rgba(230, 230, 230, 0.918);
+            margin: 0 auto 20px;
+            display: none;
+            margin: 0 10px 20px;
+        }
+
+        #next:hover {
+            background-color: rgb(122, 133, 143);
+        }
+
+        #web {
+            display: flex;
+            justify-content: space-around;
+            height: 100px;
+        }
+
+        #guanggo {
+            margin-top: 20px;
+            background-color: #fff6ec;
+        }
+
+        #mode {
+            border: 1px solid black;
+            width: 3rem;
+            margin: 5px auto;
+            border-radius: 5px;
+            background-color: rgb(255, 251, 209);
+        }
+
+        #mode:hover {
+            scale: 1.1;
+        }
+
+        @media (max-width: 1430px) {
+            #side {
+                display: none;
+            }
+
+            #no2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 750px) {
+            #web {
+                display: none;
+            }
+        }
+
+        @media (min-width: 750px) {
+            #mobile {
+                display: none;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                height: 50px;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .level:hover {
+                scale: 1.1;
+                background-color: rgb(222, 118, 73);
+            }
+
+            .type:hover {
+                background-color: rgb(91, 214, 77);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            #together {
+                font-size: 1rem;
+            }
+
+
+            #title {
+                width: auto;
+                margin: 0 10px 10px;
+            }
+
+            #tilte h1 {
+                font-size: 60px;
+            }
+
+            #name {
+                width: auto;
+                margin: 0 10px 10px;
+                font-size: 150px;
+                line-height: 196px;
+                height: 200px;
+                float: none;
+                padding: 2px;
+            }
+
+            #container2 {
+                padding: 10px;
+                width: auto;
+                margin: 0 10px 10px;
+                float: none;
+                height: auto;
+            }
+
+            #introduction,
+            #answer,
+            #input {
+                width: auto;
+                margin: 0 auto 10px;
+            }
+
+            #input {
+                margin-bottom: 50px;
+            }
+
+            #choice {
+                margin-bottom: 10px;
+            }
+
+            #result {
+                width: auto;
+                line-height: auto;
+            }
+
+            #boxout {
+                width: auto;
+            }
+
+            #footer {
+                width: auto;
+            }
+
+
+
+            ul {
+                padding-top: 8px;
+            }
+
+            nav ul {
+                margin: 20px 0 0;
+            }
+
+            .level {
+                width: 80px;
+                height: 80px;
+            }
+                }
+    
+    </style>
+    <meta
+      name="description"
+      content="여러 유명인의 사진들을 보고 시간안에 맞혀라!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="인물퀴즈" />
+    <meta
+      property="og:description"
+      content="여러 유명인의 사진들을 보고 시간안에 맞혀라!"
+    />
+    <link rel="stylesheet" href="/shared.css" />
+    <link rel="stylesheet" href="/styles/football.css" />
+    <script src="/functions/sounds.js" defer></script>
+    <script src="/lists/indivlist.js" defer></script>
+    <script src="indiv.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"/>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4961528185865014"
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div id="screen">
+      <section>
+        <div id="pick">
+          <p>
+            마음대로 문제 조합 가능! <br />
+            <span
+              >ex 2단계 배우만 풀고싶다 -> 2단계 선택 후 배우 빼고 선택
+              해제</span
+            >
+          </p>
+
+          <p>총 문제 수: <span id="total-question"></span></p>
+          <button id="go">닫기</button>
+        </div>
+        <div id="screen-level">
+          <ul>
+            <li class="level" id="all">전범위<br />★★★★★★★</li>
+            <li class="level" id="level1">1단계<br />★</li>
+            <li class="level" id="level2">2단계<br />★★</li>
+            <li class="level" id="level3">3단계<br />★★★★</li>
+            <li class="level" id="newface">NewFace<br />새로운!</li>
+          </ul>
+          <ul>
+            <li class="level type" id="idolMale">남자 아이돌 <br /></li>
+            <li class="level type" id="idol">여자 아이돌 <br /></li>
+            <li class="level type" id="singer">
+              가수 <br />
+              (아이돌 제외)
+            </li>
+            <li class="level type" id="actor">배우</li>
+            <li class="level type" id="comedian">예능인</li>
+            <li class="level type" id="influencer">
+              인플루언서/<br />캐릭터/해외
+            </li>
+            <li class="level type" id="sport">스포츠스타</li>
+            <li class="level type" id="hero">위인</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <header id="top">
+      <section id="menubar">|||</section>
+      <aside id="sidelist">
+        <ul class="gamelist">
+          <a><li class="game" id="back">뒤로</li></a>
+          <a href="../music/music.html"
+            ><li class="game" id="music">1초음악퀴즈</li></a
+          >
+          <a href="../musicmix/index.html"
+            ><li class="game">믹스음악퀴즈</li></a
+          >
+          <a href="../OST/ost.html"><li class="game">OST퀴즈</li></a>
+          <a href="../idiom/idiom.html"
+            ><li class="game" id="idiom">사자성어1</li></a
+          >
+          <a href="../4blank2/4blank2.html"
+            ><li class="game" id="4blank2">사자성어2</li></a
+          >
+          <a href="../proverb/proverb.html">
+            <li class="game" id="proverb">속담퀴즈</li></a
+          >
+          <a href="../individual/indiv.html"
+            ><li class="game" id="indiv">인물퀴즈</li></a
+          >
+          <a href="../capital/capital.html"
+            ><li class="game" id="capital">수도퀴즈</li></a
+          >
+          <a href="../football/football.html"
+            ><li class="game" id="football">해축퀴즈</li></a
+          >
+        </ul>
+      </aside>
+      <section id="page-logo">
+        <a href="../../index.html">예능 게임 모음</a>
+      </section>
+      <nav>
+        <ul class="gamelist">
+          <a href="../music/music.html"
+            ><li class="game" id="music">1초음악퀴즈</li></a
+          >
+          <a href="../musicmix/index.html"
+            ><li class="game">믹스음악퀴즈</li></a
+          >
+          <a href="../OST/ost.html"><li class="game">OST퀴즈</li></a>
+          <a href="../idiom/idiom.html"
+            ><li class="game" id="idiom">사자성어1</li></a
+          >
+          <a href="../4blank2/4blank2.html"
+            ><li class="game" id="4blank2">사자성어2</li></a
+          >
+          <a href="../proverb/proverb.html">
+            <li class="game" id="proverb">속담퀴즈</li></a
+          >
+          <a href="../individual/indiv.html"
+            ><li class="game" id="indiv">인물퀴즈</li></a
+          >
+          <a href="../capital/capital.html"
+            ><li class="game" id="capital">수도퀴즈</li></a
+          >
+          <a href="../football/football.html"
+            ><li class="game" id="football">해축퀴즈</li></a
+          >
+        </ul>
+      </nav>
+      <section id="instagram">
+        <a href="https://www.instagram.com/tvshowgame/" target="_blank"
+          ><img src="/instagram.png" alt="instagram" />tvshowgame</a
+        >
+      </section>
+    </header>
+    <section id="guess">
+      <a href="https://guesswhokpop.pages.dev/" target="_blank"
+        >걸그룹 스무고개 도전하기(click!)</a
+      >
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a id="guess-close">(close)</a>
+    </section>
+    <main>
+      <div id="title">
+        <h1>인물 퀴즈</h1>
+        <div id="limit">
+          제한시간은
+          <select name="select" id="time-limit">
+            <option value="1">1초</option>
+            <option value="2">2초</option>
+            <option value="3">3초 (알파고)</option>
+            <option value="4">4초 (영석이 형)</option>
+            <option value="5">5초 (쿼티 배려)</option>
+            <option value="6">6초 (천지인 용)</option>
+            <option value="7">7초 (독수리)</option>
+          </select>
+          입니다.
+        </div>
+        <br />
+        <button id="choice">범위 선택 (전체:</button>
+
+        <div id="mode"><a href="/GAME/individual/eng.html">ENG</a></div>
+      </div>
+      <div id="name"><img id="img" src="./기본.png" /></div>
+
+      <div id="container2">
+        <div id="input">
+          <input
+            type="text"
+            id="answer"
+            placeholder="입력하세요"
+            onkeyup="Enter()"
+            autocomplete="off"
+          />
+          <br />
+          <button id="submit">Enter</button>
+        </div>
+        <div id="introduction"></div>
+
+        <div id="result"></div>
+        <div id="explain"></div>
+        <div id="record">점수: 0</div>
+
+        <div id="button">
+          <button id="start" type="button" onclick="gamestart()">시작</button>
+          <button id="resume">다음<br />문제</button>
+        </div>
+        <div id="a">
+          <button id="restart">다시!</button>
+          <button id="next">다음 <br />단계</button>
+        </div>
+      </div>
+    </main>
+    <div id="guanggo">
+      <div id="web">
+        <div>
+          <ins
+            class="adsbygoogle"
+            style="display: inline-block; width: 720px; height: 90px"
+            data-ad-client="ca-pub-4961528185865014"
+            data-ad-slot="3518599684"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+
+        <div id="mobile">
+          <ins
+            class="adsbygoogle"
+            style="display: inline-block; width: 300px; height: 100px"
+            data-ad-client="ca-pub-4961528185865014"
+            data-ad-slot="2645973898"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+      <div id="side" class="web">
+        <ins
+          class="adsbygoogle"
+          style="display: inline-block; width: 150px; height: 700px"
+          data-ad-client="ca-pub-4961528185865014"
+          data-ad-slot="9187046100"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <div id="no2">
+        <ins
+          class="adsbygoogle"
+          style="display: inline-block; width: 150px; height: 700px"
+          data-ad-client="ca-pub-4961528185865014"
+          data-ad-slot="5172629531"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <div id="footer">
+        모든 사진의 저작권은 각각의 저작권자에게 있으며, 게시 용도로만 사용되고
+        있습니다.
+      </div>
+      <div id="loading"></div>
+    </div>
+  <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c246e594372e42d2980e18a2f2f4b39f"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

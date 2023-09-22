@@ -136,7 +136,7 @@ a{
     width: 70%;
     height: 70vh;
     border-radius: 10px;
-    background-color: #ccc;
+    
     transform: scale(0);
 }
 .modal__box .title {
@@ -211,8 +211,9 @@ a{
 }
 .modal__box .cont {
     background-color: #282936;
-    height: 100%;
-    overflow-y: auto;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;   
     box-sizing: border-box;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;

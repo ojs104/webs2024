@@ -23,13 +23,13 @@
                 <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
                 <div class="quiz__main">
                     <div class="quiz_img">
-                        <img src="assets/img/project img/img1-min.png" alt="이미지">
+                        <img src="../quiz/assets/project img/disney.png" alt="이미지">
                     </div>
                     <div class="quiz__box">
                         <div class="quiz__question">내가 누구게요~?</div>
                         <div class="quiz__footer">
-                            <input type="text" name="" id="">
-                            <div class="quiz__answer"></div>
+                            <input type="text" name="text" id="text">
+                            <div class="quiz__answer none"></div>
                         </div>
                     <div class="box__footer">
                         <button class="quiz__confirm">정답 확인</button>
@@ -42,13 +42,104 @@
     </div>
     <!-- //main -->
 
-    <div id="footer">
-        <span>위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</span>
-    </div>
+    <footer id="footer">
+        <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
+    </footer>
     <!-- //footer -->
 
     <script>
+        const quizData = [
+    {
+        question: "내가 누구게요~?",
+        answer: "디즈니",
+        imageURL: "../quiz/assets/project img/disney.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "../quiz/assets/project img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "../quiz/assets/project img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "../quiz/assets/project img/img3-min.png"
+    },
+    // 다른 퀴즈 데이터들 추가
+];
 
+let currentQuizIndex = 0; // 현재 퀴즈 인덱스
+
+// DOM 요소를 가져옵니다.
+const quizHeader = document.querySelector(".quiz__header span");
+const quizImage = document.querySelector(".quiz_img img");
+const quizQuestion = document.querySelector(".quiz__question");
+const quizAnswerInput = document.querySelector("#text");
+const quizConfirmButton = document.querySelector(".quiz__confirm");
+const quizNextButton = document.querySelector(".quiz__Next");
+
+// 초기 퀴즈 데이터를 표시합니다.
+displayQuizData();
+
+// 정답 확인 버튼 클릭 이벤트 핸들러를 등록합니다.
+quizConfirmButton.addEventListener("click", checkAnswer);
+
+// 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
+quizNextButton.addEventListener("click", nextQuestion);
+
+// 정답 확인 함수를 정의합니다.
+function checkAnswer() {
+    const userAnswer = quizAnswerInput.value.toLowerCase(); // 입력한 답을 소문자로 변환
+    const correctAnswer = quizData[currentQuizIndex].answer.toLowerCase(); // 정답을 소문자로 변환
+
+    if (userAnswer === correctAnswer) {
+        // 정답을 맞췄을 때
+       
+        // 여기서는 다음 화면으로 넘어가도록 구현하고, 사진을 변경합니다.
+        currentQuizIndex++; // 다음 퀴즈로 이동
+        if (currentQuizIndex < quizData.length) {
+            displayQuizData(); // 새로운 퀴즈 데이터 표시
+        } else {
+            // 마지막 퀴즈를 마쳤을 때 추가 동작 구현
+            alert("퀴즈가 종료되었습니다.");
+            // 원하는 추가 동작을 수행할 수 있습니다.
+        }
+    } else {
+        // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
+        alert("틀렸습니다. 다시 시도하세요.");
+    }
+    
+        };
+
+    // 입력 필드 초기화
+    quizAnswerInput.value = "";
+
+
+// 다음 문제로 이동하는 함수를 정의합니다.
+function nextQuestion() {
+    currentQuizIndex++; // 다음 퀴즈로 이동
+    if (currentQuizIndex < quizData.length) {
+        displayQuizData(); // 새로운 퀴즈 데이터 표시
+    } else {
+        alert("퀴즈가 종료되었습니다.");
+        // 원하는 추가 동작을 수행할 수 있습니다.
+    }
+
+    // 입력 필드 초기화
+    quizAnswerInput.value = "";
+}
+
+// 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
+function displayQuizData() {
+    const currentQuiz = quizData[currentQuizIndex];
+    quizHeader.textContent = currentQuiz.question;
+    quizImage.src = currentQuiz.imageURL;
+    quizQuestion.textContent = currentQuiz.question;
+}
 
     </script>
 </body>

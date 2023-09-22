@@ -134,9 +134,8 @@ a{
 }
 .modal__box {
     width: 70%;
-    height: 70vh;
     border-radius: 10px;
-    
+    background-color: #ccc;
     transform: scale(0);
 }
 .modal__box .title {
@@ -213,7 +212,7 @@ a{
     background-color: #282936;
     height: auto;
     max-height: 80vh;
-    overflow-y: auto;   
+    overflow-y: auto;
     box-sizing: border-box;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -266,11 +265,12 @@ a{
         width: 96%;
     }
 }
+
 /* 모달 애니메이션 */
 .modal__cont.show {
     animation: foldOut 1s ease forwards;
 }
-.modal__cont.show .modal__box{
+.modal__cont.show .modal__box {
     animation: zoomOut 0.5s 1s ease forwards;
 }
 .modal__cont.show .modal__close {
@@ -280,29 +280,28 @@ a{
 .modal__cont.show.hide {
     animation: foldIn 0.3s 0.5s ease backwards;
 }
-.modal__cont.show.hide .modal__box{
-    animation: zoomOut 0.5s  ease forwards;
+.modal__cont.show.hide .modal__box {
+    animation: zoomIn 0.5s ease forwards;
 }
 .modal__cont.show.hide .modal__close {
-    animation: opacityOut 0.5s ease forwards;
+    animation: opacityIn 0.5s ease forwards;
 }
 
-
-@keyframes foldOut{
+@keyframes foldOut {
     0% {transform: scaleX(0.0001) scaleY(1);}
-    50% {transform: scaleX(0001) scaleY(1);}
-    100% {transform: scaleX(1) scaleY(1);}   
+    50% {transform: scaleX(0.0001) scaleY(1);}
+    100% {transform: scaleX(1) scaleY(1);}
 }
-@keyframes foldIn{
+@keyframes foldIn {
     0% {transform: scaleX(1) scaleY(1);}
     50% {transform: scaleX(0.0001) scaleY(1);}
-    100% {transform: scaleX(0.0001) scaleY(1);}   
+    100% {transform: scaleX(0.0001) scaleY(1);}
 }
-@keyframes zoomOut{
+@keyframes zoomOut {
     0% {transform: scale(0);}
     100% {transform: scale(1);}
 }
-@keyframes zoomIn{
+@keyframes zoomIn {
     0% {transform: scale(1);}
     100% {transform: scale(0);}
 }

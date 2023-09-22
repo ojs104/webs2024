@@ -19,7 +19,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .slider__img {            /* 이미지가 보이는 영역 */
             width: 800px;
             height: 450px;
@@ -127,11 +126,11 @@
                     <div class="cont">
                         <div class="active">
 <pre><code class="language-js">
-sliderInner.appendChild(sliderClone);       //복사한 이미지를 마지막에 붙여넣기
+sliderInner.appendChild(sliderClone);       
 
 function sliderEffect(){
     currentIndex++;
-    sliderInner.style.transition = "all 0.6s ease-in";
+sliderInner.style.transition = "all 0.6s ease-in";
     sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex+"px)";
 //마지막 이미지가 위치 했을 때 초기화 시키기
     if(currentIndex == sliderCount) {
@@ -143,20 +142,54 @@ function sliderEffect(){
     }
 }
 setInterval(sliderEffect, sliderInterval);
-
-
-
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-js">
+    sliderInner.appendChild(sliderClone);
+    function sliderEffect () {
+        currentIndex++;
+    gsap.to(sliderInner, {
+            x:  -sliderWidth * currentIndex,
+            duratin: 0.6,
+            ease: "power2.out"
+        });
+    if(currentIndex === sliderCount){
+        setTimeout(() => {
+                gsap.set(sliderInner, {x: 0});
+                currentIndex = 0
+        }, 700)
+        }
+    }
+    setInterval(sliderEffect, sliderInterval);  
 
 </code></pre>
                         </div>
                         <div>
 <pre><code class="language-js">
+    $(".slider__inner").append(sliderClone);
 
-</code></pre>
-                        </div>
-                        <div>
-<pre><code class="language-js">
+    function sliderEffect(){
+       currentIndex++;
 
+       $(".slider__inner").css({
+           "transition": "all 0.6s",
+           "transform" : "translateX(-"+ sliderWidth * currentIndex +"px)"
+       });
+       if(currentIndex === sliderCount){
+           setTimeout (() => {
+               $(".slider__inner").css({
+                   "transition": "0s",
+                   "transform": "translateX(0px)"
+               });
+           }, 700);
+           currentIndex = 0; // 초기화
+       }
+    }           
+    setInterval(sliderEffect, sliderInterval);
+
+
+    
 </code></pre>
                         </div>
                     </div>

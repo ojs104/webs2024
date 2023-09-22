@@ -26,6 +26,6 @@ tabBtn.forEach((element, index) => {
         element.classList.add("active");
 
         tabCont.forEach(div => div.style.display = "none");
-        // tabCont[index].style.display = "block";
+        tabCont[index].style.display = "block";
     })
 })

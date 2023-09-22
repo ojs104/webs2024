@@ -121,6 +121,7 @@
                                     </svg>
                                 </span>
                             </div>
+                            
                             <div>
                                 <span class="favicon" aria-label="true">
                                     <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
@@ -137,44 +138,46 @@
                                     </svg>
                                 </span>
                             </div>
-                            
                         </div>
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language.js">window.onload = function(){
-    let currentIndex = 0;                                    //현재 이미지
-    const slider = document.querySelectorAll(".slider");     //모든 이미지를 변수에 저장
-    // 이미지를 변경
-    setInterval(() => {
-        let nextIndex = (currentIndex + 1) % slider.length    // 0 1 2 3 4 0 1 2 3 4
-        slider[currentIndex].style.opacity = "0";            //첫번째 이미지가 사라짐
-        slider[nextIndex].style.opacity = "1";               //두번째 이미지가 나타남
-        slider.forEach(img => img.style.transition = "all 1s");  //이미지 애니메이션 추가
-        currentIndex = nextIndex;               //두번째 인덱스 값을 현 인덱스 값에 저장
-       }, 3000);   //3초에 한번씩
-}
-</code></pre>
-                        </div>
-                    <div>
-<pre><code class="language.js">
-$(function(){
+<pre><code class="language-js">
+window.onload = function () {
     let currentIndex = 0;       //현재 이미지
+    const slider = document.querySelectorAll(".slider");    //모든 이미지를 변수에 저장          
+    
+    
+    setInterval(() => {         // 3초에 한번씩 이미지를 변경
+        let nextIndex = (currentIndex + 1) % slider.length // 0 1 2 3 4 0 1 2 3 4 
 
-    setInterval(function() {    //3ch에 한번 실행
-        let nextIndex = (currentIndex + 1) % 5;
-        
-        $(".slider").eq(currentIndex).fadeOut(1200);    //첫번쨰 이미지 사라짐
-        $(".slider").eq(nextIndex).fadeIn(1200);        // 두번쨰 이미지 나타남
-
-        currentIndex = nextIndex
+        slider[currentIndex].style.opacity = "0";   //첫번째 이미지가 사라짐
+        slider[nextIndex].style.opacity = "1";      //두번째 이미지가 나타남
+        slider.forEach(img => img.style.transition = "all 1s");      //이미지 애니메이션 추가
+        currentIndex = nextIndex;   // 두번째 인덱스 값을 현 인덱스값에 저장
 
     }, 3000);
-});
-</pre></code>
+    }               
+</code></pre>
                         </div>
-                        
-                    </div>
+                        <div>
+<pre><code class="language-js">
+    $(function(){
+        let currentIndex = 0;       //현재 이미지
+
+        setInterval(function() {    //3ch에 한번 실행
+            let nextIndex = (currentIndex + 1) % 5;
+            
+            $(".slider").eq(currentIndex).fadeOut(1200);    //첫번쨰 이미지 사라짐
+            $(".slider").eq(nextIndex).fadeIn(1200);        // 두번쨰 이미지 나타남
+
+            currentIndex = nextIndex
+
+        }, 3000);
+    });
+</code></pre>
+                        </div>
+                        <div>
                 </div>
                 <div class="modal__close">
                     <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
@@ -185,9 +188,13 @@ $(function(){
             </div>
         </div>
     </footer>
+
+
+
     <script src="../../assets/js/highlight.min.js"></script>
     <script src="js/common.js"></script>
     <!-- javascript -->
+
      <script>
         window.onload = function () {
             let currentIndex = 0;       //현재 이미지

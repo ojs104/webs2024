@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,13 +11,17 @@
     <meta name="keywords" content="웹표준, 피그마, 제플린, 코딩 사이트, 클론 사이트, 따라하기, 사이트 제작" />
     <meta name="autor" content="wonyoung" />
     <meta name="robots" content="all" />
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/common.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
+
 <body>
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
@@ -52,8 +57,39 @@
 
     <main id="main" role="main">
         <section class="sliderWrap">
-            <div class="slider__inner">
-                <div class="slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider__text">
+                            <h3>JS백화점 그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                            <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider__text">
+                            <h3>JS백화점 그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                            <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider__text">
+                            <h3>JS백화점 그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                            <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-button">
+                    <div class="swiper-button-play"></div>
+                    <div class="swiper-button-stop"></div>
+                </div>   
+            </div>
+            <!-- <div class="slider__inner">
+                <div class="slider">                  
                     <div class="slider__text">
                         <h3>JS백화점 그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
                         <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도</p>
@@ -70,9 +106,10 @@
                         <a href="#" class="right"><span class="ir">다음이미지</span></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
-        <!-- //section -->
+        <!-- //sliderWrap -->
+
         <section id="introWrap">
             <div class="intro__inner">
                 <div class="container">
@@ -106,23 +143,23 @@
                         <div>
                             <figure>
                                 <img src="assets/image/intro04.png" alt="포인트 샵">
-                                <figcaption>포인트 샵</figcaption>                                
-                            </figure>                           
-                            <p> H.Point로 하는 즐거운 소비생활</p>                           
+                                <figcaption>포인트 샵</figcaption>
+                            </figure>
+                            <p> H.Point로 하는 즐거운 소비생활</p>
                         </div>
                         <div>
                             <figure>
                                 <img src="assets/image/intro05.png" alt="포인트 샵">
-                                <figcaption>포인트 기부</figcaption>                                
+                                <figcaption>포인트 기부</figcaption>
                             </figure>
-                            <p>기부하는 당신이 세상의 영웅</p>                           
+                            <p>기부하는 당신이 세상의 영웅</p>
                         </div>
                         <div>
                             <figure>
                                 <img src="assets/image/intro06.png" alt="포인트 샵">
-                                <figcaption>포인트 선물</figcaption>                                
+                                <figcaption>포인트 선물</figcaption>
                             </figure>
-                            <p>친구끼리 포인트 선물은 어때요?</p>                           
+                            <p>친구끼리 포인트 선물은 어때요?</p>
                         </div>
                     </div>
                 </div>
@@ -134,9 +171,9 @@
             <div class="up__inner">
                 <div class="container">
                     <div class="up__title">
-                        <h3>포인트 <em>쌓기</em> <span>즐거움이 매일매일 쌓이는 포인트 플레이</span></h3>                       
+                        <h3>포인트 <em>쌓기</em> <span>즐거움이 매일매일 쌓이는 포인트 플레이</span></h3>
                     </div>
-                    <div class="up__slider">                        
+                    <div class="up__slider">
                         <div class="img">
                             <div>
                                 <img src="assets/image/up01.png" alt="H.설문">
@@ -163,66 +200,116 @@
                                 <span>포인트 워크</span>
                                 <em>걸으면서 받는 포인트</em>
                             </div>
-                        </div>
-                        <div class="btn">
-                            <a href="#" class="left"><span class="ir">왼쪽 이미지</span></a>
-                            <a href="#" class="right"><span class="ir">오른쪽 이미지</span></a>
-                         </div>
-                    </div>        
-                 </div>  
-            </div>   
+                        </div>    
+                    </div>   
+                </div>
+            </div>
         </section>
-        <!-- POINTUP -->
-        
+        <!-- //pointUp -->
+
         <section id="download">
             <div class="download__inner">
                 <div class="download__title">
                     <h3>포인트를 가장 빠르고 재밌게 모으는 방법</h3>
-                    <p>H.POINT APP에 다있다.</p>
+                    <p>H.POINT APP에 다 있다</p>
                 </div>
                 <div class="download__img">
                     <div class="img">
                         <img src="assets/image/download01.png" alt="h.point">
                     </div>
                     <div class="btn">
-                        <a href="#">앱 다운로드 바로가기</a>
+                        <a href="#">앱다운로드 바로가기</a>
                     </div>
                 </div>
                 <div class="download__bg" aria-label="true">
-                    <img src="assets/image/download02.png" alt="H.POINT">
+                    <img src="assets/image/download02.png" alt="H.point">
                 </div>
             </div>
-           
         </section>
-            
-      
-
+        <!-- //download -->
     </main>
     <!-- main -->
 
     <footer id="footer" role="contentinfo">
-        <h2>푸터</h2>
+        <div class="footer__inner">
+            <div class="container">
+                <div class="footer__logo">
+                <img src="assets/image/W.Point.svg" alt="W.Point">
+            </div>
+            <address class="footer__info">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">위치기반서비스 이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">개인정보보호센터</a></li>
+                </ul>
+                <ul>
+                    <li>주식회서 현대백화점 서울시 강남구 테헤란로 98길 12   고객센터 1800-2800</li>
+                    <li>&copy; HYUNDAI DEPARTMENT STORE GROUP Co. Ltd.ALL RIGHTS RESEVED</li>
+                </ul>
+            </address>
+            <div class="footer__sns">
+                <ul>
+                    <li><a href="#"><span class="ir">naver</span></a></li>
+                    <li><a href="#"><span class="ir">insta</span></a></li>
+                    <li><a href="#"><span class="ir">facebook</span></a></li>                  
+                </ul>                
+            </div>            
+        </div>
+    </div>            
     </footer>
 
-    <script>
-        const sliderWrap = document.querySelector(".sliderWrap");
-        const slider = sliderWrap.querySelectorAll(".slider");
-        const sliderInner = sliderWrap.querySelector(".slider__inner");
-        //변수 설정
-        let currentIndex = 0;                                              // 현재 보이는 이미지
-         let sliderCount = slider.length;                                   // 이미지 갯수
-         let sliderInterval = 2000;                                         // 이미지 변경 간격 시간(2초)
-         let sliderWidth = slider[0].offsetWidth;                           // 이미지 가로 값
-         let sliderClone = sliderInner.firstElementChild.cloneNode(true);
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>      
+    
+   
+    let swiper = new Swiper(".swiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            centeredSlides: true,           
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+        });
         
+        //slider 2
+        let swiper2 = new Swiper(".swiper2", {
+            slidesPerView: 5,
+            // spaceBetween: 30,
 
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },  
+            autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            },                
+            
+         });    
+      
         
-
-
-
-
 
     </script>
 
 </body>
+
 </html>

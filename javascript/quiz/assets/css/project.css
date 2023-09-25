@@ -244,23 +244,11 @@ body {
 /* footer */
 .footer__desc {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-bottom: 25px;
 }
-.quiz__wrap {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-.quiz__wrap > .quiz {
-    width: 500px;
-    min-height: 400px;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
-    margin: 10px;
-}
+
+/* good or bag */
 .quiz__wrap > .quiz.good {
     position: relative;
 }
@@ -271,7 +259,7 @@ body {
     border: 10px solid red;
     border-radius: 50%;
     position: absolute;
-    left: 20px;
+    left: 20px; 
     top: 20px;
     z-index: 100;
 }
@@ -291,7 +279,7 @@ body {
     z-index: 100;
 }
 .quiz__wrap > .quiz.bad::after {
-    content: ' ';
+    content: '';
     width: 150px;
     height: 10px;
     background-color: red;

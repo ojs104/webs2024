@@ -580,28 +580,43 @@
                     return; // 오답 처리 후 함수 종료
                 }    
             }
-                currentQuizIndex++; // 다음 퀴즈로 이동
-                if (currentQuizIndex < quizData.length) {
-                    displayQuizData(); // 새로운 퀴즈 데이터 표시
-                } else {
-                    alert("퀴즈가 종료되었습니다.");
-                }
-                // 입력 필드 초기화
-                quizAnswerInput.value = "";
-                quizAnswerInput.classList.remove("correct");
-            
-            // 다음 문제로 이동하는 함수를 정의합니다.
             function nextQuestion() {
-                
-                currentQuizIndex++; // 다음 퀴즈로 이동
-                if (currentQuizIndex < quizData.length) {
-                    displayQuizData(); // 새로운 퀴즈 데이터 표시
-                } else {
-                    alert("퀴즈가 종료되었습니다.");
-                }
+    // 7초 동안 카운트다운을 표시하는 div 요소를 생성합니다.
+    const countdownDiv = document.createElement("div");
+    countdownDiv.classList.add("countdown");
+    countdownDiv.textContent = "7"; // 초기 카운트 값을 설정합니다.
+    document.querySelector(".quiz__box").appendChild(countdownDiv);
+
+    // 카운트 다운을 시작합니다.
+    let count = 7;
+    const countdownInterval = setInterval(function () {
+        count--;
+        countdownDiv.textContent = count; // 남은 시간을 업데이트합니다.
+
+        if (count <= 0) {
+            clearInterval(countdownInterval); // 카운트가 종료되면 setInterval을 해제합니다.
+            countdownDiv.remove(); // 카운트 다운 요소를 제거합니다.
+            proceedToNextQuestion(); // 다음 문제로 진행합니다.
+        }
+    }, 1000); // 1초마다 카운트를 감소시킵니다.
+
+    // 입력 필드 초기화
+    quizAnswerInput.value = "";
+}
+
+// 다음 문제로 진행하는 함수를 정의합니다.
+function proceedToNextQuestion() {
+    currentQuizIndex++; // 다음 퀴즈로 이동
+
+    if (currentQuizIndex < quizData.length) {
+        displayQuizData(); // 새로운 퀴즈 데이터 표시
+    } else {
+        alert("퀴즈가 종료되었습니다.");
+    }
+}
                 // 입력 필드 초기화
                 quizAnswerInput.value = "";
-            }
+            
             // 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
             function displayQuizData() {
                 const currentQuiz = quizData[currentQuizIndex];

@@ -151,11 +151,17 @@ body {
     border: 1px solid #FECCBE;
     background-color: #fff;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 .quiz_img > img {
-    width: 729px;
-    height: 586px;
+    width: 719px;
+    height: 566px;
     border-radius: 20px;
+    padding: 10px;
+    margin-top: 5px;
 }
 .quiz__box {
     width: 729px;
@@ -240,12 +246,24 @@ body {
     font-size: 30px;
     margin-left: 20px;
 }
-
+.box__footer div {
+    margin: 0 auto;
+    font-size: 30px;
+    margin-top: 50px;   
+}
+/* score */
+#score {
+    font-size: 30px;
+    margin: 0 auto;
+    margin-top: 800px;
+    margin-bottom: 10px;
+}
 /* footer */
 .footer__desc {
     font-size: 30px;
-    margin-left: 25px;
-    margin-bottom: 25px;
+    margin: 30px 25px 50px 25px;
+    margin: 50px auto; /* 위 아래 50px, 좌우 자동 마진 설정 */
+    text-align: center;
 }
 
 /* good or bag */
@@ -289,4 +307,11 @@ body {
     border-radius: 30px;
     transform: rotate(-45deg);
     z-index: 100;
+}
+/* .quiz__box 오답알려주기 */
+.feedback {
+    font-size: 24px;
+    color: red; 
+    font-weight: bold;
+    margin-bottom: 20px ;
 }

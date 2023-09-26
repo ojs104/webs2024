@@ -34,8 +34,11 @@
                         <div class="box__footer">
                             <button class="quiz__confirm">정답 확인</button>
                             <button class="quiz__Next none" >다음</button>
-                            <div>점수: <span id="score">0</span></div>
+                            <div>점수: <span id="score">0</span></div>                            
                         </div>
+                        <div class="progress-bar">
+                            <div class="filler"></div>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -120,7 +123,7 @@
                 {
                     "question": "내가 누구게요~?",
                     "answer": "비비",
-                    "imageURL": "../quiz/assets/project img/img14-min.png"
+                    "imageURL": "../quiz/assets/project img/img14.png"
 
                 },
                 {
@@ -520,114 +523,208 @@
                     "imageURL": "../quiz/assets/project img/img85-min.png"
                 }
 
-                // 다른 퀴즈 데이터들 추가
             ];
             let currentQuizIndex = 0; // 현재 퀴즈 인덱스
             let score = 0;
-            // DOM 요소를 가져옵니다.
-            const quizHeader = document.querySelector(".quiz__header span");
-            const quizImage = document.querySelector(".quiz_img img");
-            const quizQuestion = document.querySelector(".quiz__question");
-            const quizAnswerInput = document.querySelector("#text");
-            const quizConfirmButton = document.querySelector(".quiz__confirm");
-            const quizNextButton = document.querySelector(".quiz__Next");
-            const quizAnswer = document.querySelector(".quiz__answer")
-            // 초기 퀴즈 데이터를 표시합니다.
-            displayQuizData();
-            // 정답 확인 버튼 클릭 이벤트 핸들러를 등록합니다.
-            quizConfirmButton.addEventListener("click", checkAnswer);
-            // 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
-            quizNextButton.addEventListener("click", nextQuestion);
-            // 정답 입력 필드에서 Enter 키를 눌렀을 때도 정답 확인 함수를 호출합니다.
-            quizAnswerInput.addEventListener("keyup", function(event) {
-                if (event.key === "Enter") {
-                    checkAnswer();
-                }
-            });
-            // 퀴즈 데이터를 랜덤으로 섞습니다.
-            function shuffleQuizData() {
-                for (let i = quizData.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [quizData[i], quizData[j]] = [quizData[j], quizData[i]];
-                }
-            }
-            // 초기화 함수를 호출하여 퀴즈 데이터를 섞고 첫 번째 퀴즈를 표시합니다.
-            function initializeQuiz() {
-                shuffleQuizData(); // 퀴즈 데이터를 섞음
-                currentQuizIndex = 0; // 현재 퀴즈 인덱스 초기화
-                displayQuizData(); // 첫 번째 퀴즈를 표시
-            }
-            initializeQuiz();
-            // 정답 확인 함수를 정의합니다.
-            function checkAnswer() {
-                const userAnswer = quizAnswerInput.value.trim().toLowerCase(); // 입력한 답을 소문자로 변환
-                const correctAnswer = quizData[currentQuizIndex].answer.replace(/\s/g, "").toLowerCase(); // 정답을 소문자로 변환
-                const feedbackDiv = document.createElement("div");
+            let countdownInterval; // 카운트다운을 관리하는 인터벌 변수
+            const feedbackDiv = document.createElement("div"); // 피드백 div를 전역 스코프에서 선언
+            let countdownPaused = false; // 카운트다운 일시 정지 상태를 나타내는 변수
+            let excludedIndices = []; // 기존에 출제된 문제의 인덱스를 추적하는 배열
 
-                 if (userAnswer === correctAnswer) {
-                    score++;
-                    document.getElementById("score").textContent = score;
-                    nextQuestion();
-                } else {
-                    feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
-                    feedbackDiv.classList.add("feedback");
-                    document.querySelector(".quiz__box").appendChild(feedbackDiv);
+            const progressBar = document.querySelector(".progress-bar .filler");
+            let progressWidth = 0; // 초기 게이지 너비
 
-                    setTimeout(function () {
-                        feedbackDiv.remove();
-                        nextQuestion(); // 일정 시간 후에 다음 문제로 자동으로 넘어감
-                    }, 2000); // 2초 후에 제거 및 다음 문제로 이동
-                    return; // 오답 처리 후 함수 종료
-                }    
-            }
-            function nextQuestion() {
-    // 7초 동안 카운트다운을 표시하는 div 요소를 생성합니다.
+
+    // DOM 요소를 가져옵니다.
+    const quizHeader = document.querySelector(".quiz__header span");
+    const quizImage = document.querySelector(".quiz_img img");
+    const quizQuestion = document.querySelector(".quiz__question");
+    const quizAnswerInput = document.querySelector("#text");
+    const quizConfirmButton = document.querySelector(".quiz__confirm");
+    const quizNextButton = document.querySelector(".quiz__Next");
+    const quizAnswer = document.querySelector(".quiz__answer");
     const countdownDiv = document.createElement("div");
-    countdownDiv.classList.add("countdown");
-    countdownDiv.textContent = "7"; // 초기 카운트 값을 설정합니다.
-    document.querySelector(".quiz__box").appendChild(countdownDiv);
 
-    // 카운트 다운을 시작합니다.
-    let count = 7;
-    const countdownInterval = setInterval(function () {
-        count--;
-        countdownDiv.textContent = count; // 남은 시간을 업데이트합니다.
+    // 초기 퀴즈 데이터를 표시합니다.
+    displayQuizData();
 
-        if (count <= 0) {
-            clearInterval(countdownInterval); // 카운트가 종료되면 setInterval을 해제합니다.
-            countdownDiv.remove(); // 카운트 다운 요소를 제거합니다.
-            proceedToNextQuestion(); // 다음 문제로 진행합니다.
+    // 정답 확인 버튼 클릭 이벤트 핸들러를 등록합니다.
+    quizConfirmButton.addEventListener("click", checkAnswer);
+
+    // 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
+    quizNextButton.addEventListener("click", nextQuestion);
+
+    // 정답 입력 필드에서 Enter 키를 눌렀을 때도 정답 확인 함수를 호출합니다.
+    quizAnswerInput.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+            checkAnswer();
         }
-    }, 1000); // 1초마다 카운트를 감소시킵니다.
+    });
 
-    // 입력 필드 초기화
-    quizAnswerInput.value = "";
-}
+    // 퀴즈 데이터를 랜덤으로 섞습니다.
+    function shuffleQuizData() {
+        for (let i = quizData.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [quizData[i], quizData[j]] = [quizData[j], quizData[i]];
+        }
+    }
 
-// 다음 문제로 진행하는 함수를 정의합니다.
-function proceedToNextQuestion() {
-    currentQuizIndex++; // 다음 퀴즈로 이동
+    // 초기화 함수를 호출하여 퀴즈 데이터를 섞고 첫 번째 퀴즈를 표시합니다.
+    function initializeQuiz() {
+        shuffleQuizData(); // 퀴즈 데이터를 섞음
+        currentQuizIndex = 0; // 현재 퀴즈 인덱스 초기화
+        score = 0; // 점수 초기화
+        document.getElementById("score").textContent = score; // 점수 표시 초기화
+        excludedIndices = []; // 기존에 출제된 문제의 인덱스 초기화
+        displayQuizData(); // 첫 번째 퀴즈를 표시
+    }
 
-    if (currentQuizIndex < quizData.length) {
-        displayQuizData(); // 새로운 퀴즈 데이터 표시
+    initializeQuiz();
+    //게이지
+    function fillGauge() {
+        progressWidth += 100 / quizData.length; // 정답을 맞출 때마다 게이지 너비를 1/문제 수 만큼 증가
+        progressBar.style.width = progressWidth + "%"; // 게이지 너비 설정
+
+        setTimeout(function () {
+            if (currentQuizIndex === quizData.length - 1) {
+            // 모든 문제를 푼 경우
+            alert("퀴즈가 종료되었습니다.");
+        } else {
+            nextQuestion(); // 다음 문제로 이동
+        }
+    }, 1000); // 게이지 채워짐 애니메이션 지속 시간과 동일한 시간을 설정합니다. 여기서는 0.7초로 설정했습니다.
+    }
+
+    // 정답 확인 함수를 정의합니다.
+function checkAnswer() {
+    clearInterval(countdownInterval); // 카운트다운 중지
+
+    const userAnswer = quizAnswerInput.value.trim().toLowerCase(); // 입력한 답을 소문자로 변환
+    const correctAnswer = quizData[currentQuizIndex].answer.replace(/\s/g, "").toLowerCase(); // 정답을 소문자로 변환
+
+    if (userAnswer === correctAnswer) {
+        score++;
+        document.getElementById("score").textContent = score;
+        nextQuestion();
+        fillGauge(); 
     } else {
-        alert("퀴즈가 종료되었습니다.");
+        feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
+        feedbackDiv.classList.add("feedback");
+        document.querySelector(".quiz__box").appendChild(feedbackDiv);
+
+        setTimeout(function () {
+            feedbackDiv.remove();
+            nextRandomQuestion(); // 2초 후에 다음 랜덤 화면으로 넘어가기
+        }, 2000); // 2초 후에 피드백 제거 및 다음 화면으로 이동
     }
 }
-                // 입력 필드 초기화
-                quizAnswerInput.value = "";
-            
-            // 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
-            function displayQuizData() {
-                const currentQuiz = quizData[currentQuizIndex];
-                // quizHeader.textContent = currentQuiz.question;
-                quizImage.src = currentQuiz.imageURL;
-                quizQuestion.textContent = currentQuiz.question;
+
+// 랜덤으로 다음 문제를 선택하는 함수
+function nextRandomQuestion() {
+    const remainingIndices = quizData
+        .map((_, index) => index)
+        .filter((index) => index !== currentQuizIndex); // 현재 문제 인덱스 제외
+
+    if (remainingIndices.length === 0) {
+        // 모든 문제가 출제되었을 경우
+        alert("퀴즈가 종료되었습니다.");
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * remainingIndices.length);
+    currentQuizIndex = remainingIndices[randomIndex]; // 랜덤하게 다음 문제 선택
+    displayQuizData();
+    startCountdown();
+}
+
+    function nextQuestion() {
+        clearInterval(countdownInterval); // 이전 카운트다운 인터벌 해제
+        currentQuizIndex = selectRandomQuestionIndex(); // 다음 퀴즈로 이동
+        if (currentQuizIndex === -1) {
+            // 모든 문제가 출제되었을 경우
+            alert("퀴즈가 종료되었습니다.");
+            return;
+        }
+
+        displayQuizData(); // 새로운 퀴즈 데이터 표시
+        startCountdown(); // 카운트다운 재시작
+        quizAnswerInput.value = ""; // 입력 필드 초기화
+    }
+
+    function selectRandomQuestionIndex() {
+        const remainingIndices = quizData
+            .map((_, index) => index)
+            .filter((index) => !excludedIndices.includes(index));
+
+        if (remainingIndices.length === 0) {
+            return -1; // 모든 문제가 출제되었을 경우
+        }
+
+        const randomIndex = Math.floor(Math.random() * remainingIndices.length);
+        const selectedIndex = remainingIndices[randomIndex];
+        excludedIndices.push(selectedIndex);
+        return selectedIndex;
+    }
+
+    // 카운트 다운을 시작하는 함수
+    function startCountdown() {
+        countdownDiv.textContent = "7"; // 초기 카운트 값을 설정합니다.
+        countdownDiv.classList.add("countdown");
+        document.querySelector(".quiz__box").appendChild(countdownDiv);
+
+        let count = 7;
+        countdownInterval = setInterval(function () {
+            count--;
+            countdownDiv.textContent = count; // 남은 시간을 업데이트합니다.
+
+            if (count <= 0) {
+                clearInterval(countdownInterval); // 카운트가 종료되면 setInterval을 해제합니다.
+                countdownDiv.remove(); // 카운트 다운 요소를 제거합니다.
+                handleTimeout(); // 시간 초과 처리
             }
+        }, 1000); // 1초마다 카운트를 감소시킵니다.
+    }
+
+// 시간 초과 처리 함수
+function handleTimeout() {
+    feedbackDiv.textContent = "시간 초과! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
+    feedbackDiv.classList.add("feedback");
+    document.querySelector(".quiz__box").appendChild(feedbackDiv);
+
+    setTimeout(function () {
+        feedbackDiv.remove();
+        if (excludedIndices.length < quizData.length) {
+            // 아직 출제되지 않은 문제가 남아있을 경우
+            const restart = confirm("다시 시작하시겠습니까?");
+            if (restart) {
+                nextQuestion(); // 다음 문제 출제
+            } else {
+                alert("퀴즈가 종료되었습니다.");
+            }
+        } else {
+            // 모든 문제가 출제되었을 경우
+            alert("퀴즈가 종료되었습니다.");
+        }
+        fillGauge(); // 시간 초과 시 게이지 채우기 함수 호출
+    }, 2000); // 2초 후에 피드백 제거 및 처리
+}
+
+// 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
+function displayQuizData() {
+    const currentQuiz = quizData[currentQuizIndex];
+    quizImage.src = currentQuiz.imageURL;
+    quizQuestion.textContent = currentQuiz.question;
+}
 
 
 
-        </script>
+
+// 페이지 로드 시 초기 카운트다운을 시작합니다.
+startCountdown();
+
+
+
+</script>
 </body>
 
 </html>

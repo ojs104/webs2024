@@ -20,10 +20,11 @@
     <div id="main">
         <div class="quiz__wrap">
             <div class="quiz">
-                <div class="quiz__header"><span>캐릭터 이름을 맞춰봐!</span></div>
+                <div class="quiz__header"><span>😊캐릭터 이름을 맞춰봐😊</span></div>
                 <div class="quiz__main">
                     <div class="quiz_img">
                         <img src="" alt="">
+                        <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
                     </div>
                     <div class="quiz__box">
                         <div class="quiz__question"></div>
@@ -33,19 +34,17 @@
                         </div>
                         <div class="box__footer">
                             <button class="quiz__confirm">정답 확인</button>
-                            <button class="quiz__Next none" >다음</button>
+                            <button class="quiz__Next none">다음</button>
                             <div>점수: <span id="score">0</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
         <!-- //main -->
 
-        <footer id="footer">
-            <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
-
-        </footer>
+      
         <!-- //footer -->
 
 
@@ -523,7 +522,8 @@
             ];
             let currentQuizIndex = 0; // 현재 퀴즈 인덱스
             let usedQuizIndices = [];
-            let score = 0;
+            let score = 0;          
+            
             // DOM 요소를 가져옵니다.
             const quizHeader = document.querySelector(".quiz__header span");
             const quizImage = document.querySelector(".quiz_img img");
@@ -568,7 +568,14 @@
                  if (userAnswer === correctAnswer) {
                     score++;
                     document.getElementById("score").textContent = score;
-                    nextQuestion();
+                    updateProgressBar(); // 게이지 업데이트
+                    feedbackDiv.textContent = "정답입니다";
+                    feedbackDiv.classList.add("feedback2");
+                    document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                    setTimeout(function () {
+                        feedbackDiv.remove();
+                        nextQuestion();
+                 }, 500); // 0.5초 후에 제거 및 다음 문제로 이동
                 } else {
                     feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
                     feedbackDiv.classList.add("feedback");

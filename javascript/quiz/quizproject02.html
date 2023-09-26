@@ -120,8 +120,7 @@
                 {
                     "question": "내가 누구게요~?",
                     "answer": "비비",
-                    "imageURL": "../quiz/assets/project img/img14-min.png"
-
+                    "imageURL": "../quiz/assets/project img/img14.png"
                 },
                 {
                     "question": "내가 누구게요~?",
@@ -523,6 +522,7 @@
                 // 다른 퀴즈 데이터들 추가
             ];
             let currentQuizIndex = 0; // 현재 퀴즈 인덱스
+            let usedQuizIndices = [];
             let score = 0;
             // DOM 요소를 가져옵니다.
             const quizHeader = document.querySelector(".quiz__header span");
@@ -555,6 +555,7 @@
             function initializeQuiz() {
                 shuffleQuizData(); // 퀴즈 데이터를 섞음
                 currentQuizIndex = 0; // 현재 퀴즈 인덱스 초기화
+                usedQuizIndices = []; //// 이미 사용한 퀴즈 인덱스 배열 초기화
                 displayQuizData(); // 첫 번째 퀴즈를 표시
             }
             initializeQuiz();
@@ -591,9 +592,15 @@
                 quizAnswerInput.classList.remove("correct");
             
             // 다음 문제로 이동하는 함수를 정의합니다.
-            function nextQuestion() {
-                
-                currentQuizIndex++; // 다음 퀴즈로 이동
+            function nextQuestion() {                
+                 // 현재 퀴즈 인덱스를 usedQuizIndices 배열에 추가
+                    usedQuizIndices.push(currentQuizIndex);
+
+                // 다음 랜덤 퀴즈 인덱스를 찾을 때까지 반복
+                do {
+                    currentQuizIndex = Math.floor(Math.random() * quizData.length);
+                } while (usedQuizIndices.includes(currentQuizIndex));
+
                 if (currentQuizIndex < quizData.length) {
                     displayQuizData(); // 새로운 퀴즈 데이터 표시
                 } else {

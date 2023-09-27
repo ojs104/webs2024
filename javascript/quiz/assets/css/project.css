@@ -496,6 +496,7 @@ body {
         margin-top: 20px;
     }
 }
+
 @media(max-width: 890px){
     .header span {
         font-size: 100px;

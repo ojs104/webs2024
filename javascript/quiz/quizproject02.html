@@ -648,39 +648,37 @@
                 const correctAnswer = quizData[currentQuizIndex].answer.replace(/\s/g, "").toLowerCase(); // 정답을 소문자로 변환
                 const feedbackDiv = document.createElement("div");
 
-                 if (userAnswer === correctAnswer) {
+                if (userAnswer === correctAnswer) {
                     score++;
                     document.getElementById("score").textContent = score;
-                    updateProgressBar(); // 게이지 업데이트
+      
                     feedbackDiv.textContent = "정답입니다";
                     feedbackDiv.classList.add("feedback2");
-                    document.querySelector(".quiz__box").appendChild(feedbackDiv);
-                    setTimeout(function () {
-                        feedbackDiv.remove();
-                        nextQuestion();
-                 }, 500); // 0.5초 후에 제거 및 다음 문제로 이동
                 } else {
                     feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
                     feedbackDiv.classList.add("feedback");
-                    document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                }
 
-                    setTimeout(function () {
-                        feedbackDiv.remove();
-                        nextQuestion(); // 일정 시간 후에 다음 문제로 자동으로 넘어감
-                    }, 2000); // 2초 후에 제거 및 다음 문제로 이동
-                    return; // 오답 처리 후 함수 종료
-                }    
+                document.querySelector(".quiz__box").appendChild(feedbackDiv);
+
+                setTimeout(function () {
+                    feedbackDiv.remove();
+                    nextQuestion(); // 일정 시간 후에 다음 문제로 이동
+                }, 2000); // 2초 후에 제거 및 다음 문제로 이동
             }
+            function nextQuestion() {
                 currentQuizIndex++; // 다음 퀴즈로 이동
+
                 if (currentQuizIndex < quizData.length) {
                     displayQuizData(); // 새로운 퀴즈 데이터 표시
                 } else {
                     alert("퀴즈가 종료되었습니다.");
                 }
+
                 // 입력 필드 초기화
                 quizAnswerInput.value = "";
                 quizAnswerInput.classList.remove("correct");
-            
+            }
             // 다음 문제로 이동하는 함수를 정의합니다.
             function nextQuestion() {                
                  // 현재 퀴즈 인덱스를 usedQuizIndices 배열에 추가

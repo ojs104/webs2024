@@ -376,21 +376,45 @@ body {
 }
 
 
+
+
 /* ------------- media------------ */
 @media (max-width: 1700px){
     .quiz__wrap {
         width: 90%;
+        height: 90%;
         margin: 0 auto;
         justify-content: center;    
     }
     .quiz_img {
         width: 45%;
+        height: 100%;
+    }
+    .quiz_img > img {
+        width: 90%;
+        height: inherit;
     }
     .quiz__box {
         width: 45%;
+        height: 90%;
+    }
+     .quiz__question {
+        margin-top: 80px;
+        font-size: 70px;
+    }
+    .quiz__footer input {
+        margin-top: 40px;
+        width: 90%;
+        height: 70px;
+    }
+    .box__footer {
+        margin-top: 40px;
     }
     .footer__desc {
         font-size: 30px;
+    }
+    #score {
+        margin-top: 35px;
     }
 }
 @media (max-width: 1600px){
@@ -415,26 +439,19 @@ body {
     }
     .quiz__question {
         font-size: 60px;
+        margin-top: 50px;
     }
     .footer__desc {
         font-size: 20px;
     }
 }
-/* @media (max-width: 1470px){
-    .quiz_img {
-        width: 600px;
-    }
-    .quiz__box {
-        width: 600px;
-    }
-} */
 @media(max-width: 1205px){
     .quiz__header {
         width: 100%;
         height: 50px;
     }
     .quiz__question {
-        font-size: 40px;
+        font-size: 50px;
     }
     .quiz__header span {
         font-size: 30px;
@@ -446,6 +463,8 @@ body {
         padding: 10px;
     }
     .quiz__footer input {
+        font-size: 30px;
+        height: 50px;
         width: 90%;
     }
     .footer__desc {
@@ -462,14 +481,34 @@ body {
         margin: 0 auto;
     }
     .quiz__question {
-        margin-top: 10px;
+        font-size: 60px;
+        margin-top: 30px;
     }
     .quiz__footer input {
-        margin-top: 10px;
+        margin-top: 20px;
     }
     .quiz_img {
         width: 90%;
         margin-bottom: 10px;
         margin: 0 auto;
+    }
+    .box__footer button.quiz__confirm {
+        margin-top: 20px;
+    }
+}
+@media(max-width: 890px){
+    .header span {
+        font-size: 100px;
+        word-break: keep-all;
+    }
+    .start a {
+        font-size: 80px;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+    .quiz__question {
+        font-size: 50px;
+
     }
 }

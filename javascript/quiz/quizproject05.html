@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL4</title>
+
+    <link rel="stylesheet" href="assets/css/project.css">
+
+
+</head>
+
+<body>
+    <div id="header">
+        <a href="quizproject01.html">
+            <h1>Quiz</h1>
+        </a>
+    </div>
+    <!-- //header -->
+
+    <div id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header"><span>😊캐릭터 이름을 맞춰봐😊</span></div>
+                <div class="quiz__main">
+                    <div class="quiz_img">
+                        <img src="" alt="">
+                        <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
+                    </div>
+                    <div class="quiz__box">
+                        <div class="quiz__question"></div>
+                        <div class="quiz__footer">
+                            <input type="text" name="text" id="text">
+                            <div class="quiz__answer none"></div>
+                        </div>
+                        <div class="box__footer">
+                            <button class="quiz__confirm">정답 확인</button>
+                            <a href="quizproject06.html" class="quiz__Next none">LEVEL5</a>
+                            <a href="quizproject01.html" class="quiz__reset none">START</a>
+                        <div>점수: <span id="score">0</span></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+
+
+    <script>
+        const quizData = [
+            {
+                "question": "내가 누구게요~?",
+                "answer": "뮬란",
+                "imageURL": "assets/project img/level4/img3-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "보스베이비",
+                "imageURL": "assets/project img/level4/img25-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "버블",
+                "imageURL": "assets/project img/level4/img27-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "아이스베어",
+                "imageURL": "assets/project img/level4/img29-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "레드후드",
+                "imageURL": "assets/project img/level4/img43-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "모아나",
+                "imageURL": "assets/project img/level4/img75-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "타츠마키",
+                "imageURL": "assets/project img/level4/img98-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "가로우",
+                "imageURL": "assets/project img/level4/img90-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "엘리자베스",
+                "imageURL": "assets/project img/level4/img102-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "뿌까",
+                "imageURL": "assets/project img/level4/img66-min.png"
+            }
+        ];
+
+        let currentQuizIndex = 0; // 현재 퀴즈 인덱스
+        let score = 0;
+
+        // DOM 요소를 가져옵니다.
+        const quizHeader = document.querySelector(".quiz__header span");
+        const quizImage = document.querySelector(".quiz_img img");
+        const quizQuestion = document.querySelector(".quiz__question");
+        const quizAnswerInput = document.querySelector("#text");
+        const quizConfirmButton = document.querySelector(".quiz__confirm");
+        const quizNextButton = document.querySelector(".quiz__Next");
+        const quizAnswer = document.querySelector(".quiz__answer")
+        const quizReset = document.querySelector(".quiz__reset")
+        const quizInput = document.querySelector(".quiz__footer input");
+        
+
+        // 초기 퀴즈 데이터를 표시합니다.
+        displayQuizData();
+
+        // 정답 확인 버튼 클릭 이벤트 핸들러를 등록합니다.
+        quizConfirmButton.addEventListener("click", checkAnswer);
+
+        // 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
+        // quizNextButton.addEventListener("click", nextQuestion);
+
+        // 정답 입력 필드에서 Enter 키를 눌렀을 때도 정답 확인 함수를 호출합니다.
+        quizAnswerInput.addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                checkAnswer();
+            }
+        });
+
+        // 퀴즈 데이터를 랜덤으로 섞습니다.
+        function shuffleQuizData() {
+            for (let i = quizData.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [quizData[i], quizData[j]] = [quizData[j], quizData[i]];
+            }
+        }
+        // 초기화 함수를 호출하여 퀴즈 데이터를 섞고 첫 번째 퀴즈를 표시합니다.
+        function initializeQuiz() {
+            shuffleQuizData(); // 퀴즈 데이터를 섞음
+            currentQuizIndex = 0; // 현재 퀴즈 인덱스 초기화
+            displayQuizData(); // 첫 번째 퀴즈를 표시
+        }
+        initializeQuiz();
+
+        // 정답 확인 함수를 정의합니다.
+        
+        function checkAnswer() {
+            const userAnswer = quizAnswerInput.value.trim().toLowerCase(); // 입력한 답을 소문자로 변환
+            const correctAnswer = quizData[currentQuizIndex].answer.replace(/\s/g, "").toLowerCase(); // 정답을 소문자로 변환
+            const feedbackDiv = document.createElement("div");
+            if (userAnswer === correctAnswer) {
+                // 정답을 맞췄을 때
+                // alert("정답입니다.");
+                score = score+10;
+                document.getElementById("score").textContent = score;
+                feedbackDiv.textContent = "정답입니다";
+                feedbackDiv.classList.add("feedback2");
+                document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                setTimeout(function () {
+                    feedbackDiv.remove();
+                }, 500); // 0.5초 후에 제거 및 다음 문제로 이동
+            } else {
+                // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
+                feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
+                feedbackDiv.classList.add("feedback");
+                document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                setTimeout(function () {
+                    feedbackDiv.remove();
+                    nextQuestion(); // 일정 시간 후에 다음 문제로 자동으로 넘어감
+                }, 2500); // 2초 후에 제거 및 다음 문제로 이동
+                return; // 오답 처리 후 함수 종료
+            }
+            currentQuizIndex++; // 다음 퀴즈로 이동
+            if (currentQuizIndex < quizData.length) {
+                displayQuizData(); // 새로운 퀴즈 데이터 표시
+            } else {
+                // alert("퀴즈가 종료되었습니다.");
+                quizNextButton.classList.remove("none");
+                quizConfirmButton.classList.add("none");
+            }
+            // 입력 필드 초기화
+            quizAnswerInput.value = "";
+            quizAnswerInput.classList.remove("correct");
+            } 
+           
+
+        // 다음 문제로 이동하는 함수를 정의합니다.
+        function nextQuestion() {
+            currentQuizIndex++; // 다음 퀴즈로 이동
+            if (currentQuizIndex < quizData.length) {
+                displayQuizData(); // 새로운 퀴즈 데이터 표시
+            } else {
+                alert("퀴즈가 종료되었습니다.");
+                if (score >= 50){
+                    quizNextButton.classList.remove("none");
+                    quizConfirmButton.classList.add("none");
+                } else {
+                    quizReset.classList.remove("none");
+                    quizConfirmButton.classList.add("none");
+                }
+            }
+            // 입력 필드 초기화
+            quizAnswerInput.value = "";
+        }
+
+        quizReset.addEventListener("click", function () {
+            // 점수 초기화
+            score = 0;
+            document.getElementById("score").textContent = score;
+            // 리셋 버튼을 감춥니다.
+            quizReset.classList.add("none");
+            // 다시 퀴즈를 시작합니다.
+            initializeQuiz();
+        });
+
+        // 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
+        function displayQuizData() {
+            const currentQuiz = quizData[currentQuizIndex];
+            // quizHeader.textContent = currentQuiz.question;
+            quizImage.src = currentQuiz.imageURL;
+            quizQuestion.textContent = currentQuiz.question;
+        }
+
+
+    </script>
+</body>
+
+</html>

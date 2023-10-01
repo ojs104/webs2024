@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PyeongChang"; 
+}
+pre code.hljs {
+    margin-bottom: 0 !important;
+}
+body {
+    width: 100%;
+    height: 100vh;
+}
+body.img01 {
+    background: #000 url(../img/images01.jpg) no-repeat center / cover;
+}
+body.img02 {
+    background: #000 url(../img/images02.jpg) no-repeat center / cover;
+}
+body.img03 {
+    background: #000 url(../img/images03.jpg) no-repeat center / cover;
+}
+body.img04 {
+    background: #000 url(../img/images04.jpg) no-repeat center / cover;
+}
+body.img05 {
+    background: #000 url(../img/images05.jpg) no-repeat center / cover;
+}
+body.img06 {
+    background: #000 url(../img/images06.jpg) no-repeat center / cover;
+}
+body.img07 {
+    background: #000 url(../img/images07.jpg) no-repeat center / cover;
+}
+body.img08 {
+    background: #000 url(../img/images08.jpg) no-repeat center / cover;
+}
+body.img09 {
+    background: #000 url(../img/images09.jpg) no-repeat center / cover;
+}
+body.img10 {
+    background: #000 url(../img/images10.jpg) no-repeat center / cover;
+}
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(23, 20, 88, 0.486);
+    z-index: -1;
+}
+img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;            
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}

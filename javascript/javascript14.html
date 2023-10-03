@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../assets/css/default.min.css">
 </head>
+
 <body>
     <div id="wrap">
         <header id="header">
             <h1>
-                <a href="index.html">javascriqt</a>
+                <a href="index.html">javascript</a>
             </h1>
             <nav>
                 <ul>
@@ -41,13 +43,8 @@
         </header>
         <!-- //header -->
 
-        <main id="main">
-            <div class="main__menu">
-                
-            </div>
-            <!-- //main__menu -->
-
-            <div class="main__sample">
+        
+            <!-- <div class="main__sample">
                 <div class="table">
                     <table>
                         <caption>제이쿼리 이벤트 등록 메서드의 종류</caption>
@@ -141,7 +138,8 @@
                             </tr>
                             <tr>
                                 <td class="left">change()</td>
-                                <td class="left">포커스가 선택한 요소에서 다른 요소로 이동되었을 때 이벤트가 발생하거나 선택한 요소의 포커스가 강제로 사라지도록 합니다.</td>
+                                <td class="left">포커스가 선택한 요소에서 다른 요소로 이동되었을 때 이벤트가 발생하거나 선택한 요소의 포커스가 강제로 사라지도록 합니다.
+                                </td>
                             </tr>
                             <tr>
                                 <td rowspan="3">키보드 이벤트</td>
@@ -159,58 +157,231 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-                
+            </div> -->
+
             <main id="main">
+                <div class="main__menu">
+                    <ul>
+                        <li><a href="#desc01">01. 슬라이드 이펙트 - 트랜지션 효과</a></li>
+                        <li><a href="#desc02">02. 슬라이드 이펙트 - 좌로 움직이기</a></li>
+                        <li><a href="#desc03">03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</a></li>
+                    </ul>
+                </div>
+                <!-- //main__menu -->
+
+
                 <div class="main__desc">
-                    <div >
-                        <h2>Javascript Slider Effect01</h2>
-                        <p>슬라이드 이펙트 - 트랜지션 효과.</p>
+                    <div class="desc01">
+                        <h2>01. 슬라이드 이펙트 - 트랜지션 효과</h2>
+                        <p>이미지가 반복적으로 변하는 효과입니다.</p>
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>javascript</li>
+<pre><code class="language-js">{
+        window.onload = function(){
+            let currentIndex = 0;   // 현재 이미지
+            const slider = document.querySelectorAll(".slider");    // 모든 이미지를 변수에 저장
+        
+            setInterval(() => { // 3초에 한번씩 
+                let nextIndex = (currentIndex + 1) % slider.length;       // 0 1 2 3 4 0 1 2 3 4
+        
+                slider[currentIndex].style.opacity = "0";   // 첫번째 이미지가 사라짐
+                slider[nextIndex].style.opacity = "1";  // 두번째 이미지가 나타남
+                slider.forEach(img => img.style.transition = "all 1s");  //이미지 애니메이션 추가
+        
+                currentIndex = nextIndex;   // 두번째 인덱스값을 현재 인덱스값에 저장
+        
+                console.log(currentIndex)
+            }, 3000);
+        }
+    }</code></pre>
+                            <li>jquery</li>
+<pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"&gt;&lt;/script&gt;      // jquery 사용시 필수 사항
+    {
+        $(function(){
+            let currentIndex = 0;   // 현재 이미지
+        
+            setInterval(function(){     // 3초에 한번씩 실행
+                let nextIndex = (currentIndex + 1) % 5;
+        
+                $(".slider").eq(currentIndex).fadeOut(1200);    // 첫번째 이미지 사라짐
+                $(".slider").eq(nextIndex).fadeIn(1200);    // 두번째 이미지 나타남
+        
+                currentIndex = nextIndex;
+        
+            }, 3000);
+        });
+    }</code></pre>
                         </ul>
                         <a href="../javascript/slider/slider01.html">확인하기</a>
                     </div>
-                    <div>
-                        <h2>Javascript Slider Effect02</h2>
-                        <p>슬라이드 이펙트 - 좌로 움직이기.</p>
+
+                    <div class="desc02">
+                        <h2>02.슬라이드 이펙트 - 좌로 움직이기</h2>
+                        <p>이미지가 좌로 움직이면서 튕기는 효과를 넣어준 것입니다.</p>
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>선택자와 변수 설정</li>
+<pre><code class="language-js">{
+        // 선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");       //보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner ")    //움직이는 영역;
+        const slider = sliderWrap.querySelectorAll(".slider");               // 개별 이미지
+    
+        // 변수 설정
+        let currentIndex = 0;               // 현재 보이는 이미지
+        let sliderCount = slider.length;    // 이미지 갯수
+        let sliderInterval = 3000;           // 이미지 변경 간격 시간
+    }</code></pre>
+                            <li>javascript</li>
+                            <pre><code class="language-js">{
+        sliderInner.style.transition = "all 0.6s";
+    
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderCount;
+            sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
+        }, sliderInterval);
+    }</code></pre>
+                            <li>gsap</li>
+                            <pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;
+    {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderCount;
+    
+            gsap.to(sliderInner, {
+                x: -800 * currentIndex,
+                duration: 1,
+                ease: "power4.out"
+            }) 
+        }, sliderInterval);
+    }</code></pre>
+                            <li>jquery</li>
+                            <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"&gt;&lt;/script&gt;      // jquery 사용시 필수 사항
+    {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderCount;
+    
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner").animate({left: -800 * currentIndex}, 600, "easeOutElastic");
+    
+        }, sliderInterval);
+    }</code></pre>
                         </ul>
                         <a href="../javascript/slider/slider02.html">확인하기</a>
                     </div>
-                    <div>
-                        <h2>Javascript Slider Effect03</h2>
-                        <p>슬슬라이드 이펙트 - 좌로 움직이기(연속적으로)</p>
+
+                    <div class="desc03">
+                        <h2>03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
+                        <p>이미지가 좌로 연속적으로 움직이는 효과입니다.</p>
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>선택자와 변수 설정</li>
+<pre><code class="language-js">{
+        // 선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");       //보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner ")    //움직이는 영역;
+        const slider = sliderWrap.querySelectorAll(".slider");               // 개별 이미지
+    
+        // 변수 설정
+        let currentIndex = 0;                                               // 현재 이미지
+        let sliderCount = slider.length;                                    // 이미지 갯수
+        let sliderInterval = 2000;                                          // 이미지 변경 간격 시간
+        let sliderWidth = slider[0].offsetWidth                             //이미지 가로값
+        let sliderclone = sliderInner.firstElementChild.cloneNode(true);    // 첫번째 이미지를 복사
+}
+</code></pre>
+                            <li>javascript</li>
+                            <pre><code class="language-js">{
+        // javascript
+        // 복사한 이미지를 마지막에 붙여넣기
+        sliderInner.appendChild(sliderclone);
+    
+        function sliderEffect (){
+            currentIndex++;
+    
+            sliderInner.style.transition = "all 0.6s ease-in";
+            sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";
+    
+                // 마지막 이미지가 위치 했을 때
+                if(currentIndex == sliderCount){
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                sliderInner.style.transform = "translateX(0px)";
+                }, 700);
+                currentIndex = 0;
+            }
+        };
+        setInterval(sliderEffect, sliderInterval);
+    }</code></pre>
+                            <li>gsap</li>
+                            <pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;   // gsap 사용시 필수
+    {
+        // 복사한 이미지를 마지막에 붙여넣기
+        sliderInner.appendChild(sliderclone);
+    
+        function sliderEffect() {
+            currentIndex++;
+    
+            gsap.to(sliderInner, {
+                x: -sliderWidth * currentIndex,
+                druation: 0.6,
+                ease: "power2.out"
+            });
+    
+            // 마지막 이미지가 위치 했을 때
+            if (currentIndex === sliderCount) {
+                setTimeout(() => {
+                        gsap.set(sliderInner, {x: 0});
+                        currentIndex = 0;
+                    }, 700);
+            };
+        };
+        setInterval(sliderEffect, sliderInterval);
+    }</code></pre>
+                            <li>jquery</li>
+                            <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"&gt;&lt;/script&gt;      // jquery 사용시 필수 사항
+    {
+        // 복사한 이미지를 마지막에 붙여넣기
+        $(".slider__inner").append(sliderclone);
+    
+        function sliderEffect(){
+            currentIndex++;
+    
+            $(".slider__inner").css({
+                "transition": "all 0.6s",
+                "transform": "translateX(-"+ sliderWidth * currentIndex + "px)"
+            });
+    
+            // 마지막 이미지가 위치 했을 때
+            if(currentIndex === sliderCount){
+                setTimeout(() => {
+                    $(".slider__inner").css({
+                        "transition": "0s",
+                        "transform": "translateX(0px)"
+                    });
+                }, 700);
+                currentIndex = 0;
+            }
+        };
+        setInterval(sliderEffect, sliderInterval);
+    }</code></pre>
                         </ul>
                         <a href="../javascript/slider/slider03.html">확인하기</a>
                     </div>
-        
-                                       
-        
-                    
                 </div>
-        </main>
-        <!-- //main --> 
-        
-        <footer id="footer">
-            <a href="mailto:0000mar@naver.com">0000mar@naver.com</a>
-        </footer>
-        <!-- //footer-->
+
+                <!-- //main__desc -->
+
+
+            </main>
+            <!-- //main -->
+
+            <footer id="footer">
+                <a href="mailto:0000mar@naver.com">0000mar@naver.com</a>
+            </footer>
+            <!-- //footer-->
 
     </div>
 
@@ -222,4 +393,5 @@
 
     </script>
 </body>
+
 </html>

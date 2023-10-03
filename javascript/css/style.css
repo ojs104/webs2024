@@ -24,6 +24,7 @@ li {
     color: #161366;
     font-family: "GmarketSans";
 }
+
 #header nav ul li {
     list-style: none;
     display: inline;
@@ -76,6 +77,8 @@ li {
     color: #161366;
 }
 .main__menu ul li a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
     color: #09073c;
 }
 .main__menu ul li a strong {

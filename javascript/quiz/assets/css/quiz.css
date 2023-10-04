@@ -101,6 +101,12 @@ body::after {
     align-items: center;
     justify-content: space-between;
 }
+#header.fix {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
 #header h1 a {
     display: inline-block;
     color: #fff;
@@ -744,20 +750,19 @@ body::after {
     0% {opacity: 1;}
     100% {opacity: 0;}
 }
-/* cbt__box */
+/* cbt */
 .cbt__box {
     width: 100%;
-    max-width: 600px; 
+    max-width: 600px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgb(0 0 0 / 90%);
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 50px;
     text-align: center;
-    display: none;
 }
 .cbt__box h2 {
     font-size: 30px;
@@ -783,16 +788,17 @@ body::after {
     font-style: normal;
 }
 .cbt__box em {
-    font-style: nomal;
+    font-style: normal;
     font-size: 20px;
+    position: relative;
 }
-.cbt__box em::before{
+.cbt__box em::before {
     content: '';
     width: 100%;
     height: 50%;
     background-color: #eeeaff;
     position: absolute;
-    left: 0;
+    left: 0; 
     bottom: 0;
     z-index: -1;
 }
@@ -807,7 +813,7 @@ body::after {
     background-color: #eeeaff;
     padding: 20px 40px;
     border-radius: 40px;
-    width: 100%;   
+    width: 100%;
     margin-top: 20px;
     font-size: 20px;
     cursor: pointer;
@@ -815,13 +821,21 @@ body::after {
 
 .cbt__wrap {
     padding: 20px;
+    background-color: #000000ad;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
+
+
 .cbt__header {
     position: fixed;
     left: 20px;
-    top: 80px;
+    top: 20px;
     z-index: 1000;
-    width: calc(100% - 370px);
+    width: calc(100% - 360px);
     height: 80px;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
@@ -829,57 +843,129 @@ body::after {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border-bottom: 1px solid #c4c4c4;
-
+    border-bottom: 1px solid #e2e2e2;
 }
+
 .cbt__title {
     font-size: 28px;
+}
+
+.cbt__aside {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    height: calc(100vh - 40px);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+.cbt__conts {
+    width: calc(100% - 320px);
+    height: 100%;
+    background-color: #fff;
+    padding: 100px 20px 20px 20px;
+    border-radius: 10px ;
+    overflow-y: auto;
+}
+.cbt__quiz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cbt__quiz .cbt {
+    width: 48%;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+.cbt__question {
+    font-size: 20px;
+    line-height: 1.4;
+    position: relative;
+}
+.cbt__choices {
+    margin-top: 15px;
+}
+.cbt__choices label {
+    display: flex;
+}
+.cbt__choices input {
+    position: absolute;
+    left: -9999px;
+}
+.cbt__choices label span {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px 10px 8px 30px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #444;
+    position: relative;
+}
+.cbt__choices label span::before {
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 15px;
+    box-shadow: inset 0px 0px 0px 1px #000;
+    transition: all 0.25s;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+    font-family: 'Helvetica Neue';
+}
+.cbt__choices label:nth-of-type(1) span::before {
+    content: '1';
+} 
+.cbt__choices label:nth-of-type(2) span::before {
+    content: '2';
+} 
+.cbt__choices label:nth-of-type(3) span::before {
+    content: '3';
+} 
+.cbt__choices label:nth-of-type(4) span::before {
+    content: '4';
+} 
+.cbt__choices label input:checked + span {
+    color: #000;
+}
+.cbt__choices input:checked + label span::before {
+    box-shadow: inset 0px 0px 0px 10px #000;
+    color: #fff;
+}
+.cbt__choices label.good span::before {
+    box-shadow: inset 0px 0px 0px 10px rgb(255, 0, 0);
+    color: #fff;
 }
 .cbt__info {
     display: flex;
 }
 .cbt__time {
-   background-color: #412E91;
-   color: #fff;
-   margin-left: 10px;
-   padding: 10px 20px;
-   border-radius: 10px;
+    background-color: #412E91;
+    color: #fff;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
 }
-
-.cbt__cont {
-    width: calc(100% - 330px);
-    height: 500px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-
-}
-.cbt__aside {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: 300px;
-    height: 500px;
-    background-color: #fff;
-    border-radius: 10px;
-}
-
 .cbt__name {
     background-color: #412E91;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 40px;
     text-align: center;
-    cursor: pointer;
-    margin: 10px;
+    margin-bottom: 10px;
 }
-
 .cbt__submit {
     background-color: #412E91;
-    color: #fff;    
+    color: #fff;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 40px;
     text-align: center;
     cursor: pointer;
-    margin: 10px;
-} 
+}

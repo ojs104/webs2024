@@ -24,7 +24,7 @@
 <body>
     <header id="header">
         <h1>
-            <a href="../javascript12.html">Quiz</a>
+            <a href="../javascript12.html">Quiz100(주관식)</a>
         </h1>
         <nav>
             <ul>
@@ -67,7 +67,6 @@
         <a href="mailto:kmdojs@gmail.com">kmdojs@gmail.com</a>
     </footer>
     <!-- //footer -->
-
     <script>
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
@@ -92,7 +91,7 @@
             });
         };
         let quizScore = 0;
-        let currentIndex = 0; // 현재 문제
+        let currentIndex = 0;
         // 문제 출력
         const updataQuiz = (number) => {
             let quizWrapTag = `
@@ -118,27 +117,32 @@
                 </div>
             `;
             quizWrap.innerHTML = quizWrapTag;
+
             // 선택자
             const quizConfirm = quizWrap.querySelector(".quiz__confirm");
             const quizNext = quizWrap.querySelector(".quiz__next");
+
             // 정답 확인 버튼
             quizConfirm.addEventListener("click", () => {
                 checkAnswer();
-                quizConfirm.classList.add("none");      // 정답 버튼 삭제
-                quizNext.classList.remove("none");      // 다음 버튼 추가
+                quizConfirm.classList.add("none");      
+                quizNext.classList.remove("none");      
             });
+
             // 다음 문제 버튼
             quizNext.addEventListener("click", () => {
                 if(currentIndex < quizInfo.length -1){
-                    quizNext.classList.add("none");            // 다음 버튼 삭제
-                    quizConfirm.classList.remove("none");      // 정답 버튼 추가
-                    currentIndex++;                            //문제 번호 추가
-                    updataQuiz(currentIndex);                   //퀴즈반영
+                    quizNext.classList.add("none");            
+                    quizConfirm.classList.remove("none");      
+                    currentIndex++;                           
+                    updataQuiz(currentIndex);                 
                 } else {
                     alert("퀴즈가 종료되었습니다.");
                 }
             });
         };
+
+
         // 정답 확인
         const checkAnswer = () => {
             const quizElement = quizWrap.querySelector(".quiz")
@@ -155,8 +159,9 @@
                 quizConfirm.classList.add("none");
                 quizInput.classList.add("none");
                 quizNext.classList.remove("none");
+
                 quizScore++;
-                updateScore()
+                updateScore();
             } else {
                 quizElement.classList.add("bad");
                 quizAnswer.classList.remove("none");
@@ -164,12 +169,12 @@
                 quizInput.classList.add("none");
                 quizNext.classList.remove("none");
             }
-        }
+        };
         // 점수 업데이트
         const updateScore = () => {
             const scoreElement = document.querySelector(".quiz__score");
-            scoreElement.textContent = quizScore; // 점수 업데이트
-        }
+            scoreElement.textContent = quizScore
+        };
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz();

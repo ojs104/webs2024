@@ -45,14 +45,13 @@
         const quizCheck = document.querySelector(".quiz__check");
 
         // 문제 정보
-
         let quizInfo = [];
         let quizScore = 0;
 
         // 문제 가져오기
         const fetchQuiz = () => {
             
-            fetch("https://ojs104.github.io/webs2024/json/gineungsaJC2011_05.json")
+            fetch("https://ojs104.github.io/webs2024/json/gineungsaJC2005_02.json")
                 .then(res => res.json())
                 .then(items => {
 

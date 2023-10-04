@@ -16,6 +16,8 @@
     left: 0;
 }
 
+
+
 /* bg */
 .gray {
     background-color: var(--primary-color);
@@ -40,6 +42,11 @@
     border-radius: 50%;
     overflow: hidden;
 }
+.intro__img.small{
+    max-width: 200px;
+    height: 100px;
+    border-radius: 50px;
+}
 .intro__img.main {
     max-width: 500px;
     height: 300px;
@@ -50,6 +57,10 @@
     padding: 5% 20% 0 20%;
     word-break: keep-all;
     font-weight: 300;
+}
+.intro__text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
 }
 .intro__btn {
     margin-top: 40px;
@@ -137,7 +148,20 @@
     padding: 1rem 3.5rem;   
     cursor: pointer;
     border-radius: 5px;
+    
 }
+.btn__style3 {
+    display: inline-block;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
 /* list__style */
 .list__style li {
     padding-left: 16px;
@@ -188,3 +212,16 @@
 .mt80 {margin-top: 80px !important;}
 .mt90 {margin-top: 90px !important;}
 .mt100 {margin-top: 100px !important;}
+
+/* 마진간격 */
+.mt0 {margin-right: 0px !important;}
+.mt10 {margin-right: 10px !important;}
+.mt20 {margin-right: 20px !important;}
+.mt30 {margin-right: 30px !important;}
+.mt40 {margin-right: 40px !important;}
+.mt50 {margin-right: 50px !important;}
+.mt60 {margin-right: 60px !important;}
+.mt70 {margin-right: 70px !important;}
+.mt80 {margin-right: 80px !important;}
+.mt90 {margin-right: 90px !important;}
+.mt100 {margin-right: 100px !important;}

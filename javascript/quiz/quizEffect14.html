@@ -13,6 +13,7 @@
             bottom: 20px;
             width: 70px;
             height: 50px;
+            line-height: 50px;
             border-radius: 10px;
             background-color: #412E91;
             color: #fff;
@@ -38,26 +39,7 @@
     <!-- //header -->
 
     <main id="main">
-        <div class="quiz__wrap">
-            <!-- <div class="quiz">
-                <div class="quiz__header">
-                    <span class="quiz__date"></span>
-                </div>
-                <div class="quiz__main">
-                    <div class="quiz__question">
-                        <em></em>. 
-                        <span></span>
-                        <div class="quiz__desc"></div>
-                    </div>
-                    <div class="quiz__input">
-                        <input type="text" placeholder="정답을 입력해주세요!">
-                    </div>
-                    <div class="quiz__answer"></div>
-                </div>
-                <div class="quiz__footer">
-                    <button class="quiz__confirm">정답 확인하기</button>
-                </div>
-            </div> -->
+        <div class="quiz__wrap">            
         </div>
         <div class="quiz__score">0</div>
     </main>
@@ -107,8 +89,7 @@
                         <div class="quiz__input">
                             <input type="text" id="quizInput" placeholder="정답을 입력해주세요!">
                         </div>
-                        <div class="quiz__answer none">${quizInfo[number].infoAnswer}</div>
-                        
+                        <div class="quiz__answer none">${quizInfo[number].infoAnswer}</div>                        
                     </div>
                     <div class="quiz__footer">
                         <button class="quiz__confirm">정답 확인하기</button>
@@ -117,7 +98,7 @@
                 </div>
             `;
             quizWrap.innerHTML = quizWrapTag;
-
+            
             // 선택자
             const quizConfirm = quizWrap.querySelector(".quiz__confirm");
             const quizNext = quizWrap.querySelector(".quiz__next");
@@ -141,7 +122,6 @@
                 }
             });
         };
-
 
         // 정답 확인
         const checkAnswer = () => {

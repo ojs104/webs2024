@@ -1,0 +1,95 @@
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>[#01] CSS 버튼 & 네비게이션 - 3타입 상단 네비게이션</title>
+	<style>
+		/* Google Web Fonts CDN */
+		@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Noto Sans KR', sans-serif;
+			margin: 0;
+			color: #222;
+			line-height: 1.5em;
+			font-size: 15px;
+			background-color: #eee;
+			font-weight: 300;
+		}
+		a {
+			text-decoration: none;
+			color: #222;
+		}
+
+		/*  Header */
+		header {
+			font-weight: normal;
+			background-color: #fff;
+			box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+		}
+		nav {
+			/* border: 1px solid red; */
+			width: 1100px;
+			margin: auto;
+			/* overflow: hidden; */
+		}
+		nav > div {
+			/* border: 1px solid #000; */
+			height: 70px;
+			/* line-height: 70px; */
+			padding-top: 25px;
+		}
+		.logo {
+			/* line-height: 90px; */
+			padding-top: 18px;
+			float: left;
+			width: 180px;
+		}
+		.gnb {
+			width: calc(100% - 280px);
+			display: inline-block;
+			text-align: center;
+		}
+		.gnb a {
+			margin: 10px;
+		}
+		.lnb {
+			float: right;
+			width: 100px;
+			text-align: right;
+		}
+		.lnb a {
+			background-color: teal;
+			color: #fff;
+			padding: 3px 10px;
+			border-radius: 30px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<header>
+			<nav>
+				<div class="logo">
+					<a href="#none"><img src="img/logo.png"></a>
+				</div>
+				<div class="gnb">
+					<a href="#none">목록</a>
+					<a href="#none">커뮤니티</a>
+					<a href="#none">커뮤니티</a>
+					<a href="#none">스토리</a>
+					<a href="#none">커뮤니티</a>
+				</div>
+				<div class="lnb">
+					<a href="#none">로그인</a>
+				</div>
+			</nav>
+		</header>
+	</div>
+
+</body>
+</html>

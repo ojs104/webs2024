@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>PHP 블로그 만들기</title>
+
     <link rel="stylesheet" href="../assets/css/style.css">
-
 </head>
-<body class="gray">
+<body class="gray"> 
     <?php include "../include/skip.php" ?>
-    <!-- skip -->
+    <!-- //skip -->
 
-    <?php include "../include/header.php" ?>   
-    <!-- header -->
+    <?php include "../include/header.php" ?>
+    <!-- //header -->
 
     <main id="main" role="main">
         <div class="members__inner container">
@@ -42,7 +41,7 @@
     if($result){
         $count = $result -> num_rows;
 
-        if($count > 0) {            
+        if($count > 0){
             for($i=0; $i<$count; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
 
@@ -60,11 +59,11 @@
 ?>
                 </tbody>
             </table>
-        </div>  
+        </div>
     </main>
-    <!-- main -->
+    <!-- //main -->
 
     <?php include "../include/footer.php" ?>
-    <!-- footer -->
+    <!-- //foter -->
 </body>
 </html>

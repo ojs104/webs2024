@@ -1,3 +1,9 @@
+body {
+    -webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+
 /* 여백 초기화 */
 body,
 div,
@@ -35,7 +41,7 @@ blockquote {
     box-sizing: border-box;
 }
 
-/* 폰트초기화 */
+/* 폰트 초기화 */
 body,
 button,
 input,

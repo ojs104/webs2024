@@ -9,7 +9,7 @@
     $sql .= "boardView int(10) NOT NULL,";
     $sql .= "regTime int(40) NOT NULL,";
     $sql .= "PRIMARY KEY(boardID)";
-    $sql .= " ) charset=utf8";
+    $sql .= ") charset=utf8";
 
     $connect -> query($sql);
 ?>

@@ -2,7 +2,7 @@
     max-width: 500px;
     width: 100%;
     padding: 100px 0;
-    text-align: center;    
+    text-align: center;
 }
 .login__inner h2 {
     font-size: 2rem;
@@ -26,15 +26,12 @@
 .login__footer {
     padding: 20px 0;
     text-align: left;
-   color: var(--black300);
-}
-.login__footer li {
-
+    color: var(--black200)
 }
 .login__footer a {
-   text-decoration: underline;
-   text-underline-position: under;
-   color: var(--black300);
+    text-decoration: underline;
+    text-underline-position: under;
+    color: var(--black200)
 }
 @media (max-width: 500px){
     .login__inner {

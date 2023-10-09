@@ -1,3 +1,8 @@
+<?php
+    include "../connect/connect.php";
+    include "../connect/session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,43 +13,16 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="gray"> 
-    <div id="skip">
-    <a href="#header">헤더 영역 바로가기</a>
-    <a href="#main">콘텐츠 영역 바로가기</a>
-    <a href="#footer">푸터 영역 바로가기</a>
-</div>    <!-- //skip -->
+    <?php include "../include/skip.php" ?>
+    <!-- //skip -->
 
-    <header id="header" role="banner">
-    <div class="header__inner container">
-        <div class="left">
-            <a href="../index.html">
-                <span class="blind">메인으로</span>
-            </a>
-        </div>
-        <div class="logo">
-            <a href="../main/main.php">Developer Blog</a>
-        </div>
-        <div class="right">
-                            <ul>
-                    <li><a href="../join/join.php">회원가입</a></li>
-                </ul>
-                    </div>
-    </div>
-    <nav class="nav__inner">
-        <ul>
-            <li><a href="../join/join.php">회원가입</a></li>
-            <li><a href="../login/login.php">로그인</a></li>
-            <li><a href="../board/borad.php">게시판</a></li>
-            <li><a href="../blog/blog.php">블로그</a></li>
-        </ul>
-    </nav>
-</header>    <!-- //header -->
+    <?php include "../include/header.php" ?>
+    <!-- //header -->
 
     <main id="main" role="main">
         <div class="intro__inner bmStyle container">
             <div class="intro__img small">
-                <img srcset="../assets/img/intro04-min.jpg 1x, ../assets/img/intro04@2x-min.jpg 2x,
-                ../assets/img/intro04@3x-min.jpg 3x"  alt="소개 이미지">
+                <img srcset="../assets/img/intro04.jpg 1x, ../assets/img/intro04@2x.jpg 2x, ../assets/img/intro04@3x.jpg 3x"  alt="소개 이미지">
             </div>
             <div class="intro__text">
                 <h2>게시글 작성하기</h2>
@@ -59,8 +37,8 @@
                     <fieldset>
                         <legend class="blind">게시글 작성하기</legend>
                         <div>
-                            <label for="boradTitle">제목</label>
-                            <input type="text" id="boradTitle" name="boradTitle" class="input__style">
+                            <label for="boardTitle">제목</label>
+                            <input type="text" id="boardTitle" name="boardTitle" class="input__style">
                         </div>
                         <div>
                             <label for="boardContents">내용</label>
@@ -76,11 +54,7 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-    <div class="footer__inner container btStyle">
-        <div>Copyright 2023 webstoryboy</div>
-        <div>blog by webs</div>
-    </div>
-</footer>    <!-- //foter -->
+    <?php include "../include/footer.php" ?>
+    <!-- //foter -->
 </body>
 </html>

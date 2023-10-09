@@ -8,37 +8,11 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="gray"> 
-    <div id="skip">
-    <a href="#header">헤더 영역 바로가기</a>
-    <a href="#main">콘텐츠 영역 바로가기</a>
-    <a href="#footer">푸터 영역 바로가기</a>
-</div>    <!-- //skip -->
+    <?php include "../include/skip.php" ?>
+    <!-- //skip -->
 
-    <header id="header" role="banner">
-    <div class="header__inner container">
-        <div class="left">
-            <a href="../index.html">
-                <span class="blind">메인으로</span>
-            </a>
-        </div>
-        <div class="logo">
-            <a href="../php/main/main.php">Developer Blog</a>
-        </div>
-        <div class="right">
-                            <ul>
-                    <li><a href="../php/join/join.php">회원가입</a></li>
-                </ul>
-                    </div>
-    </div>
-    <nav class="nav__inner">
-        <ul>
-            <li><a href="../join/join.php">회원가입</a></li>
-            <li><a href="../php/login/login.php">로그인</a></li>
-            <li><a href="../php/board/board.php">게시판</a></li>
-            <li><a href="../php/blog/blog.php">블로그</a></li>
-        </ul>
-    </nav>
-</header>    <!-- //header -->
+    <?php include "../include/header.php" ?>
+    <!-- //header -->
 
     <main id="main" role="main">
         <section class="login__inner container">
@@ -71,11 +45,7 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-    <div class="footer__inner container btStyle">
-        <div>Copyright 2023 webstoryboy</div>
-        <div>blog by webs</div>
-    </div>
-</footer>    <!-- //foter -->
+    <?php include "../include/footer.php" ?>
+    <!-- //foter -->
 </body>
 </html>

@@ -12,5 +12,4 @@
     // } else {
     //     echo "DATABASE Connect True";
     // }
-
 ?>

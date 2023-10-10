@@ -486,7 +486,7 @@ body::after {
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
-    border: 
+
 }
 .quiz__check:hover{
     background-color: #e1d9ff;

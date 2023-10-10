@@ -1008,6 +1008,7 @@ body::after {
     border-radius: 40px;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 .cbt__giveup {
     background-color: #e88af1;

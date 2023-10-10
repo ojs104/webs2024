@@ -80,8 +80,8 @@
                 <option value="gineungsaWD2016_04">웹디자인기능사 2016년 4회</option>
             </select>
             <p>
-                당신의 이름은 <input type="text"> 입니다. <br>
-                <em class="cbt_select_title">정보처리기능사 2006년 2회</em> 문제를 선택했습니다. <br>
+                당신의 이름은 <input type="text" class="cbt__select__input"> 입니다. <br>
+                <em class="cbt__select__title">정보처리기능사 2006년 2회</em> 문제를 선택했습니다. <br>
                 시작하겠습니까?<br>
                 <i>총 시간은 60분이며, 60점 이상 맞아야 합격입니다. </i>
             </p>
@@ -154,18 +154,23 @@
     <!-- //footer -->
 
     <script>       
-      // 선택자 
-      const cbtSelect1 = document.getElementById("cbtSelect1");   
+        // 선택자
+        const cbtWrap = document.querySelector(".cbt__wrap");
+        const cbtBox = document.querySelector(".cbt__box");
+        const cbtSelect1 = document.getElementById("cbtSelect1");
         const cbtSelect2 = document.getElementById("cbtSelect2");
         const cbtSelectTitle = document.querySelector(".cbt__select__title");
+        const cbtBoxStart = document.querySelector(".cbt__box__start");
+        const cbtSelectInput =  document.querySelector(".cbt__select__input");
 
+         
         // 문제 정보
-        let quizInfo = [];
+        let quizInfo = [];          //모든 퀴즈 정보
 
-        let quizScore = 0;  //퀴즈 점수
-        let quizCorrect = 0; // 퀴즈 맞은 갯수
+        let quizScore = 0;          //퀴즈 점수
+        let quizCorrect = 0;        //퀴즈 맞은 갯수
 
-        // 문제 가져오기 
+        // 문제 가져오기
         const fetchQuiz = (value, text) => {
             fetch(`https://webstoryboy.github.io/webs2024/json/${value}.json`)
             .then(res => res.json())
@@ -173,23 +178,39 @@
                 console.log(items);
             });
         }
-
         // 문제 정보
         const hendleSelectChange = (e) => {
+            // 텍스트 , value
             let selectValue = e.target.value;
             let selectText = e.target.options[e.target.selectedIndex].text;
             console.log(selectValue);
+
+            // cbtSelectTtitle --> 텍스트
             cbtSelectTitle.innerHTML = selectText;
             fetchQuiz(selectValue, selectText);
         }
 
-        // 페이지가 로드된 후 실행
+       // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz("gineungsaJC2005_02", "정보처리기능사 2005년 2회");
 
             // 문제 선택
             cbtSelect1.addEventListener("change", hendleSelectChange);
             cbtSelect2.addEventListener("change", hendleSelectChange);
+
+            // 시작하기 버튼
+            cbtBoxStart.addEventListener("click", () => {
+                // 이름이 입력되었는지 확인
+                const playerName = cbtSelectInput.value.trim();
+
+                if(playerName === ""){
+                    alert("이름을 입력해야 시작할 수 있습니다.");
+                } else {
+                    alert("제한 시간은 60분이며, 확인을 누르면 바로 시작합니다.");
+                    cbtBox.classList.add("none");
+                    cbtWrap.classList.remove("none");
+                }
+            });
         });
        
     </script>

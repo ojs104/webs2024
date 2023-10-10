@@ -97,30 +97,16 @@
 
             <div class="cbt__conts">
                 <div class="cbt__quiz">
-                    <!-- <div class="cbt">
-                        <div class="cbt__question">1. GoF(Gang of Four)의 디자인 패턴에서 행위 패턴에 속하는 것은?</div>
-                        <div class="cbt__choices">
-                            <input type="radio" id="choice1">
-                            <label for="choice1"><span class="choice">Visitor</span></label>
-                            <input type="radio" id="choice2">
-                            <label for="choice1"><span class="choice">Builder</span></label>
-                            <input type="radio" id="choice3">
-                            <label for="choice1"><span class="choice">Prototype</span></label>
-                            <input type="radio" id="choice4">
-                            <label for="choice1"><span class="choice">Bridge</span></label>
-                        </div>
-                        <div class="cbt__desc">
-                            객체지향 구성 요소에는 클래스(Class), 객체(Object), 인스턴스(Instance), 메시지(Message), 메소드(Method) 등이 있다.
-                        </div>
-                    </div> -->
+                    
                     
                 </div>
             </div>
             <!-- //cbt__conts -->
             
             <div class="cbt__aside">
-                <div class="cbt__name">수험자 : 오종석</div>
+                <div class="cbt__name">수험자 : <span></span></div>
                 <div class="cbt__submit">답안지 제출하기</div>
+                <div class="cbt__giveup">포기하기</div>
                 <div class="cbt__omr">
                     <!-- <div class="omr">
                         <strong>1</strong>
@@ -162,13 +148,37 @@
         const cbtSelectTitle = document.querySelector(".cbt__select__title");
         const cbtBoxStart = document.querySelector(".cbt__box__start");
         const cbtSelectInput =  document.querySelector(".cbt__select__input");
+        const cbtTime = document.querySelector(".cbt__time span");
+        const cbtQuiz = document.querySelector(".cbt__quiz");
+        const cbtOmr = document.querySelector(".cbt__omr");
+        const cbtTitle = document.querySelector(".cbt__title");
+        const cbtName = document.querySelector(".cbt__name span");
+        const cbtSubmit = document.querySelector(".cbt__submit");
+        const giveUpAll = document.querySelector(".cbt__giveup");
 
+       
+        
          
         // 문제 정보
         let quizInfo = [];          //모든 퀴즈 정보
 
         let quizScore = 0;          //퀴즈 점수
         let quizCorrect = 0;        //퀴즈 맞은 갯수
+        let remainingTime = 3600;     //남은 시간
+        let timerInterval = "";
+    
+
+        // 문제 정보
+        const hendleSelectChange = (e) => {
+            // 텍스트 , value
+            let selectValue = e.target.value;
+            let selectText = e.target.options[e.target.selectedIndex].text;
+            
+            // cbtSelectTtitle --> 텍스트
+            cbtSelectTitle.innerHTML = selectText;
+            cbtTitle.innerHTML = selectText + "기출문제";
+            fetchQuiz(selectValue, selectText);
+        }
 
         // 문제 가져오기
         const fetchQuiz = (value, text) => {
@@ -176,21 +186,231 @@
             .then(res => res.json())
             .then(items => {
                 console.log(items);
+                quizInfo = items.map((item, index) => {
+                    const formattedQuiz = {
+                        infoNum: index + 1,
+                        infoQuestion: item.question,
+                        infoDesc: item.desc,
+                        infoAnswer: item.correct_answer
+                    }
+                    //보기 가져오기
+                    const choices = [...item.incorrect_answers, item.correct_answer]
+
+                   // 보기 랜덤 섞기
+                   for (let i=choices.length-1; i>0; i--){
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [choices[i], choices[j]] = [choices[j], choices[i]];
+                    }
+                    formattedQuiz.infoChoices = choices;
+
+                    //문제에 대한 이미지가 있다면
+                    if(item.hasOwnProperty("question_img")){
+                        const src = "<img src='https://webstoryboy.github.io/webs2024/json/img/"
+                        formattedQuiz.infoQuestionImg = src + item.question_img + ".jpg' alt='정보처리기사' />";
+                    }
+
+                    //문제에 대한 보조 설명이 있다면
+                    if(item.hasOwnProperty("question_desc")){
+                        formattedQuiz.infoQuestionDesc = item.question_desc;
+                    }
+                    return formattedQuiz;
+                });
+                console.log(quizInfo);
+                updateQuiz();
             });
         }
-        // 문제 정보
-        const hendleSelectChange = (e) => {
-            // 텍스트 , value
-            let selectValue = e.target.value;
-            let selectText = e.target.options[e.target.selectedIndex].text;
-            console.log(selectValue);
 
-            // cbtSelectTtitle --> 텍스트
-            cbtSelectTitle.innerHTML = selectText;
-            fetchQuiz(selectValue, selectText);
+        // 문제 출력하기
+        const updateQuiz = () => {
+            const exam = [];
+            const omr = [];           
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="cbt">
+                        <div class="cbt__question">${question.infoNum}. ${question.infoQuestion}</div>
+                        ${question.infoQuestionDesc ? `<div class="cbt__question__desc">${question.infoQuestionDesc}</div>` : ''}
+                        ${question.infoQuestionImg ? `<div class="cbt__question__desc">${question.infoQuestionImg}</div>` : ''}
+                       
+                        <div class="cbt__choices">
+                            <input type="radio" id="select${number}_1" name="select${number}" value="${number}_1" onclick="answerSelect(this)">
+                            <label for="select${number}_1"><span>${question.infoChoices[0]}</span></label>
+                            <input type="radio" id="select${number}_2" name="select${number}" value="${number}_2" onclick="answerSelect(this)">
+                            <label for="select${number}_2"><span>${question.infoChoices[1]}</span></label>
+                            <input type="radio" id="select${number}_3" name="select${number}" value="${number}_3" onclick="answerSelect(this)">
+                            <label for="select${number}_3"><span>${question.infoChoices[2]}</span></label>
+                            <input type="radio" id="select${number}_4" name="select${number}" value="${number}_4" onclick="answerSelect(this)">
+                            <label for="select${number}_4"><span>${question.infoChoices[3]}</span></label>
+                        </div>
+                        <div class="cbt__answer none">${question.infoAnswer}</div>
+                        <div class="cbt__desc none">${question.infoDesc}</div>
+                    </div>
+                `);     
+           
+            
+                omr.push(`
+                    <div class="omr">
+                        <strong>${question.infoNum}</strong>
+                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_1" onclick="answerSelect2(this)">
+                        <label for="omr${number}_1"><span class="label-inner">1</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_2" onclick="answerSelect2(this)">
+                        <label for="omr${number}_2"><span class="label-inner">2</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_3" onclick="answerSelect2(this)">
+                        <label for="omr${number}_3"><span class="label-inner">3</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_4' onclick="answerSelect2(this)">
+                        <label for="omr${number}_4"><span class="label-inner">4</span></label>
+                    </div>          
+                `);
+            })
+
+            cbtQuiz.innerHTML = exam.join('');
+            cbtOmr.innerHTML = omr.join('');
+        }
+       
+        // 타이머 작동
+        const startTimer = () => {
+            timerInterval = setInterval(() => {
+                if(remainingTime > 0){
+                    remainingTime--;
+
+                    // 시간 표시
+                    const minutes = Math.floor(remainingTime / 60);
+                    const seconds = remainingTime % 60;                    
+                    //초가 한자리 수일때 0 추가
+                    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+                    cbtTime.textContent = `${minutes}분 ${formattedSeconds}초`;
+
+                    
+                } else {
+                    clearInterval(timerInterval);   // 시간이 다 되면 타이머 중지
+                    alert("시간이 종료되었습니다.");
+                }
+            }, 1000);
         }
 
-       // 페이지가 로드된 후 실행
+        //  정답 체크 표시
+        const answerSelect = (el) => {
+            const value = el.value.split('_');          // ['0', '2']
+            const questionNum = parseInt(value[0]);     // 0
+            const choiceNum = parseInt(value[1]);       // 2
+            // 선택된 보기 요소
+            const selectedChoice = document.querySelector(`#select${questionNum}_${choiceNum}`);
+
+            if(selectedChoice.checked){
+                // OMR 선택 처리
+                const omrChoice = document.querySelector(`#omr${questionNum}_${choiceNum}`);
+                omrChoice.checked = true;
+                
+            }
+        }
+
+    
+
+        // OMR 체크 표시
+        const answerSelect2 = (el) => {
+            const value = el.value.split('_');          // ['0', '2']
+            const questionNum = parseInt(value[0]);     // 0
+            const choiceNum = parseInt(value[1]);       // 2
+            // 선택된 보기 요소
+            const omrChoice = document.querySelector(`#omr${questionNum}_${choiceNum}`);
+
+            if(omrChoice.checked){
+                // OMR 선택 처리
+                const selectedChoice = document.querySelector(`#select${questionNum}_${choiceNum}`);
+                selectedChoice.checked = true;
+                
+            }
+        }
+
+        // 정답 체크
+        const checkAnswers = () => {
+            quizInfo.forEach((question, number) => {
+                const choices = question.infoChoices;               // 정답지의 보기
+                const userChoice = getSelectChoice(number);         // 사용자가 체크한 정답
+                const cbtQuestion = document.querySelector(`.cbt:nth-child(${number + 1})`);
+                const cbtDesc = cbtQuestion.querySelector(`.cbt__desc`);
+                const cbtAnswers = cbtQuestion.querySelector(`.cbt__answer`);
+              
+
+                if(userChoice !== -1){
+                    const selectedChoice = choices[userChoice -1]; 
+
+                    if(selectedChoice === question.infoAnswer){
+                        quizScore++;
+                        quizCorrect++;
+                        cbtQuestion.classList.add('good');
+                    } else {
+                        cbtQuestion.classList.add('bad');
+                        cbtDesc.classList.remove('none');
+                        cbtAnswers.classList.remove('none');
+                    }
+                }
+            });
+        }
+
+        //포기하기 버튼을 누르면 모든 문제 포기
+        giveUpAll.addEventListener('click', () => {
+        if (confirm("정말로 모든 문제를 포기하시겠습니까?")) {
+            quizInfo.forEach((question, number) => {
+                const cbtQuestion = document.querySelector(`.cbt:nth-child(${number + 1})`);
+                const cbtAnswers = cbtQuestion.querySelector('.cbt__answer');
+                const cbtDesc = cbtQuestion.querySelector('.cbt__desc');
+
+                // OMR 선택 초기화
+                const omrChoices = document.querySelectorAll(`input[name="omr${number}"]`);
+                omrChoices.forEach((omrChoice) => {
+                    omrChoice.checked = false;
+                });
+
+                // 보기 선택 초기화
+                const selectChoices = document.querySelectorAll(`input[name="select${number}"]`);
+                selectChoices.forEach((selectChoice) => {
+                    selectChoice.checked = false;
+                });
+
+                // 퀴즈 스코어와 정답 여부 초기화
+                quizScore = 0;
+                quizCorrect = 0;
+
+                // 문제 상태 초기화 (모든 문제를 오답처리)
+                cbtQuestion.classList.remove('good');
+                cbtQuestion.classList.add('bad');
+                
+                // 해설 표시
+                cbtAnswers.classList.remove('none');
+                cbtDesc.classList.remove('none');
+            });
+
+            // 시간 초기화 (필요한 경우)
+            remainingTime = 3600;
+            cbtTime.textContent = '60분 00초';
+
+            // 타이머 재시작 (필요한 경우)
+            clearInterval(timerInterval);
+            startTimer();
+
+            alert("모든 문제를 포기하였습니다.");
+        }
+    });
+            
+        
+       
+
+        // 선택된 보기의 인덱스 가져오기
+        const getSelectChoice = (questionNumber) => {
+            const choices = document.querySelectorAll(`input[name="select${questionNumber}"]:checked`);
+
+            if(choices.length === 0){
+                return -1;      // 체크하지 않은 문제는 -1을 반환
+                alert("풀지 않은 문제가 있습니다. 다시 한번 확인해주세요!!");
+            } else {
+                return parseInt(choices[0].value.split('_')[1]);
+            }
+        }
+
+
+        // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz("gineungsaJC2005_02", "정보처리기능사 2005년 2회");
 
@@ -208,9 +428,26 @@
                 } else {
                     alert("제한 시간은 60분이며, 확인을 누르면 바로 시작합니다.");
                     cbtBox.classList.add("none");
-                    cbtWrap.classList.remove("none");
+                    cbtWrap.classList.remove("none");                
+                    cbtName.innerHTML = playerName;
+
+                    startTimer();
                 }
             });
+        });
+        // 정답 제출하기 버튼 클릭
+        cbtSubmit.addEventListener("click", () => {
+            checkAnswers();
+        // 모든 문제에 대한 체크 여부를 확인
+        const allQuestionChecked = quizInfo.every((_, number) => {
+            return getSelectChoice(number) !== -1;
+            });
+
+        if(allQuestionChecked){
+            // checkAnswers();
+        } else {
+            alert("모든 문제에 대한 답을 선택해야 합니다. 체크 되지 않은 문제가 있습니다. 정답과 해설을 보고 싶아면 포기하기 버튼을 눌러주세요!!");
+        }
         });
        
     </script>

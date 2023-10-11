@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP Parallax Effect01</title>
+    <title>GSAP Scroll Effect03</title>
     <link href="https://webfontworld.github.io/hoengseoung/HoengseongHanu.css" rel="stylesheet">
 
     <style>
-         * {
+        * {
             margin: 0;
             padding: 0;
         }
@@ -69,7 +69,7 @@
             align-items: center;
             justify-content: center;
         }
-        .parallax__item:nth-child(2n){
+        #section2, #section4, #section6, #section8 {
             background-color: #222;
         }
         .parallax__item__num {
@@ -80,54 +80,71 @@
             line-height: 1;
         }
         .parallax__item__img {
-            width: 10vw;
-            height: 10vw;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
             background-color: #fff;
             background-size: cover;
             background-position: center;
         }
-        .parallax__item:nth-child(1) .parallax__item__img{
+        .parallax__item__img::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1;
+        }
+        #section1 .parallax__item__img {
             background-image: url(img/images01.jpg);
         }
-        .parallax__item:nth-child(2) .parallax__item__img{
+        #section2 .parallax__item__img {
             background-image: url(img/images02.jpg);
         }
-        .parallax__item:nth-child(3) .parallax__item__img{
+        #section3 .parallax__item__img {
             background-image: url(img/images03.jpg);
         }
-        .parallax__item:nth-child(4) .parallax__item__img{
+        #section4 .parallax__item__img {
             background-image: url(img/images04.jpg);
         }
-        .parallax__item:nth-child(5) .parallax__item__img{
+        #section5 .parallax__item__img {
             background-image: url(img/images05.jpg);
         }
-        .parallax__item:nth-child(6) .parallax__item__img{
+        #section6 .parallax__item__img {
             background-image: url(img/images06.jpg);
         }
-        .parallax__item:nth-child(7) .parallax__item__img{
+        #section7 .parallax__item__img {
             background-image: url(img/images07.jpg);
         }
-        .parallax__item:nth-child(8) .parallax__item__img{
+        #section8 .parallax__item__img {
             background-image: url(img/images08.jpg);
         }
-        .parallax__item:nth-child(9) .parallax__item__img{
+        #section9 .parallax__item__img {
             background-image: url(img/images09.jpg);
         }
-        .parallax__item__img.active {
-            filter: hue-rotate(100deg);
+        .parallax__item__title {
+            font-size: 5vw;
+            z-index: 100;
+            text-transform: uppercase;
+            display: inline-block;
         }
-        
+
+        /* option */
         
     </style>
 </head>
 <body>
     <header id="parallax__title">
-        <h1>GSAP Parallax Effect01</h1>
-        <p>GSAP scrollTrigger - 애니메이션 기본 효과</p>
+        <h1>GSAP Scroll Effect03</h1>
+        <p>GSAP scrollTrigger - 배경 고정시키기</p>
         <ul>
-            <li class="active"><a href="gsap01.html">1</a></li>
+            <li><a href="gsap01.html">1</a></li>
             <li><a href="gsap02.html">2</a></li>
-            <li><a href="gsap03.html">3</a></li>
+            <li class="active"><a href="gsap03.html">3</a></li>
             <li><a href="gsap04.html">4</a></li>
             <li><a href="gsap05.html">5</a></li>
             <li><a href="gsap06.html">6</a></li>
@@ -146,198 +163,115 @@
         <section id="section1" class="parallax__item">
             <span class="parallax__item__num">01</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section1</div>
         </section>
         <!-- section1 -->
-         
+
         <section id="section2" class="parallax__item">
             <span class="parallax__item__num">02</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section2</div>
         </section>
         <!-- section2 -->
 
         <section id="section3" class="parallax__item">
             <span class="parallax__item__num">03</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section3</div>
         </section>
         <!-- section3 -->
 
         <section id="section4" class="parallax__item">
             <span class="parallax__item__num">04</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section4</div>
         </section>
         <!-- section4 -->
 
         <section id="section5" class="parallax__item">
             <span class="parallax__item__num">05</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section5</div>
         </section>
         <!-- section5 -->
 
         <section id="section6" class="parallax__item">
             <span class="parallax__item__num">06</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section6</div>
         </section>
         <!-- section6 -->
 
         <section id="section7" class="parallax__item">
             <span class="parallax__item__num">07</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section7</div>
         </section>
         <!-- section7 -->
 
         <section id="section8" class="parallax__item">
             <span class="parallax__item__num">08</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section8</div>
         </section>
         <!-- section8 -->
 
         <section id="section9" class="parallax__item">
             <span class="parallax__item__num">09</span>
             <div class="parallax__item__img"></div>
+            <div class="parallax__item__title">section9</div>
         </section>
-        <!-- section09 -->
-
-        <section id="section10" class="parallax__item">
-            <span class="parallax__item__num">10</span>
-            <div class="parallax__item__img"></div>
-        </section>
-        <!-- section10 -->
-
-        
-
+        <!-- section9 -->
+         
     </main>    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-        const box1 = document.querySelector("#section1 .parallax__item__img");
-        const box2 = document.querySelector("#section2 .parallax__item__img");
-        const box3 = document.querySelector("#section3 .parallax__item__img");
-        const box4 = document.querySelector("#section4 .parallax__item__img");
-        const box5 = document.querySelector("#section5 .parallax__item__img");
-        const box6 = document.querySelector("#section6 .parallax__item__img");
-        const box7 = document.querySelector("#section7 .parallax__item__img");
-        const box8 = document.querySelector("#section8 .parallax__item__img");
-        const box9 = document.querySelector("#section9 .parallax__item__img");
+        //01. 한개 섹션 고정시키기
+        // const panel = document.querySelector("$section5");
 
-        // 01
-        gsap.to(box1, {
-            duration: 2,
-            x: 500,
-            borderRadius : 100,
-            rotation : 360
+        // ScrollTrigger.create({
+        //     trigger: panel,
+        //     strat: "top top",
+        //     pin: true,
+        //     markers: true
+
+        // });
+        
+        // 02. 여러개 섹션 고정시키기
+        // gsap.utils.toArray(".parallax__item").forEach((panel, i) => {
+        //     ScrollTrigger.create({
+        //         trigger: panel,
+        //         start: "top top",
+        //         pin: true,
+        //         pinSpacing: false
+        //     })
+        // });
+
+        // 03. 스냅 고정 효과 만들기
+        let panels = gsap.utils.toArray(".parallax__item");
+        let tops = panels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
+
+        panels.forEach((panel, i) => {
+            ScrollTrigger.create({
+                trigger: panel,
+                start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+                pin: true, 
+                pinSpacing: false 
+            });
         });
 
-        // 02 : trigger(시발점)
-        gsap.to(box2, {
-            duration: 2,
-            x: 500,
-            rotation: 360,
-            borderRadius: 100,
-            scrollTrigger:{
-                trigger: box2
+        ScrollTrigger.create({
+            snap: {
+                snapTo: (progress, self) => {
+                    let panelStarts = tops.map(st => st.start), 
+                    snapScroll = gsap.utils.snap(panelStarts, self.scroll()); 
+                    return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll); 
+                },
+                duration: 0.5
             }
         });
-
-        //03 : toggleActions
-        gsap.to(box3, {
-            duration : 2,
-            x : 500,
-            rotation : 360,
-            borderRadius : 100,
-            scrollTrigger: {
-                trigger : box3,
-                toggleActions: "play none reverse none" // play pause resume reverse restart reset complete none
-                                                        // onEnter inLeave onEnterBack onLeaveBack
-            }
-        });
-
-        //04 : start, end 
-        gsap.to(box4, {
-            duration : 2,
-            x : 500,
-            rotation : 360,
-            borderRadius : 100,
-            scrollTrigger: {
-                trigger : box4,
-                start: "top 60%",
-                end : "bottom 20%",
-                toggleActions: "play none reverse none",
-                markers: false
-            }
-        });
-
-        //05. scrub
-        gsap.to(box5, {
-            duration : 2,
-            x : 500,
-            rotation : 360,
-            borderRadius : 100,
-
-            scrollTrigger: {
-                trigger : box5,
-                start: "top 50%",
-                end : "bottom 20%",
-                scrub: 2   //true        
-                
-            }
-        });
-
-        //06. pin
-        gsap.to(box6, {
-            duration : 2,
-            x : 500,
-            rotation : 360,
-            borderRadius : 100,
-
-            scrollTrigger: {
-                trigger : box6,
-                start: "top 50%",
-                end : "bottom 400px",
-                scrub: true,
-                pin: true                      
-            }
-        });
-
-        //07. toggleClass
-        gsap.to(box7, {
-            duration : 2,
-            x : 500,
-            rotation : 360,
-            borderRadius : 100,
-
-            scrollTrigger: {
-                trigger : box7,
-                start: "top center",
-                end : "bottom 20%",
-                scrub: true,
-                toggleClass: "active",
-                id: "box7",
-                markers: true                     
-            }
-        });
-
-        //08. callback
-        gsap.to(box8, {
-            duration : 2,
-            x : 500,
-            rotation : 360,
-            borderRadius : 100,
-
-            scrollTrigger: {
-                trigger : box8,
-                start: "top center",
-                end : "bottom 20%",
-                scrub: true,
-                // onEnter: () => {console.log("onEnter")},
-                // onLeave: () => {console.log("onLeave")},
-                // onEnterBack: () => {console.log("onEnterBack")},
-                // onLeaveBack: () => {console.log("onLeaveBack")},
-                onUpdate: (self) => {console.log("onUpdate", self.progress.toFixed(3))},
-                onToggle: (self) => {console.log("onToggle", self.isActive)}
-            }
-        });  
-
-
     </script>
 </body>
 </html>

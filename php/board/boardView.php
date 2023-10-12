@@ -53,6 +53,10 @@
 <?php
     $boardID = $_GET['boardID'];
 
+    // 보도 뷰 + 1
+    $sql = "UPDATE board SET boardView = boardView + 1 WHERE boardID = {$boardID}";
+    $connect -> query($sql);
+
     $sql = "SELECT b.boardTitle, m.youName, b.regtime, b.boardView, b.boardContents FROM board b JOIN members m on(b.memberID = m.memberID) WHERE b.boardID = {$boardID}";
     $result = $connect -> query($sql);
 

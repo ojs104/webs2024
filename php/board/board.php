@@ -133,7 +133,7 @@
 
             <div class="board__pages">
                 <ul>
-                <?php
+<?php
     // 총 페이지 갯수
     $boardTotalCount = ceil($boardTotalCount/$viewNum);
 

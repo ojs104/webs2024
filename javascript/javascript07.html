@@ -60,7 +60,158 @@
          
         </main>
         <!-- //main -->
+        <div class="main__sample">
+            <div id="sample01" class="sample">
+                <h3>01. Math.random()</h3>
+                <p>랜덤값 반환(0~1 사이의 난수 값을 반환) - 반환(숫자)</p>
+<pre><code class="language-js">{
+const randomNumber = Math.floor(Math.random() * 10) + 1;    // 1~10 사이 숫자 랜덤
+}
+</code></pre>
+            </div>
+            <!-- //sample01 -->
 
+            <div id="sample02" class="sample">
+                <h3>02. Math.round()</h3>
+                <p>반올림 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.round(4.4)); // 출력: 4 (4.4는 4로 반올림)
+console.log(Math.round(4.6)); // 출력: 5 (4.6은 5로 반올림)
+console.log(Math.round(4.5)); // 출력: 5 (4.5는 가장 가까운 정수인 5로 반올림)
+console.log(Math.round(-4.4)); // 출력: -4 (-4.4는 -4로 반올림)
+console.log(Math.round(-4.6)); // 출력: -5 (-4.6은 -5로 반올림)
+}
+</code></pre>
+            </div>
+            <!-- //sample02 -->
+
+            <div id="sample03" class="sample">
+                <h3>03. Math.floor()</h3>
+                <p>버림 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.floor(4.4)); // 출력: 4 (4.4를 내림하여 4를 반환)
+console.log(Math.floor(4.6)); // 출력: 4 (4.6을 내림하여 4를 반환)
+console.log(Math.floor(4.0)); // 출력: 4 (4.0을 내림하여 4를 반환, 소수점 이하가 0이어도 내림합니다)
+console.log(Math.floor(-4.4)); // 출력: -5 (-4.4를 내림하여 -5를 반환)
+console.log(Math.floor(-4.6)); // 출력: -5 (-4.6을 내림하여 -5를 반환)
+}
+</code></pre>
+            </div>
+            <!-- //sample03 -->
+
+            <div id="sample04" class="sample">
+                <h3>04. Math.ceil()</h3>
+                <p>올림 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.ceil(4.4)); // 출력: 5 (4.4를 올림하여 5를 반환)
+console.log(Math.ceil(4.6)); // 출력: 5 (4.6을 올림하여 5를 반환)
+console.log(Math.ceil(4.0)); // 출력: 4 (4.0은 이미 정수이므로 변경되지 않고 4를 반환)
+console.log(Math.ceil(-4.4)); // 출력: -4 (-4.4를 올림하여 -4를 반환, 음수의 경우 가장 작은 정수로 올립니다)
+console.log(Math.ceil(-4.6)); // 출력: -4 (-4.6를 올림하여 -4를 반환)
+}
+</code></pre>
+            </div>
+            <!-- //sample04 -->
+
+            <div id="sample05" class="sample">
+                <h3>05. Math.max()</h3>
+                <p>가장 큰 값 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.max(5, 2, 9, 3, 6)); // 출력: 9 (가장 큰 숫자인 9를 반환)
+console.log(Math.max(1, 1, 1, 1));    // 출력: 1 (모든 숫자가 동일하므로 1을 반환)
+console.log(Math.max(-5, -2, -9, -3, -6)); // 출력: -2 (가장 큰 숫자인 -2를 반환)
+
+// 배열에서 최대값을 찾을 때도 사용할 수 있습니다.
+const numbers = [2, 8, 1, 6, 5];
+console.log(Math.max(...numbers)); // 출력: 8 (배열에서 가장 큰 숫자인 8을 반환)
+}
+</code></pre>
+            </div>
+            <!-- //sample05 -->
+
+            <div id="sample06" class="sample">
+                <h3>06. Math.min()</h3>
+                <p>가장 작은 값 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.min(5, 2, 9, 3, 6)); // 출력: 2 (가장 작은 숫자인 2를 반환)
+console.log(Math.min(1, 1, 1, 1));    // 출력: 1 (모든 숫자가 동일하므로 1을 반환)
+console.log(Math.min(-5, -2, -9, -3, -6)); // 출력: -9 (가장 작은 숫자인 -9를 반환)
+
+// 배열에서 최소값을 찾을 때도 사용할 수 있습니다.
+const numbers = [2, 8, 1, 6, 5];
+console.log(Math.min(...numbers)); // 출력: 1 (배열에서 가장 작은 숫자인 1을 반환)
+}
+</code></pre>
+            </div>
+            <!-- //sample06 -->
+
+            <div id="sample07" class="sample">
+                <h3>07. Math.abs()</h3>
+                <p>절댓값 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.abs(5));   // 출력: 5 (양수는 그대로 반환)
+console.log(Math.abs(-8));  // 출력: 8 (음수는 양수로 변환)
+console.log(Math.abs(0));   // 출력: 0 (0도 그대로 반환)
+
+// 변수에 할당하여 사용할 수도 있습니다.
+const num = -3;
+const absNum = Math.abs(num);
+console.log(absNum);        // 출력: 3 (음수를 양수로 변환한 값)
+}
+</code></pre>
+            </div>
+            <!-- //sample07 -->
+
+            <div id="sample08" class="sample">
+                <h3>08. Math.trunc()</h3>
+                <p>값의 정수 부분만 - 반환(숫자)</p>
+<pre><code class="language-js">{
+console.log(Math.trunc(5.95));    // 출력: 5
+console.log(Math.trunc(5.05));    // 출력: 5
+console.log(Math.trunc(-5.95));   // 출력: -5
+console.log(Math.trunc(-5.05));   // 출력: -5
+console.log(Math.trunc(0));       // 출력: 0
+
+// 변수에 할당하여 사용할 수도 있습니다.
+const num = 7.87;
+const truncatedNum = Math.trunc(num);
+console.log(truncatedNum);        // 출력: 7
+}
+</code></pre>
+            </div>
+            <!-- //sample08 -->
+
+            <div id="sample09" class="sample">
+                <h3>09. Math.PI()</h3>
+                <p>원의 둘레에 대한 지름의 비율을 나타내며 약 3.1459... - 반환(숫자)</p>
+<pre><code class="language-js">{
+const radius = 5;
+const circumference = 2 * Math.PI * radius;
+console.log(circumference); // 원의 둘레 출력 (약 31.41592653589793)
+}
+</code></pre>
+            </div>
+            <!-- //sample09 -->
+
+            <div id="sample10" class="sample">
+                <h3>10. Math.sqrt()</h3>
+                <p>값의 제곱근을 반환 - 반환(숫자)</p>
+<pre><code class="language-js">{
+const number = 16;
+const squareRoot = Math.sqrt(number);
+console.log(squareRoot); // 4
+
+const negativeNumber = -16;
+const squareRootOfNegative = Math.sqrt(negativeNumber);
+console.log(squareRootOfNegative); // 음수일 땐 NaN을 반환
+}
+</code></pre>
+            </div>
+            <!-- //sample10 -->
+        </div>
+        <!-- //main__sample -->
+    </main>
+    <!-- //main -->
         <footer id="footer">
             <a href="mailto:kmdojs@gmail.com">kmdojs@gmail.com</a>
         </footer>

@@ -1,40 +1,215 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-  
-</head>
-<body>    
-    <div class="contaier">
-        <header>
-            <div class="logo">
-                <img src="../portfolio/img/logo.png">
-            </div>
-            <div class="signin">
-                <button>sign in</button>
-            </div>
-        </header>
-        <section class="hello">
-            <div class="slider">
-                <h1>...</h1>
-                <h5>...</h5>
-                <p>...</p>
-                <div class="started">
-                    <input type="email"><button></button>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문제적 남자 - 인덱스</title>
 
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+      .wrap {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1160px;
+        margin: 0 auto;
+      }
 
-        </section>
-        <section class="enjoy"></section>
-        <section class="download"></section>
-        <section class="watch"></section>
-        <section class="create"></section>
-        <section class="faq"></section>
-        <footer></footer>
+      .html,
+      .php,
+      .figma {
+        width: 33.333%;
+        margin: 0 auto;
+        text-align: center;
+
+        font-weight: bold;
+        color: #129;
+        position: relative;
+        /* padding: 40px; */
+      }
+
+      .hover {
+        color: #000;
+        margin-bottom: 40px;
+        font-size: 22px;
+      }
+      .hover:hover {
+        color: #129;
+      }
+
+      /* 전체 */
+      .AllTopDown {
+        padding: 60px 0;
+        background-color: #FAF7F0;
+      }
+
+      .wrap div:nth-child(3) .F_cont ul {
+        border-right: none;
+      }
+
+      /* 피그마 : 로그인 */
+      .F_cont ul {
+        border-right: 0.5px solid #ededed;
+        padding: 0 25px;
+      }
+
+      .F_cont h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+        padding: 0 25px;
+        border-left: 2px solid #129;
+      }
+      .F_cont ul {
+        text-align: left;
+        font-size: 20px;
+        margin-bottom: 60px;
+      }
+      .F_cont ul:last-child {
+        margin-bottom: 0px;
+      }
+      .F_cont ul li {
+        /* border-bottom: Dashed 1px #ededed; */
+        padding: 15px 0;
+      }
+      .F_cont ul li a {
+        font-weight: normal;
+        font-size: 16px;
+      }
+      .F_cont ul li:hover {
+        /* background: #f1f1f485;
+        border-radius: 50px; */
+        padding: 15px 0px 15px 51px;
+        transition: 0.25s;
+        /* backdrop-filter: blur(8px); */
+        background-color: #F2E2DE;
+        border-radius: 20px;
+      }
+      .F_cont ul li:hover a {
+        color: #129;
+      }
+      .F_cont ul li:not(:hover) {
+        transition: 0.25s;
+      }
+    </style>
+  </head>
+  <body class="AllTopDown">
+    <h2
+      style="
+        text-align: center;
+        font-size: 50px;
+
+        margin-bottom: 70px;
+      "
+    >
+      iNDEX・뇌섹남녀
+    </h2>
+    <div class="wrap">
+      <div class="figma">
+        <a
+          href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design"
+          target="_blank"
+          ><h2 class="hover">Figma</h2></a
+        >
+        <div class="F_cont">
+          <h2>로그인•회원가입</h2>
+          <ul class="F_login">
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">로그인</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">비밀번호 찾기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">회원가입</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">회원가입 완료</a>
+            </li>
+          </ul>
+          <h2>게시판</h2>
+          <ul class="F_board">
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">게시판 메인</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">게시판 보기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">게시판 글쓰기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/saJOvzuL1dQ7l7mpyBslSe/%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=157-1113&mode=design">게시판 수정</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="html">
+        <a href="#" target="_blank"
+          ><h2 class="hover">html</h2></a
+        >
+        <div class="F_cont">
+          <h2>로그인•회원가입</h2>
+          <ul class="H_login">
+            <li>
+                <a href="#">로그인</a>
+              </li>
+              <li>
+                <a href="#">비밀번호 찾기</a>
+              </li>
+              <li>
+                <a href="#">회원가입</a>
+              </li>
+              <li>
+                <a href="#">회원가입 완료</a>
+              </li>
+          </ul>
+          <h2>게시판</h2>
+          <ul class="H_board">
+            <li>
+                <a href="#">게시판 메인</a>
+              </li>
+              <li>
+                <a href="#">게시판 보기</a>
+              </li>
+              <li>
+                <a href="#">게시판 글쓰기</a>
+              </li>
+              <li>
+                <a href="#">게시판 수정</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="php">
+        <a href="" target="_blank"><h2 class="hover">PHP</h2></a>
+        <div class="F_cont">
+            <h2>MAIN</h2>
+          <ul>
+            <li><a href="#">메인</a></li>
+          </ul>
+        </div>
+        <div class="F_cont">
+          <h2>로그인•회원가입</h2>
+          <ul class="P_login">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">비밀번호 찾기</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">회원가입 완료</a></li>
+          </ul>
+          <h2>게시판</h2>
+          <ul class="P_board">
+            <li><a href="">게시판 메인</a></li>
+            <li><a href="">게시판 보기</a></li>
+            <li><a href="">게시판 글쓰기</a></li>
+            <li><a href="">게시판 수정</a></li>
+            <li><a href="">게시판 수정 완료</a></li>
+            <li><a href="">게시판 검색</a></li>
+            <li><a href="">게시판 삭제</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-</body> 
+  </body>
 </html>

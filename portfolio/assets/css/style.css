@@ -1,15 +1,29 @@
 .header__inner {
     display: flex;
     justify-content: space-between;
-    height: 70px;
     align-items: center;
     padding: 0 20px;
-    border-bottom: 1px solid #ccc;
+    background-color: #ecebeb;
+    color: #eee;
+    /* height: 70px;
+   
+    border-bottom: 1px solid #ccc; */
+    
 }
+.header__logo {
+    text-align: center;
+    flex: 1;
+}
+.header__logo a {
+
+} 
 .header__nav ul {
-    display: flex;
+    padding: 0;
+    margin: 0;
 }
 .header__nav li {
+    display: inline-block;
+    margin-right: 20px; /* 메뉴 간격 지정 */
 }
 .header__nav li a {
     width: 120px;
@@ -28,46 +42,17 @@
     background-color: #e9e4ff;
     color: #412c86;
 }
-.header__ham{
-    width: 40px;
-    height: 40px;
-    display: none;
+.header__login {    
+    text-align: right;
+    display: inline-block;
+    width: 
+    
 }
-.header__ham a{
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 17px 0 0 8px;
+.header__login ul a {
+    display: inline-block;
 }
-.header__ham a span{
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: #ccc;
-    position: relative;
-    border-radius: 3px;
-    background-color: #412c86;
-}
-.header__ham span::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: #412c86;
-    border-radius: 3px;
-    position: absolute;
-    bottom: 7px;
-}
-.header__ham span::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: #412c86;
-    border-radius: 3px;
-    position: absolute;
-    top: 7px;
-}
+
+
 @media (max-width : 1200px){
     .header__nav {
         display: none;

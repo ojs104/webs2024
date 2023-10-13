@@ -37,7 +37,7 @@ pre code.hljs {
 }
 .modal__box .title {
     padding: 1rem;
-    background-color: #1b1c2e;
+    background-color: #8957cdde;
     display: flex;
     align-items: center;
     color: #fff;
@@ -123,7 +123,7 @@ pre code.hljs {
     position: absolute;
     right: 20px;
     top: 20px;
-    background-color: #ffffff;
+    background-color: #8957cdde;
     padding: 1rem 1rem 0.8rem 1rem;
     border-radius: 5px;
     cursor: pointer;

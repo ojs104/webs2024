@@ -1,18 +1,22 @@
 $(function(){
     // 슬라이드 : 페이드 효과
     let currentIndex = 0;
-    $(".slider").hide().first().show();
+    $(".sliderWrap").append($(".slider").first().clone(true)); //첫번째 이미지를 복사해서 마지막에 추가
 
-    setInterval(function(){
-        let nextIndex = (currentIndex+1) % 3; 
-
-        $(".slider").eq(currentIndex).fadeOut(1200);
-        $(".slider").eq(nextIndex).fadeIn(1200);
-
-        currentIndex = nextIndex;
+    setInterval(function(){     // 3초에 한번씩 실행해라
+        currentIndex++;          //현재 이미지를 1씩 증가
+        $(".sliderWrap").animate({marginTop: -350 * currentIndex + "px"}, 600);
+        
+        if(currentIndex == 3){  //마지막 이미지가 됐을때
+            setTimeout(function(){  //한번만 실행
+                $(".sliderWrap").animate({marginTop:0}, 0);     //애니메이션 정지
+                currentIndex = 0;       //이미지를 초기화
+            }, 700);           
+               
+        }
     }, 3000);
 
-    // 메뉴 : 하나씩 나오기
+    // 메뉴 
     $(".nav > ul > li").mouseover(function(){
         $(this).find(".submenu").stop().slideDown(200);
     });
@@ -20,18 +24,7 @@ $(function(){
         $(this).find(".submenu").stop().slideUp(200);
     });
 
-    // 탭메뉴
-    const tabBtn = $(".info-menu > a");
-    const tabCont = $(".info-cont > div");
-    tabCont.hide().eq(0).show();
-
-    tabBtn.click(function(){
-        const index = $(this).index();
-
-        $(this).addClass("active").siblings().removeClass("active");
-        tabCont.eq(index).show().siblings().hide();
-    });
-
+   
     // 팝업
     $(".popup-btn").click(function(){
         $(".popup-view").show();

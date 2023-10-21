@@ -1,0 +1,527 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,900);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+
+
+
+
+img {
+    width: 100%;
+    vertical-align: top;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#main {
+    display: flex;
+    width: 100%;
+    
+}
+#aside{
+    width: 20%;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+   
+}
+#aside ul {
+   position: relative;
+   left: 8%;
+}
+
+
+#aside ul li a {
+    display: block;
+    position: relative;
+   
+    line-height: 2;
+    border: 1px inset red;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 60%;
+}
+
+#aside ul li a:hover {
+    background-color: var(--colorS);
+   
+}
+.aside__nav__phone {
+    display: none;
+    
+}
+
+
+
+
+/* container */
+#container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;  
+    margin: 10px;
+    position: relative;
+    left: 15%;
+}
+
+#container .container-nav {
+    display: inline-block;
+   
+}
+#container .container-nav h3 {
+    font-size: 2rem;
+    line-height: 2;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+#container .container-nav h2 {
+    font-size: 1rem;
+    line-height: 2;
+    color: var(--primary-color);
+}
+
+#container .container-nav p {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 29px;
+    
+}
+#container .container-nav .list {
+    margin: 10px;
+    position: relative;
+    left: 0;
+    top: 0;
+    border: 1px solid #ffffff;
+    padding: 85px 0 26px 0;
+    margin-bottom: 45px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(to right, var(--colorB) 20%, var(--colorS) 80% );
+}
+#container .container-nav .list h3 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 44px;
+}
+#container .container-nav .list h2 {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 44px;
+}
+#container .container-nav .list span {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2;
+    color: var(--primary-color);
+
+}
+
+/* contents */
+.contents{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+/* section */
+.contents .section {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+/* create */
+.create {
+    flex-wrap:  wrap;
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+.c01,
+.c02,
+.c03,
+.c04,
+.c05,
+.c06,
+.c07,
+.c08 {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.heart {
+    position: relative;
+    top: 5%;
+    left: 0%; 
+   
+    
+  
+    transition: 0.5s; 
+}
+
+.heart .ion-heart {
+    color: gold;
+}   
+
+/* math */
+.math {
+    flex-wrap:  wrap;
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+
+/* reasoning */
+.reasoning {
+    flex-wrap:  wrap;
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+/* matchstick */
+.matchstick{
+    flex-wrap:  wrap;
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+/* etc */
+.etc {
+    flex-wrap:  wrap;
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+
+
+
+
+
+/* footer */
+
+.footerwrap {
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+    height: 120px;
+    background-color: #283269;
+}
+
+.footer__logo img {
+    width: 100%;
+    transform: translatey(5%);
+}
+
+.footer2 {
+    display: flex;
+}
+
+.footer_us ul {
+    display: flex;
+    margin-right: 40px;
+}
+
+
+.footer_us ul li a {
+    color: #fff;
+    font-weight: lighter;
+    padding: 10px 30px;
+}
+@media (max-width: 850px) {
+    .footerwrap {
+        padding: 0 20px;
+        height: 80px;
+    }
+
+    .footer2 {
+        font-size: 0.9rem;
+    }
+
+    .footer_us ul li a {
+        padding: 5px 10px;
+    }
+
+    .footer_us ul {
+        margin-right: 10px;
+    }
+
+    .footer__logo img {
+        width: 80px;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .footerwrap {
+        height: 60px;
+    }
+
+    .footer__logo img {
+        width: 60px;
+    }
+
+    .footer2 {
+        font-size: 0.7rem;
+    }
+
+    .footer_us ul {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 1250px){
+    .create .c01,
+    .create .c02,
+    .create .c03,
+    .create .c04,
+    .create .c05,
+    .create .c06,
+    .create .c07,
+    .create .c08 {
+        width: 45%;
+      
+    }
+    .math .c01,
+    .math .c02,
+    .math .c03,
+    .math .c04,
+    .math .c05,
+    .math .c06,
+    .math .c07,
+    .math .c08 {
+        width: 45%;
+      
+    }
+    .reasoning .c01,
+    .reasoning .c02,
+    .reasoning .c03,
+    .reasoning .c04,
+    .reasoning .c05,
+    .reasoning .c06,
+    .reasoning .c07,
+    .reasoning .c08 {
+        width: 45%;
+      
+    }
+
+    .matchstick .c01,
+    .matchstick .c02,
+    .matchstick .c03,
+    .matchstick .c04,
+    .matchstick .c05,
+    .matchstick .c06,
+    .matchstick .c07,
+    .matchstick .c08 {
+        width: 45%;
+      
+    }
+
+    .etc .c01,
+    .etc .c02,
+    .etc .c03,
+    .etc .c04,
+    .etc .c05,
+    .etc .c06,
+    .etc .c07,
+    .etc .c08 {
+        width: 45%;
+      
+    }
+    
+}
+
+@media (max-width: 960px) {
+    #container .container-nav .list h3{
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-top: 20px;
+    }
+}
+
+
+
+@media (max-width: 750px){
+    #container .container-nav .list {
+        padding: 20px;
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: -30px;
+        text-align: center;
+        
+    }
+    #container .container-nav .list h3{
+        margin-top: 50px;
+        
+    }
+
+
+    #container .container-nav .list p{
+        font-size: 1rem;
+       
+    }
+
+
+
+}
+
+@media (max-width: 600px){
+    #container .container-nav .list h3 {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+}
+
+
+@media (max-width: 550px){
+   
+    #aside .aside__nav {
+        position: relative;
+        display: block;
+    }
+    .aside__nav a {
+        font-size: 0.8rem;
+    }
+    #container {
+        margin-top: 30px;
+    }
+  
+    #container .container-nav h3{
+        font-size: 1.3rem;
+
+    }
+}
+
+@media (max-width: 440px){
+    
+    #aside .aside__nav {
+        display: none;
+    }
+    .aside__nav__phone {
+        display: block;
+        position: relative;
+    }
+
+    .aside__nav__phone a {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        white-space: nowrap;
+        left: 0;
+        top: 0;
+        position: absolute;
+        padding: 10px;
+        
+        
+       
+    }
+    #aside{
+        width: 20%;
+    }
+    #aside ul li a{
+        font-size: 0.8rem;
+    }
+    #container .container-nav h2 {
+        font-size: 0.9rem;
+    }
+
+
+
+    #container .container-nav .list h3 {
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    #container .container-nav .list h2 {
+        font-size: 1rem;
+        line-height: 2;
+        position: relative;
+        left: 0;
+    }
+    #container .container-nav .list span{
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+    #container .container-nav .list p{
+        font-size: 0.8rem;
+    }
+   
+}
+
+@media (max-width: 400px){
+   
+    #container .container-nav {
+        padding: 10px;
+        margin: 0;
+    }
+    
+    
+    #container .container-nav .list {
+        padding: 25px 10px 10px 0;
+    }
+    #container .container-nav .list h3 {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    #container .container-nav .list p{
+        font-size: 0.6rem;
+    }
+    /* #container .contents .section {
+        padding: 0;
+        margin: 0;
+    } */
+    #container .contents .section .create{
+        padding: 0;
+        margin: 20px;
+    }
+
+
+   
+}
+@media (max-width: 375px){
+    #aside{
+        width: 19%;
+    }
+    #container .container-nav {
+        padding:10px;
+        margin: 0;
+    }
+    #container .container-nav h3 {
+        font-size: 1.4rem;
+       
+    }
+
+    #container .container-nav .list h3 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    #container .container-nav .list p{
+        font-size: 0.6rem;
+    }
+
+    
+   
+}
+
+

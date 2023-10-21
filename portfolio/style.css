@@ -1,0 +1,66 @@
+/* Main 스타일링 */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#aisde {
+    background-color: #fff;
+    width: 20%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contents {
+    background-color: #fff;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer 스타일링 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.card__wrap {
+    margin-top: 20px;
+}
+
+.card__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card__inner figure {
+    margin: 0;
+    padding: 0;
+}
+
+.card__inner img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card__inner h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.line3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

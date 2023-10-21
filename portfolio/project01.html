@@ -1,22 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="KO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
+    <!-- <link rel="stylesheet" href="../portfolio/css/main.css"> -->
+    <link rel="stylesheet" href="../portfolio/css/reset.css">
+    <link rel="stylesheet" href="../portfolio/css/commons.css">
+    <link rel="stylesheet" href="../portfolio/css/quiz.css">
+    <link rel="stylesheet" href="../portfolio/css/vars.css">
+    <link rel="stylesheet" href="../portfolio/css/header_login.css">
+
 </head>
 <body>
-    <div class="page">        
-        <header class="header">
-            <h1 class="website-title">뇌섹남녀</h1>
+    <div id="wrap">
+        <header id="header">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="../portfolio/project01.html">문제</a></li>
+
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <div class="header__logo">
+                <a href="home.html"><img src="../portfolio/img/logo.png" alt="뇌섹남녀" href></a>
+            </div>
+            <div class="header__right">
+                <input type="search" class="search" name="allSearchValue" autocomplete="off" role="combobox" placeholder="검색" aria-live="polite"> <!-- aria-controls="matches" aria-expanded="false"  -->
+                <a class="logout" href="#">로그아웃</a>
+                <a class="propile" href="#">뇌섹</a>
+                <!-- <img src="" alt="프로필"> -->
+            </div>
         </header>
         <!-- header -->
-        <main class="main">
 
-        </main>
+        <div id="main">
+            <div id="aside">
+                <ul class="aside__nav">
+                    <li>
+                        <a href="../portfolio/project02.html">    
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                                <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                            </svg>
+                            창의력 문제 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../portfolio/project03.html">               
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-superscript" viewBox="0 0 16 16">
+                                <path d="m4.266 12.496.96-2.853H8.76l.96 2.853H11L7.62 3H6.38L3 12.496h1.266Zm2.748-8.063 1.419 4.23h-2.88l1.426-4.23h.035Zm5.132-1.797v-.075c0-.332.234-.618.619-.618.354 0 .618.256.618.58 0 .362-.271.649-.52.898l-1.788 1.832V6h3.59v-.958h-1.923v-.045l.973-1.04c.415-.438.867-.845.867-1.547 0-.8-.701-1.41-1.787-1.41C11.565 1 11 1.8 11 2.576v.06h1.146Z"/>
+                            </svg>
+                            수학 문제
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../portfolio/project04.html"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-question" viewBox="0 0 16 16">
+                                <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745z"/>
+                                <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
+                                <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
+                            </svg>
+                            추리 문제
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../portfolio/project05.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-magic" viewBox="0 0 16 16">
+                                <path d="M9.5 2.672a.5.5 0 1 0 1 0V.843a.5.5 0 0 0-1 0v1.829Zm4.5.035A.5.5 0 0 0 13.293 2L12 3.293a.5.5 0 1 0 .707.707L14 2.707ZM7.293 4A.5.5 0 1 0 8 3.293L6.707 2A.5.5 0 0 0 6 2.707L7.293 4Zm-.621 2.5a.5.5 0 1 0 0-1H4.843a.5.5 0 1 0 0 1h1.829Zm8.485 0a.5.5 0 1 0 0-1h-1.829a.5.5 0 0 0 0 1h1.829ZM13.293 10A.5.5 0 1 0 14 9.293L12.707 8a.5.5 0 1 0-.707.707L13.293 10ZM9.5 11.157a.5.5 0 0 0 1 0V9.328a.5.5 0 0 0-1 0v1.829Zm1.854-5.097a.5.5 0 0 0 0-.706l-.708-.708a.5.5 0 0 0-.707 0L8.646 5.94a.5.5 0 0 0 0 .707l.708.708a.5.5 0 0 0 .707 0l1.293-1.293Zm-3 3a.5.5 0 0 0 0-.706l-.708-.708a.5.5 0 0 0-.707 0L.646 13.94a.5.5 0 0 0 0 .707l.708.708a.5.5 0 0 0 .707 0L8.354 9.06Z"/>
+                            </svg>
+                            성냥개비 문제
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../portfolio/project06.html">                 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-boxes" viewBox="0 0 16 16">
+                                <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
+                            </svg>
+                            기타 문제
+                        </a>
+                    </li>
+                </ul>
+                <ul class="aside__nav__phone">
+                    <li>
+                        <a href="#">창의력</a>
+                    </li>
+                    <li>
+                        <a href="#">수학
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"> 
+                            추리 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">성냥
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">기타</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- aside -->
+            <div id="container">
+                <div class="container-nav">
+                    <h3>뇌섹 남녀</h3>
+                    <div class="list">
+                        <h3>각 문제에 좋아요 표시를 하세요!<br>찜 목록에서 확인할 수 있습니다.</h3>
+                        <p> 창의력 문제 외에도 다양한 문제가 있습니다. 도전해보세요!</p>
+                    </div>
+                </div>
+
+
+
+                <div class="contents">
+                    <div class="section">
+                        <div class="create">
+                            <div class="c01">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c02">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c03">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div> 
+                                <img src="../portfolio/img/quiz01.jpg">
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                            </div>
+                            <div class="c04">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div> 
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                        
+                            <div class="c05">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div> 
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c06">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div> 
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c07">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div> 
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c08">
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div> 
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            
+                        </div>
+                        <!-- create -->
+
+                        <div class="math">
+                            <div class="c01">
+                                
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c02">
+                                
+                                <div class="heart">
+                                    <a href="#"> <i class="ion-heart"></i></a>
+                                </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c03">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c04">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c05">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c06">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c07">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                            <div class="c08">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz02.jpg">
+                            </div>
+                           
+                        </div>
+
+                        <div class="reasoning">
+                            <div class="c01">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c02">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c03">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c04">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c05">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c06">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c07">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                            <div class="c08">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz03.jpg">
+                            </div>
+                           
+                        </div>
+
+                        <div class="matchstick">
+                            <div class="c01">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c02">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c03">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c04">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c05">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c06">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c07">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                            <div class="c08">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz04.jpg">
+                            </div>
+                           
+                        </div>
+
+                        <div class="etc">
+                            <div class="c01">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c02">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c03">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c04">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c05">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c06">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c07">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            <div class="c08">
+                                <div class="heart">
+                                     <a href="#"> <i class="ion-heart"></i></a>
+                                 </div>
+                                <a href="#" class="go" title="콘텐츠 바로가기"></a>
+                                <img src="../portfolio/img/quiz01.jpg">
+                            </div>
+                            
+                        </div>
+                        <!-- etc -->
+                    </div>
+                    <!-- section -->
+                </div>
+                <!-- contents -->
+
+                
+            </div>
+            <!-- container -->
+        </div>
         <!-- main -->
 
-         
+        <div id="footer">
+            <div class="footerwrap">
+                <div class="footer__logo"><img src="../portfolio/img/footer_logo.png" alt="logo02"></div>
+            <div class="footer2">
+                <div class="footer_us">
+                    <ul>
+                        <li><a href="#">권초록</a></li>
+                        <li><a href="#">오종석</a></li>
+                        <li><a href="#">이원영</a></li>
+                        <li><a href="#">이혜민</a></li>
+                    </ul>
+                </div>
+                <div class="copylight">© 2023 뇌섹남녀</div>
+            </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <script>
+            /* Demo purposes only */
+            $(".hover").mouseleave(
+            function () {
+                $(this).removeClass("hover");
+            }
+            );
+
+            
+        </script>
+
+        
     </div>
+    s
 </body>
 </html>

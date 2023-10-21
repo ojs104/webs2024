@@ -50,7 +50,6 @@ input,
 select,
 table,
 textarea {
-    font-family: "nanumSquareNeo", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -139,3 +138,37 @@ address {
        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.ttf") format("truetype");
   font-display: swap;
 } 
+@font-face {
+  font-family: 'SOYOMapleBoldTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BookkMyungjo-Bd';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* input 기본 설정 초기화 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    appearance: none;
+    position: absolute;
+    right: 0;
+}
+
+/* select 기본 설정 초기화 */
+/* IE */
+select::-ms-expand { 
+	display: none;
+}
+select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

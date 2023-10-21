@@ -1,0 +1,401 @@
+:root {
+    --htmlColor: #620c65;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "NexonLv1Gothic";
+    color: var(--htmlColor);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #6312af;
+    text-decoration: none;
+}
+
+/* header */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+#header h1 a {
+    font-family: "LotteriaDdag";
+}
+#header nav {
+    margin: 10px;
+}
+
+#header nav li {
+    position: relative;
+    display: inline;
+}
+
+#header nav li a {
+    width: 30px;
+    height: 30px;   
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: "LotteriaDdag";
+}
+
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #b375db54;
+    padding: 30px;
+    text-align: center;
+}
+
+.search__title>span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.search__title > h2 {
+    font-family: "LotteriaDdag";
+    color: var(--htmlColor);
+    font-size: 4vw;
+    margin-bottom: 10px;
+}
+
+
+/* search__star */
+.search__star {
+    
+}
+
+.search__star li {
+    display: inline-block;  
+    border: 1px solid var(--htmlColor);
+    padding: 10px 30px;
+    color: rgb(209, 193, 100);
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px; 
+    border-radius: 50%;
+}
+.search__list li:hover {
+    background-color: #9236ad80;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.search__wrap .desc {
+    line-height: 1.4;
+    padding: 20px 0;
+}
+
+.search__wrap .time {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--htmlColor);
+}
+.search__wrap .time span {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 100;
+}
+.search__wrap li a {
+    font-size: 34px;
+}
+
+
+.search__box {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+ 
+#searchButton {
+    border: 2px solid #da0f96;
+    padding: 17px 36px;
+    border-radius: 50px;
+    background-color: #811b70;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 40%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__box p {
+    margin-top: 10px;
+}
+.search__box p em {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-style: normal;
+}
+
+.search__box .start {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: #223547;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* search__list */
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.search__list li.show {
+    display: block;
+}
+
+.search__list li.hide {
+    display: none;
+}
+
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px outset var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span.active {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+
+
+
+/* 선택된 항목 스타일링 */
+.search__list span.selected {
+    background-color: #3495db;
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+
+.search__list .line {
+    margin: 50px 0;
+}
+
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+
+.search__list .line li:hover {
+    background: #d3e2fa;
+    cursor: pointer;
+}
+
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+
+.search__info.center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 40px;
+}
+
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+.search__select {
+    margin: 30px 0 20px ;
+}
+.search__select span {
+    padding: 10px;
+    border: 2px solid var(--htmlColor);    
+}
+.search__select span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+
+.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.search__click li {
+    display: inline;
+}
+
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+.search__answers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding-bottom: 40px;
+}
+
+
+.search__box__result {
+    margin-top: 50px;
+    border-top: 2px dashed var(--htmlColor);
+    border-bottom: 2px dashed var(--htmlColor);
+    padding: 20px;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+/* footer */
+#footer {
+    text-align: center;
+    padding: 20px;
+}
+
+#footer a {
+    color: #000;
+    font-family: "NexonLv1Gothic";
+    padding-bottom: 50px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+
+

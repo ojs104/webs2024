@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #283269;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-weight: 400;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-weight: 400;
+}
+#wrap {
+    display: flex;
+}
+#menu {
+    
+}
+#nav {
+    width: 300px;
+    padding: 20px;
+}
+#nav h3 {
+    margin: 10px 0;
+}
+#nav li a {
+    border: 1px solid #283269;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: all 0.1s;
+    color:#283269;
+}
+#nav li a:hover {
+    background-color: #283269;
+    color: #fff;
+}
+#nav .webd {
+    margin-top: 50px;
+}
+#nav .webd li {
+    width: 55px;
+    display: inline-block;
+    text-align: center;
+}
+#main {
+    width: 100%;
+    min-height: 100vh;
+}
+#main iframe {
+    width: 100%;
+    height: 100%;
+}
+.menu ul {
+    margin-bottom: 50px;
+}
+.menu ul li {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #283269;
+    cursor: pointer;
+}
+.menu ul li.active {
+    background-color: #283269;
+    color: #fff;
+}
+.contents > div {
+    display: none;
+}
+.contents > div:nth-child(2) {
+    display: block;
+}

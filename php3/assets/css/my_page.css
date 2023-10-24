@@ -1,0 +1,267 @@
+#wrap {
+    color: #283269;
+    font-size: 1rem;
+}
+#header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page__header {
+    height: 7rem;
+}
+#header .nav ul {
+    display: flex; 
+    align-items: left;
+}
+#header .nav ul li {
+    padding: 20px;
+}
+
+#header .nav ul li a {
+    display: inline-block;
+    margin-left: 2rem;
+}
+#header .nav ul li a:hover {
+    color: #9E3436;
+}
+#header .logo2 {
+    display: flex; 
+}
+.header__right {
+    margin-right: 3rem;
+    position: relative;
+}
+.header__right .logout {
+    margin-right: 3rem;
+    color: #fff;
+    background-color: #283269;
+    padding: 20px 30px;
+    border-radius: 35px;
+}
+.header__right .logout::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: #283269;
+    border-radius: 100%;
+    top: 50%;
+    right: 38%;
+    transform: translate(-50%, -50%);
+}
+.header__right .propile {
+    color: #C5AAA4;
+    padding: 25px 20px;
+    border-radius: 50%;
+    background-color: #F2E2DE;
+    display: inline-block;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* profil */
+.profil {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profil > div {
+    margin-left: 3rem;
+}
+.profil .pofil__name {
+    font-size: 30px;
+    font-weight: 900;
+}
+.profil .pofil__locate {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+/* nav */
+.profil__nav {
+    width: 80%;
+    margin: 4rem 0 2rem 0;
+}
+.profil__nav::after {
+    content: '';
+    border-bottom: 1px solid #283269;
+}
+
+.profil__nav > ul > li {
+    display: inline-block;
+    margin-right: 4rem;
+    
+}
+.profil__nav > ul > li > a {
+    font-size: 20px;
+}
+.profil__nav > ul > li > a:hover {
+    color: #9E3436;
+}
+.like__list__wrap {
+    border-top: 1px solid #CEDFFD;
+    width: 85%;
+    margin-bottom: 100px;
+}
+.like__list {
+    justify-content: space-between;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.like__list .like__first {
+    border: 2px dotted #A7BEE7;
+    width: 30%;
+    /* height: 22.5rem; */
+    border-radius: 30px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.like__list .like__first .svg {
+    background-image: url(../img/like.svg);
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+}
+.like__list .like__first button {
+    margin-top: 2rem;
+}
+.like__list .like {
+    width: 30%;
+    height: 22.5rem;
+    border-radius: 30px;
+    background: linear-gradient(#CEDFFD 20%, #FAF7F0);
+    margin: 1rem;
+}
+
+#footer {
+    width: 100%;
+    height: 80px;
+    background-color: #283269;
+    display: flex;
+    align-items: center;
+}
+.footer__logo {
+    background-image: url(../img/footer_logo.png);
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 50px;
+    margin-left: 5rem;
+}
+.name {
+    color: #fff;
+    width: 80%;
+}
+.name ul {
+    display: flex;
+    text-align: right;
+    justify-content: right;
+}
+.name ul li {
+    margin-right: 2rem;
+}
+@media (max-width: 1200px){
+    .like__list .like__first {
+        width: 40%;
+    }
+    .like__list .like {
+        width: 40%;
+    }
+}
+@media (max-width: 900px) {
+    #header {
+        height: 70px;
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .nav ul li a {
+        padding: 8px 5px;
+    }
+
+    .header__right a {
+        padding: 8px 15px;
+    }
+    .header__right .logout {
+        padding: 15px;
+        margin-right: 0;
+    }
+    .header__right .logout::after {
+        width: 0;
+        height: 0;
+    }
+    .header__right .propile {
+        display: none;
+    }
+    .profil__nav > ul > li > a {
+        font-size: 17px;
+    }
+    .like__list__wrap {
+        width: 90%;
+    }
+    .like__list .like__first {
+       width: 45%;
+    }
+    .like__list .like {
+       width: 45%;
+       margin: 10px;
+    }
+}
+@media (max-width: 700px){
+    #header .nav ul li {
+        padding: 0;
+    }
+    .logo2 a img {
+        width: 80px;
+    }
+    .header__right .logout {
+        display: inline-block;
+        font-size: 12px;
+        align-items: center;
+    }
+    .profil__nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .profil__nav > ul > li {
+        text-align: center;
+        margin-right: 0;
+    }
+    .profil__nav ul li a {
+        margin: 0 1.5rem;
+    }
+    .like__list {
+        display: flex;
+        justify-content: center;
+    }
+    .like__list .like__first {
+        width: 60%;
+        height: 22.5rem;
+     }
+     .like__list .like {
+        width: 60%;
+     }
+    .footer__logo {
+        width: 30%;
+        margin-left: 1rem;
+    }
+    .name {
+        width: 70%;
+        font-size: 12px;
+    }
+}

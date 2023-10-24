@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뇌섹남녀 index</title>
+
+    <link href="https://websfont.github.io/pyeongChangPeace/pyeongChangPeace.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <nav id="nav">
+            <div class="menu">
+                <ul>
+                    <li>디자인</li>
+                    <li class="active">코딩</li>
+                    <li>개발</li>
+                </ul>
+            </div>
+            <div class="contents">
+                <div>
+                    <h3>메인 디자인</h3>
+                    <ul>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/main.html">메인 페이지</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>메인 코딩</h3>
+                    <ul>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/main.html">메인 페이지</a></li>
+                    </ul>
+
+                    <h3>회원가입</h3>
+                    <ul>
+                        <li><a href="https://chfhr22.github.io/webs2024/sexyBrain/html/join.html">회원가입 : 정보입력</a></li>
+                        <li><a href="https://chfhr22.github.io/webs2024/sexyBrain/html/join_profil.html">회원가입 : 성공 후 프로필 입력</a></li>
+                    </ul>
+
+                    <h3>로그인•회원가입</h3>
+                    <ul>
+                        <li><a href="https://chfhr22.github.io/webs2024/sexyBrain/html/login.html">로그인</a></li>
+                        <li><a href="https://chfhr22.github.io/webs2024/sexyBrain/html/login_fail.html">비밀번호 찾기</a></li>
+                        <li><a href="https://chfhr22.github.io/webs2024/sexyBrain/html/my_page.html">마이페이지</a></li>
+                    </ul>
+
+                    <h3>게시판</h3>
+                    <ul>
+                        <li><a href="https://coconutpalmtreeisland.github.io/webs2024/html/project/SexyBrainPerson/board.html">게시판 홈</a></li>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/boardView.html">글 보기</a></li>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/boardWrite.html">글 쓰기</a></li>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/boardModify.html">글 수정하기</a></li>
+                    </ul>
+
+                    <h3>문제 페이지</h3>
+                    <ul>
+                        <li><a href="https://ojs104.github.io/webs2024/portfolio/project01.html">홈</a></li>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/quiz.html">문제 : 푸는 페이지</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>메인 개발</h3>
+                    <ul>
+                        <li><a href="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/main.html">메인 페이지</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main id="main">
+            <iframe src="https://elese0821.github.io/webs2024/project/php/%EB%87%8C%EC%84%B9%EB%82%A8%EB%85%80/html/main.html" frameborder="0"></iframe>
+        </main>
+
+        <script>
+            document.querySelectorAll("#nav ul li").forEach((li) => {
+                li.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const href = li.querySelector("a").getAttribute("href");
+                    document.querySelector("#main iframe").src = href;
+                });
+            });
+
+            const menus = document.querySelectorAll(".menu ul li");
+            const contents = document.querySelectorAll(".contents > div");
+
+            menus.forEach((li, index) => {
+                li.addEventListener("click", () => {
+                    menus.forEach(menu => {
+                        menu.classList.remove("active")
+                    });
+                    li.classList.add("active");
+
+                    contents.forEach(content => {
+                        content.style.display = "none";
+                    });
+                    contents[index].style.display = "block";
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

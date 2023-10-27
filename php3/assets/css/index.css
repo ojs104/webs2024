@@ -1,75 +1,100 @@
-* {
-    margin: 0;
-    padding: 0;
-    color: #283269;
-    font-family: 'GangwonEdu_OTFBoldA';
-    font-weight: 400;
+body {
+    font-family: "nanumSquareNeo";
+    background-color: #FAF7F0;
 }
-li {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-    font-family: 'GangwonEdu_OTFBoldA';
-    font-weight: 400;
-}
-#wrap {
-    display: flex;
-}
-#menu {
-    
-}
-#nav {
-    width: 300px;
-    padding: 20px;
-}
-#nav h3 {
-    margin: 10px 0;
-}
-#nav li a {
-    border: 1px solid #283269;
-    display: block;
-    padding: 10px;
-    margin-bottom: 5px;
-    transition: all 0.1s;
-    color:#283269;
-}
-#nav li a:hover {
-    background-color: #283269;
-    color: #fff;
-}
-#nav .webd {
-    margin-top: 50px;
-}
-#nav .webd li {
-    width: 55px;
-    display: inline-block;
+#titleh2 {
+    width: 100%;
     text-align: center;
+    font-size: 3rem;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: #283269 ;
 }
-#main {
-    width: 100%;
-    min-height: 100vh;
-}
-#main iframe {
-    width: 100%;
-    height: 100%;
-}
-.menu ul {
+.notion__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 50px;
 }
-.menu ul li {
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid #283269;
-    cursor: pointer;
-}
-.menu ul li.active {
+.notion {
+    width: 200px;
+    height: 50px;
     background-color: #283269;
-    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
 }
-.contents > div {
-    display: none;
-}
-.contents > div:nth-child(2) {
+.notion a {
     display: block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.notion:hover {
+    background-color: #283269c5;
+}
+.wrap {
+    margin: 0 auto;
+}
+.wrap2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wrap2 > div > h2 {
+    color: #283269;
+    font-size:2.5rem;
+    padding: 20px;
+    font-family: "BookkMyungjo-Bd";
+}
+.wrap2 > div > div > div {
+    width: 30%;
+    margin: 1%;
+    min-width: 200px;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+.wrap2 > div > div h2 {
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #f8bfb0 ;
+    text-align: center;
+    line-height: 40px;
+
+}
+.wrap2 > div {
+     width: 100%;
+     margin: 1%;
+}
+.wrap2 > div > div {
+    border-radius: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.wrap2 > div > div ul {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+} 
+.wrap2 > div > div li {
+    display: block;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+.wrap2 > div > div li a {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+}
+.wrap2 > div > div li:hover {
+    background-color: #fdc5b7;
 }

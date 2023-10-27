@@ -50,3 +50,20 @@
     border-radius: 25px;
     cursor: pointer;
 }
+:root {
+    --bgc: #FAF7F0;
+    --colorB: #F2E2DE;
+    --colorBD: #C5AAA4;
+    --colorS: #E9F3FC;
+    --colorSM: #CEDFFD;
+    --colorSD: #A7BEE7;
+    --colorSB: #555D8A;
+    --colorR: #9E3436;
+    --colorRD: #E62D46;
+
+    --primary-color: #283269;
+
+    --white: #fff;
+
+    --main-neo: "nanumSquareNeo";
+}

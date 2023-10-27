@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뇌섹남녀-boardWrite</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/board.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <nav class="nav">
+                <ul class="down_nav">
+                    <li class="active"><a href="#">홈</a></li>
+                    <li><a href="#">문제</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <h2 class="logo"><img src="../assets/img/logo.png" alt="logo"></h2>
+            <nav class="loginnav">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li class="active_nav"><a href="#">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- header -->
+
+        <main id="main">
+            <div id="b_write_wrap">
+                <div class="write_board"></div>
+                <form action="boardWriteSave.html" name="#" method="#" class="board_write b_p">
+                    <fieldset>
+                        <legend>글 작성하기</legend>
+                        <div>
+                            <label id="b_title" for="title" class="label_text">제목 <span class="red_t">*</span></label>
+                            <input type="text" id="boardTitle" name="boardTitle" class="input__style"  placeholder="제목을 입력해주세요">
+                        </div>
+                        <div id="weite_box2">
+                            <label id="boardContents_w" for="boardContents" class="label_text">내용 작성하기</label>
+                            <textarea name="boardContents" id="boardContents" rows="20" class="input__style"></textarea>
+                        </div>
+                        <div>
+                            <label for="blogFile" class="blind file">파일</label>
+                            <input type="file" id="blogFile" name="blogFile">
+                            <p>* jpg, gif, png, webp 파일만 넣을 수 있습니다. 이미지 용량은 1MB를 넘길 수 없습니다.</p>
+                        </div>
+                        <div class="board__btns">
+                            <button type="submit" class="btn__style3">저장하기</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <!-- main -->
+
+        <footer id="footer">
+            <div class="footerwrap">
+                <div class="footer__logo"><img src="../assets/img/footer_logo.png" alt="logo02"></div>
+            <div class="footer2">
+                <div class="footer_us">
+                    <ul>
+                        <li><a href="#">권초록</a></li>
+                        <li><a href="#">오종석</a></li>
+                        <li><a href="#">이원영</a></li>
+                        <li><a href="#">이혜민</a></li>
+                    </ul>
+                </div>
+                <div class="copylight">© 2023 뇌섹남녀</div>
+            </div>
+            </div>
+        </footer>
+        <!-- footer -->
+    </div>
+
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#blogContents'), {
+            language: 'ko' 
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    </script>
+</body>
+
+</html>

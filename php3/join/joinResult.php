@@ -3,12 +3,13 @@
 include "../connect/connect.php"; 
 include "../connect/session.php";
 
+$youId = mysqli_real_escape_string($connect, $_POST['youId']);
 $youName = mysqli_real_escape_string($connect, $_POST['youName']);
 $youEmail = mysqli_real_escape_string($connect, $_POST['youEmail']);
 $youPass = mysqli_real_escape_string($connect, $_POST['youPass']);
 $youRegTime = time();
 
-$sql = "INSERT INTO sexyMembers ( youName, youEmail, youPass, youRegTime) VALUES ('$youName', '$youEmail', '$youPass', '$youRegTime')";
+$sql = "INSERT INTO sexyMembers (youId, youName, youEmail, youPass, youRegTime) VALUES ('$youId','$youName', '$youEmail', '$youPass', '$youRegTime')";
 if (mysqli_query($connect, $sql)) {
 } else {
     echo "SQL 오류: " . mysqli_error($connect);
@@ -20,6 +21,7 @@ mysqli_close($connect);
 ?>
 
 <!DOCTYPE html>
+
  <html lang="ko">
  <head>
     <meta charset="UTF-8">
@@ -60,16 +62,13 @@ mysqli_close($connect);
                                 <label for="youAddress1" class="label required">주소</label>
                                 <div class="check">
                                     <input type="text" id="youAddress1" name="youAddress1" placeholder="주소를 적어주세요" class="input__box3">
-                                    <button class="btn" id="addressCheck" type="button">주소 찾기</button>
+                                    <div class="btn" id="addressCheck" type="button">주소 찾기</div>
                                 </div>
-                                
                                 <p class="msg" id="youAddressComment"></p>
                             </div>
-
-
                         </fieldset>
                         <div class="profil__btn">
-                            <button type="button" class="btn__style3"><a href="#">완료</a></button>
+                            <button type="button" class="btn__style3"><a href="join_success.php">완료</a></button>
                         </div> 
                     </form>
                 </div>

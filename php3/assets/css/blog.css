@@ -1,0 +1,83 @@
+.blog__layout { 
+    width: 100%;
+  
+   
+   
+} 
+.blog__contents {
+    width: 100%;
+   
+}
+
+
+/* blog__write */
+.blog__write {
+    width: 100%;
+    padding: 100px;
+}
+.blog__write select {
+    width: 200px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    color: black;
+    font-weight: 500;
+}
+.blog__write input{
+    border-radius: 0;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+   
+    border: 1px solid #ccc;
+    color: var(--black300);
+    font-weight: 500;
+
+
+}
+.blog__write textarea {
+    width: 100%;
+    height: 400px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    padding: 0.8rem 1rem;
+    resize: none;
+    font-weight: 500;
+    color: var(--black300);
+
+
+
+}
+.blog__write .file p {
+    margin-bottom: 20px;
+    color: var(--black300);
+    font-weight: 500;
+}
+.blog__write .btn{
+    text-align: right;
+}
+.ck-editor__editable {
+    height: 600px;
+    margin-bottom: 10px;
+
+}
+.blog__category h3{
+    padding: 10px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.blog__category ul {
+    padding: 20px;
+    border-bottom: 2px solid #000;
+
+
+}
+.blog__category ul li {
+    list-style-type: circle;
+}
+
+.blog__index {
+    border-top: 1px solid var(--black300);
+    border-bottom: 1px solid var(--black500);
+    
+}

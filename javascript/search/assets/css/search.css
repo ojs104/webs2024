@@ -121,19 +121,21 @@ a {
     display: inline-block;  
     border: 1px solid var(--htmlColor);
     padding: 10px 30px;
-    color: rgb(209, 193, 100);
+    color: #4a354b;
     border-radius: 50%;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px; 
     border-radius: 50%;
 }
-.search__list li:hover {
+.search__star li:hover {
     background-color: #9236ad80;
     color: #ffffff;
     cursor: pointer;
 }
-
+.search__star li::after {
+    content: attr(data-desc);
+}
 
 
 
@@ -227,6 +229,11 @@ a {
 .search__list li {
     text-align: left;
     line-height: 1.7;
+}
+.search__list li strong:hover {
+    background: #9236ad80;
+    cursor: pointer;
+    color: #ffffff;
 }
 
 .search__list li.show {

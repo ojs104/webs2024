@@ -36,6 +36,7 @@
                 <ul>
                     <li><a href="javascript11.html">데이터 효과</a></li>
                     <li><a href="javascript12.html">퀴즈 효과</a></li>
+                    <li><a href="javascript15.html">GSAP</a></li>
                     <li><a href="javascript13.html">마우스 효과</a></li>
                     <li class="active"><a href="javascript14.html">슬라이드 효과</a></li>
                 </ul>
@@ -43,8 +44,8 @@
         </header>
         <!-- //header -->
 
-        
-            <!-- <div class="main__sample">
+
+        <!-- <div class="main__sample">
                 <div class="table">
                     <table>
                         <caption>제이쿼리 이벤트 등록 메서드의 종류</caption>
@@ -159,24 +160,24 @@
                 </div>
             </div> -->
 
-            <main id="main">
-                <div class="main__menu">
+        <main id="main">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#desc01">01. 슬라이드 이펙트 - 트랜지션 효과</a></li>
+                    <li><a href="#desc02">02. 슬라이드 이펙트 - 좌로 움직이기</a></li>
+                    <li><a href="#desc03">03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</a></li>
+                </ul>
+            </div>
+            <!-- //main__menu -->
+
+
+            <div class="main__desc">
+                <div class="desc01">
+                    <h2>01. 슬라이드 이펙트 - 트랜지션 효과</h2>
+                    <p>이미지가 반복적으로 변하는 효과입니다.</p>
                     <ul>
-                        <li><a href="#desc01">01. 슬라이드 이펙트 - 트랜지션 효과</a></li>
-                        <li><a href="#desc02">02. 슬라이드 이펙트 - 좌로 움직이기</a></li>
-                        <li><a href="#desc03">03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</a></li>
-                    </ul>
-                </div>
-                <!-- //main__menu -->
-
-
-                <div class="main__desc">
-                    <div class="desc01">
-                        <h2>01. 슬라이드 이펙트 - 트랜지션 효과</h2>
-                        <p>이미지가 반복적으로 변하는 효과입니다.</p>
-                        <ul>
-                            <li>javascript</li>
-<pre><code class="language-js">{
+                        <li>javascript</li>
+                        <pre><code class="language-js">{
         window.onload = function(){
             let currentIndex = 0;   // 현재 이미지
             const slider = document.querySelectorAll(".slider");    // 모든 이미지를 변수에 저장
@@ -194,8 +195,8 @@
             }, 3000);
         }
     }</code></pre>
-                            <li>jquery</li>
-<pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
+                        <li>jquery</li>
+                        <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
     &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"&gt;&lt;/script&gt;      // jquery 사용시 필수 사항
     {
         $(function(){
@@ -212,16 +213,16 @@
             }, 3000);
         });
     }</code></pre>
-                        </ul>
-                        <a href="../javascript/slider/slider01.html">확인하기</a>
-                    </div>
+                    </ul>
+                    <a href="../javascript/slider/slider01.html">확인하기</a>
+                </div>
 
-                    <div class="desc02">
-                        <h2>02.슬라이드 이펙트 - 좌로 움직이기</h2>
-                        <p>이미지가 좌로 움직이면서 튕기는 효과를 넣어준 것입니다.</p>
-                        <ul>
-                            <li>선택자와 변수 설정</li>
-<pre><code class="language-js">{
+                <div class="desc02">
+                    <h2>02.슬라이드 이펙트 - 좌로 움직이기</h2>
+                    <p>이미지가 좌로 움직이면서 튕기는 효과를 넣어준 것입니다.</p>
+                    <ul>
+                        <li>선택자와 변수 설정</li>
+                        <pre><code class="language-js">{
         // 선택자
         const sliderWrap = document.querySelector(".slider__wrap");
         const sliderImg = sliderWrap.querySelector(".slider__img");       //보여지는 영역
@@ -233,8 +234,8 @@
         let sliderCount = slider.length;    // 이미지 갯수
         let sliderInterval = 3000;           // 이미지 변경 간격 시간
     }</code></pre>
-                            <li>javascript</li>
-                            <pre><code class="language-js">{
+                        <li>javascript</li>
+                        <pre><code class="language-js">{
         sliderInner.style.transition = "all 0.6s";
     
         setInterval(() => {
@@ -242,8 +243,8 @@
             sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
         }, sliderInterval);
     }</code></pre>
-                            <li>gsap</li>
-                            <pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;
+                        <li>gsap</li>
+                        <pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;
     {
         setInterval(() => {
             currentIndex = (currentIndex + 1) % sliderCount;
@@ -255,8 +256,8 @@
             }) 
         }, sliderInterval);
     }</code></pre>
-                            <li>jquery</li>
-                            <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
+                        <li>jquery</li>
+                        <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
     &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"&gt;&lt;/script&gt;      // jquery 사용시 필수 사항
     {
         setInterval(() => {
@@ -267,16 +268,16 @@
     
         }, sliderInterval);
     }</code></pre>
-                        </ul>
-                        <a href="../javascript/slider/slider02.html">확인하기</a>
-                    </div>
+                    </ul>
+                    <a href="../javascript/slider/slider02.html">확인하기</a>
+                </div>
 
-                    <div class="desc03">
-                        <h2>03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
-                        <p>이미지가 좌로 연속적으로 움직이는 효과입니다.</p>
-                        <ul>
-                            <li>선택자와 변수 설정</li>
-<pre><code class="language-js">{
+                <div class="desc03">
+                    <h2>03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
+                    <p>이미지가 좌로 연속적으로 움직이는 효과입니다.</p>
+                    <ul>
+                        <li>선택자와 변수 설정</li>
+                        <pre><code class="language-js">{
         // 선택자
         const sliderWrap = document.querySelector(".slider__wrap");
         const sliderImg = sliderWrap.querySelector(".slider__img");       //보여지는 영역
@@ -291,8 +292,8 @@
         let sliderclone = sliderInner.firstElementChild.cloneNode(true);    // 첫번째 이미지를 복사
 }
 </code></pre>
-                            <li>javascript</li>
-                            <pre><code class="language-js">{
+                        <li>javascript</li>
+                        <pre><code class="language-js">{
         // javascript
         // 복사한 이미지를 마지막에 붙여넣기
         sliderInner.appendChild(sliderclone);
@@ -314,8 +315,8 @@
         };
         setInterval(sliderEffect, sliderInterval);
     }</code></pre>
-                            <li>gsap</li>
-                            <pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;   // gsap 사용시 필수
+                        <li>gsap</li>
+                        <pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;   // gsap 사용시 필수
     {
         // 복사한 이미지를 마지막에 붙여넣기
         sliderInner.appendChild(sliderclone);
@@ -339,8 +340,8 @@
         };
         setInterval(sliderEffect, sliderInterval);
     }</code></pre>
-                            <li>jquery</li>
-                            <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
+                        <li>jquery</li>
+                        <pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;     // jquery 사용시 필수 사항
     &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"&gt;&lt;/script&gt;      // jquery 사용시 필수 사항
     {
         // 복사한 이미지를 마지막에 붙여넣기
@@ -367,21 +368,21 @@
         };
         setInterval(sliderEffect, sliderInterval);
     }</code></pre>
-                        </ul>
-                        <a href="../javascript/slider/slider03.html">확인하기</a>
-                    </div>
+                    </ul>
+                    <a href="../javascript/slider/slider03.html">확인하기</a>
                 </div>
+            </div>
 
-                <!-- //main__desc -->
+            <!-- //main__desc -->
 
 
-            </main>
-            <!-- //main -->
+        </main>
+        <!-- //main -->
 
-            <footer id="footer">
-                <a href="mailto:0000mar@naver.com">0000mar@naver.com</a>
-            </footer>
-            <!-- //footer-->
+        <footer id="footer">
+            <a href="mailto:0000mar@naver.com">0000mar@naver.com</a>
+        </footer>
+        <!-- //footer-->
 
     </div>
 

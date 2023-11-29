@@ -1,211 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="ko">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP를 이용하여 블로그를 만드는 강의입니다."/>
-    <meta name="keyword" content="포트폴리오, PHP, 디자인, 풀스택, 코딩, 블로그" />
-    <title>PHP 블로그 사이트</title>
-
-    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Document</title>
 </head>
-<body>
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#main">콘텐츠 영역 바로가기</a>
-        <a href="#footer">푸터 영역 바로가기</a>
-    </div>
-    <!-- //skip -->
 
+<body>
     <header id="header" role="banner">
-        <div class="container">
-            <div class="header__inner">
-                <div class="left">
-                    <a href="../index.html">
-                        <span class="blind">메인으로</span>
-                    </a>
-                </div> 
-                <h1 class="logo">
-                    <a href="main.html">Developer Blog</a>
-                </h1>
-                <div class="right">
-                    <ul>
-                        <li><a href="join.html">로그인</a></li>
-                        <li><a href="join.html">회원가입</a></li>
-                    </ul>
-                </div>
-            </div>
-            <nav class="nav__inner">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="#">
+                    <img src="./img//LOGO.png" alt="">
+                </a>
+            </h1>
+            <nav class="header__nav" role="navigation" aria-label="Main">
                 <ul>
-                    <li><a href="#">최신 정보</a></li>
-                    <li><a href="#">강의 정보</a></li>
-                    <li><a href="#">사이트 정보</a></li>
-                    <li><a href="#">새로운 소식</a></li>
+                    <div>
+                        <li class="active"><a href="#">ABOUT</a></li>
+                    </div>
+                    <div>
+                        <li class="active"><a href="#">WORK</a></li>
+                    </div>
+                    <div>
+                        <li class="active"><a href="#">CONTACT</a></li>
+                    </div>
+
                 </ul>
             </nav>
-        </div>  
+        </div>
     </header>
     <!-- //header -->
-    
-    <main id="main" role="main">
-        <div class="container">
-            <!-- 메인 인트로 스타일 -->
-            <section class="intro__inner mainStyle borderBotStyle">
-                <h2 class="blind">개발자 블로그에 오신 것을 환영합니다.</h2>
-                <div class="intro__img">
-                    <img srcset="../assets/img/intro-main-min.jpg 1x, ../assets/img/intro-main@2x-min.jpg 2x"  alt="소개 이미지">
-                </div>
-                <div class="intro__text">
-                    어떤 일이라도 <em>노력</em>하고 즐기면 그 결과는 <em>빛</em>을 바란다고 생각합니다.<br>
-                    신입의 열정과 <em>도전정신</em>을 깊숙히 새기며 배움에 있어 <em>겸손함</em>을 유지하며 <br>
-                    세부적인 곳까지 파고드는 <em>개발자가</em> 되겠습니다.
-                </div>
-            </section> 
 
-            <!-- 게시판 인트로 스타일 -->
-            <section class="intro__inner boardStyle borderBotStyle">
-                <div class="intro__img">
-                    <img srcset="../assets/img/intro01-min.jpg 1x, ../assets/img/intro01@2x-min.jpg 2x"  alt="소개 이미지">
-                </div>
-                <div class="intro__text">
-                    <h2>새로운 소식</h2>
-                    <p>
-                        우리 블로그의 <em>새로운 공지사항</em>을 확인할 수 있습니다.<br>
-                        관련된 문의사항은 여기서 확인해주세요!
-                    </p>
-                </div>
-            </section> 
+    <main id="main">
+        <div class="content__center">
+            <div class="content__inner">
+                <h6>OH JONG SEOK</h6>
+                <h1>
+                    <div class="text1">CREATIVE</div>
+                    <div class="text2">GOOD</div>
+                    <div class="text3">WEB</div>
+                    <div class="text4">DEVELOPER</div>
+                    <div class="text5">2023</div>
+                </h1>
 
-            <!-- 카드 스타일 -->
-            <section class="card__wrap borderBotStyle2">
-                <h2><a href="#">최신 정보</a></h2>
-                <div class="card__inner column3">
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card__wrap borderBotStyle2">
-                <h2><a href="#">최신 정보</a></h2>
-                <div class="card__inner column4">
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card__wrap">
-                <h2><a href="#">최신 정보</a></h2>
-                <div class="card__inner column2">
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure class="card__img">
-                            <a href="#">
-                                <img srcset="../assets/img/card01-min.jpg 1x, ../assets/img/card01@2x-min.jpg 2x" alt="점진적으로 강화된 WebGL 효과">
-                            </a>
-                        </figure>
-                        <div class="card__text">
-                            <h3>점진적으로 강화된 WebGL 효과</h3>
-                            <p>CSS 및 React Three Fiber로 구동되는 반응형 WebGL 레이아웃을 만드는 방법을 알아보세요.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            </div>
         </div>
+
     </main>
-    <!-- //main -->
-
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner container borderTopStyle">
-            <div>Copyright 2023 webstoryboy</div>
-            <div>blog by webs</div>
-        </div>
-    </footer>
-    <!-- //footer -->
 </body>
+
 </html>

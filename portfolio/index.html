@@ -4,36 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/splitting.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
-    <header id="header" role="banner">
-        <div class="header__inner">
-            <h1 class="header__logo">
-                <a href="#">
-                    <img src="./img//LOGO.png" alt="">
-                </a>
-            </h1>
-            <nav class="header__nav" role="navigation" aria-label="Main">
-                <ul>
-                    <div>
-                        <li class="active"><a href="#">ABOUT</a></li>
-                    </div>
-                    <div>
-                        <li class="active"><a href="#">WORK</a></li>
-                    </div>
-                    <div>
-                        <li class="active"><a href="#">CONTACT</a></li>
-                    </div>
+    <header>
+        <a href="index.html" class="logo en"><span class="en2"></span>Portfolio</a>
 
-                </ul>
-            </nav>
-        </div>
+        <nav class="gnb en">
+            <ul>
+                <li><a href="#" data-splitting>About</a></li>
+                <li><a href="#" data-splitting>Work</a></li>
+                <li><a href="#" data-splitting>Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="menuOpen"><span class="a"></span><span class="b"></span></a>
     </header>
-    <!-- //header -->
-
     <main id="main">
         <div class="content__center">
             <div class="content__inner">

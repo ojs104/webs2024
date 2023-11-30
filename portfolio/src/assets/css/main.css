@@ -58,7 +58,7 @@ header.active {
     /* 배경 이미지를 가운데 정렬합니다 */
     background-repeat: no-repeat;
     /* 배경 이미지를 반복하지 않습니다 */
-    /* padding: 300px 0; */
+    padding: 5vw 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,8 +73,9 @@ header.active {
 .content__inner h6 {
     color: #ADA18F;
     font-weight: bold;
-    font-size: 6em;
+    font-size: 1vw;
     letter-spacing: .5em;
+    margin-bottom: 2vw;
 }
 
 .content__inner h1 {
@@ -122,7 +123,7 @@ header.active {
 .cont__inner h6 {
     color: #ADA18F;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1vw;
     letter-spacing: .5em;
     font-family: 'Public Sans', sans-serif;
 }

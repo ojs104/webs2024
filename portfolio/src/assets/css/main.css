@@ -73,7 +73,7 @@ header.active {
 .content__inner h6 {
     color: #ADA18F;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 6em;
     letter-spacing: .5em;
 }
 
@@ -128,7 +128,7 @@ header.active {
 }
 
 .cont__inner h1 {
-    font-size: 66px;
+    font-size: 4vw;
     letter-spacing: -.05em;
     font-weight: bold;
     color: #ADA18F;

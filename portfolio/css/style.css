@@ -1,28 +1,130 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 /* reset */
-*{margin: 0;padding: 0;}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
-font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
-tbody, tfoot, thead, tr, th, td{margin:0;padding: 0;}
-a { color: inherit; text-decoration: inherit;}
-li { list-style: none;}
-address, em, i {font-style: normal;}
-button {background: none; border: none;}
-img { vertical-align: middle;}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+address,
+em,
+i {
+    font-style: normal;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+img {
+    vertical-align: middle;
+}
 
 /* 영어폰트 */
-.en {font-family: 'Public Sans', sans-serif;};
-.rrr {font-family: 'Cormorant Infant', serif;}
+.en {
+    font-family: 'Public Sans', sans-serif;
+}
+
+.en2 {
+    font-family: 'Cormorant Infant', serif;
+}
+
+.en3 {
+    color: #DC583B;
+}
 
 /* layout */
-body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-height: 1.6;}
-.wrap {position: relative; margin: 0 auto; overflow: hidden;  background: #0d0d0d;
-    color: #b7ab98;}
+body {
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #0d0d0d;
+    color: #b7ab98;
+}
 
 /* gnb 호버효과 */
 .gnb ul li a .char {
@@ -31,6 +133,7 @@ body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-height: 1.6
     color: transparent;
     overflow: hidden;
 }
+
 .gnb ul li a .char:before,
 .gnb ul li a .char:after {
     position: absolute;
@@ -38,21 +141,25 @@ body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-height: 1.6
     left: 0;
     opacity: 0.6;
     color: #b7ab98;
-    content:attr(data-char);
+    content: attr(data-char);
     transition: transform 0.35s;
     transition-delay: calc(30ms * var(--char-index));
 
 }
+
 .gnb ul li a .char:before {
     transform: translateY(100%);
 
 }
-.gnb ul li a:hover .char::before{
+
+.gnb ul li a:hover .char::before {
     transform: translateY(0%);
     opacity: 1;
 }
+
 .gnb ul li a:hover .char::after {
     transform: translateY(100%);
 }
+
 /* data 속성 => data-로 시작하는 속성으로 이 속성은 특정한 데이터를 DOM에 이용하기 위함이 목적 
     이 저장된 데이터를 attr()함수를 이용해 속성을 가져옴*/

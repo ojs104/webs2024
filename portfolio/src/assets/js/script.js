@@ -16,3 +16,19 @@ $(function () {
         prevScrollTop = nowScrollTop;
     })
 });
+
+$(function () {
+    $('.animate').scrolla({
+        mobile: true,
+        once: false
+    })
+});
+
+// path 길이
+$(function () {
+    $('.svgAni').find('#svgAni05').each(function (i, path) {
+        var length = path.getTotalLength();
+        // alert(length);
+    });
+});
+

@@ -178,126 +178,8 @@ body {
 
 /* data 속성 => data-로 시작하는 속성으로 이 속성은 특정한 데이터를 DOM에 이용하기 위함이 목적 
     이 저장된 데이터를 attr()함수를 이용해 속성을 가져옴*/
-
-/* visual */
-.visual {
-    width: 100%;
-    height: 100vh;
-    padding-top: 125px;
-    box-sizing: border-box;
-    position: relative;
-    letter-spacing: -1px;
-}
-.visual .mainText {
-    font-size: 140px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin: 0 0 150px 60px;
-    display: inline-block;
-    background-color: #DC583B;
-}
-.visual .mainText p {
-    overflow: hidden;
-}
-.visual .subText {
-    margin-left: 20%;
-}
-.visual .svgAni {
-    position: absolute;
-    right: -2%;
-    top: 6%;
-    width: 55%;
-    transform: rotate(-10deg);
-}
-.visual.motion .mainText {
-    transform: translate3d(0,0,0) skewY(0deg); overflow:hidden;
-}
-.visual.motion .mainText p span {
-    display: block;
-    animation-name: textAni;
-    animation-duration: 1.8s;
-}
-.visual.motion .mainText p:nth-child(2) span {
-    animation-duration: 1.7s;
-}
-.visual.motion .mainText p:nth-child(3) span {
-    animation-duration: 1.5s;
-}
-
-@keyframes textAni {
-    0% {
-        opacity: 0;
-    }
-    30% { opacity: 0; transform: translate3d(0,-90px,0) skewY(-10deg); transform-origin: top-left; }
- }
-
- @keyframes textAni2 {
-     0% {
-         opacity: 0;
-     }
-
-     30% {
-         opacity: 0;       
-     }
- }
-
- .visual.motion .subText {
-    animation-name: textAni2;
-    animation-duration: 2.3s;
-}
-
-.visual.motion #svgAni01 {
-    stroke-dasharray: 675;
-    stroke-dashoffset: 675;
-    animation: ani1 .5s linear 2s forwards;
-}
-
-.visual.motion #svgAni03 {
-    stroke-dasharray: 3059;
-    stroke-dashoffset: 3059;
-    animation: ani3 .2s linear 1s forwards;
-}
-.visual.motion #svgAni04 {
-    stroke-dasharray: 66;
-    stroke-dashoffset: 66;
-    animation: ani4 .2s linear 1s forwards;
-}
-.visual.motion #svgAni05 {
-    stroke-dasharray: 55;
-    stroke-dashoffset: 55;
-    animation: ani5 .2s linear 0s forwards;
-}
-@keyframes ani1{
-    0% { stroke-dashoffset: 675;}
-    100% {stroke-dashoffset: 0}
-}
-@keyframes ani3 {
-    0% {
-        stroke-dashoffset: 3059;
-    }
-
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@keyframes ani4 {
-    0% {
-        stroke-dashoffset: 64;
-    }
-
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@keyframes ani5 {
-    0% {
-        stroke-dashoffset: 64;
-    }
-
-    100% {
-        stroke-dashoffset: 0
-    }
-}
+/* 마우스오버효과 */
+/* 
 
 /* section03 */
 .con03 {
@@ -408,6 +290,7 @@ body {
     animation-name : textAni;
     animation-duration: 1.3s;
 }
+
 /* portfolio section */
 section {
     width: 100%;
@@ -431,7 +314,7 @@ section {
     height: 60%;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 20%;
     transform: (-50%, -50%);
     background-color: rgba(225, 225, 225, 0.5);
 }
@@ -540,4 +423,53 @@ section {
 }
 .cloneWrap .contBox li.right .txtBox.motion .kor {
     animation: slide_up2 1.3s;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: black;
+}
+footer .textWrap{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    padding: 0 60px;
+    box-sizing: border-box;
+    font-size: 160px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+footer .textWrap .title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+
+footer .textWrap .contact {
+    margin-bottom: 10px;
+}
+footer .textWrap a {
+    display: block;
+    margin-top: -30px;
+}
+footer .bottom {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    box-sizing: border-box;
+    font-size: 30px;
+    letter-spacing: -1px;
+
+}
+footer .bottom .sns {
+    display: flex;
+}
+footer .bottom .sns li {
+    margin-right: 30px;
 }

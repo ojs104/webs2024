@@ -14,7 +14,13 @@
   <!-- plugin -->
   <script src="./assets/js/plugin/scrolla.jquery.min.js"></script>
   <script src="./assets/js/plugin/splitting.min.js"></script>
+  <script src="./assets/js/plugin/jquery.simplyscroll.min.js"></script>
   <script src="./assets/js/script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+
+  
 </head>
 
 <body>
@@ -55,38 +61,273 @@
         </h1>
       </div>
     </div>
-    <section class="con03">
+    
+    <section class="con03 animate" data-animate="motion">
       <div class="textWrap">
         <div class="title en">
-          <p>What <span class="en2">I do</span></p>
+          <p>What I DO</p>
         </div>
         <ul>
           <li><p>REACT</p></li>
-          <li class="en2"><p>NEXT.JS</p></li>
+          <li><p>NEXT.JS</p></li>
           <li><p>NODE.JS</p></li>
-          <li class="en2"><p>PHP</p></li>
+          <li><p>PHP</p></li>
           <li><p>VUE</p></li>
-          <li class="en2"><p>Javascript</p></li>
+          <li><p>JAVASCRIPT</p></li>
         </ul>
-        <ul class="list">
-          <li><img src="./assets/images/img1.jpg" alt=""></li>
-          <li><img src="./assets/images/img2.jpg" alt=""></li>
-          <li><img src="./assets/images/img3.jpg" alt=""></li>
-          <li><img src="./assets/images/img4.jpg" alt=""></li>
-          <li><img src="./assets/images/img5.jpg" alt=""></li>
-          <li><img src="./assets/images/img6.jpg" alt=""></li>
-          <li><img src="./assets/images/img7.jpg" alt=""></li>
-        </ul>
-        <div class="btnWrap">
+      </div>
+      <!-- textWrap -->
+      <ul class="list">
+        <li><img src="./assets/images/img1.jpg" alt=""></li>
+        <li><img src="./assets/images/img2.jpg" alt=""></li>
+        <li><img src="./assets/images/img3.jpg" alt=""></li>
+        <li><img src="./assets/images/img4.jpg" alt=""></li>
+        <li><img src="./assets/images/img5.jpg" alt=""></li>
+        <li><img src="./assets/images/img6.jpg" alt=""></li>
+        <li><img src="./assets/images/img7.jpg" alt=""></li>
+      </ul>
+      <div class="btnWrap">
           <a href="#">
             <img src="./assets/images/readMore1.png" alt="">
             <img src="./assets/images/readMore2.png" alt="">
           </a>
+      </div>     
+    </section>    
+    <!-- section03 -->
+
+    <section class="con4">
+      <div class="textWrap">
+        <div class="title en">
+          <h6>EXPERIENCE</h6>       
+          <h1>
+            <div class="text6">One of the team projects I worked on</div>
+            <div class="text7">  
+              involved building a <span class="en3"> quiz website </span> 
+            </div>           
+            <div class="text8"> using JavaScript and jQuery. </div><br>
+            <div class="text9">
+              I designed an intuitive <span class="en3"> UI/UX </span>to allow
+            </div>
+        
+            <div class="text10">
+              users to easily participate           
+            </div>
+            <div class="text11">
+                in quizzes and check their results.
+            </div>             
+          </h1>        
         </div>
+      </div>     
+    </section>
+    <!-- con4 -->
+
+    <section class="section01">
+        <div class="cloneWrap">
+             <ul class="contBox">
+                <li class="left">
+                    <a href="#">
+                        <p class="img"><img src="./assets/img/mockup_01.png" alt=""></p>
+                    </a>
+                </li>
+                <li class="right">
+                    <div class="tit eng1 animate" data-animate="motion" data-splitting>
+                        Portfolio
+                    </div>
+                    <div class="txtBox animate" data-animate="motion">
+                        <p class="eng eng1">
+                            In order to improve understanding of the layout, I personally cloned website, which uses a lot of animation and
+                            various layout.
+                        </p>
+                        <p class="kor eng3">
+                            box구조와 전체적 레이아웃 제작에 대한 이해 및 실력향상을 위해 ..
+                        </p>
+                        <ul class="skill eng1">
+                            <li>Html css MarkUp</li>
+                            <li>JavaScript</li>
+                            <li>PC Web</li>
+                        </ul>
+                    </div>
+                </li>
+          </ul>
+      </div>    
+    </section>
+    <!-- section01 -->
+
+    <section class="section02">
+      <div class="cloneWrap">
+          <ul class="contBox">
+            <li class="left">
+              <a href="#">
+                <p class="img"><img src="./assets/img/mockup_02.png" alt=""></p>
+              </a>
+            </li>
+            <li class="right">
+                <div class="tit eng1 animate" data-animate="motion" data-splitting>
+
+                Portfolio
+              </div>
+              <div class="txtBox animate" data-animate="motion" >
+                <p class="eng eng1">
+                  In order to improve understanding of the layout, I personally cloned website, which uses a lot of animation
+                  and various layout.
+                </p>
+                <p class="kor eng3">
+                  box구조
+                </p>
+                <ul class="skill eng1">
+                  <li>Html css MarkUp</li>
+                  <li>JavaScript</li>
+                  <li>PC Web</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </div>
+   
+    </section>
+    <!-- section02 -->
+
+    <section class="section03">
+      <div class="cloneWrap">
+        <ul class="contBox">
+          <li class="left">
+            <a href="#">
+              <p class="img"><img src="./assets/img/mockup_03.png" alt=""></p>
+        
+            </a>
+          </li>
+          <li class="right">
+                            <div class="tit eng1 animate" data-animate="motion" data-splitting>
+
+              Portfolio
+            </div>
+            <div class="txtBox animate" data-animate="motion" >
+              <p class="eng eng1">
+                In order to improve understanding of the layout, I personally cloned website, which uses a lot of animation
+                and various layout.
+              </p>
+              <p class="kor eng3">
+                box구조
+              </p>
+              <ul class="skill eng1">
+                <li>Html css MarkUp</li>
+                <li>JavaScript</li>
+                <li>PC Web</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+     
+    </section>
+    <!-- section03 -->
+
+    <section class="section04">
+      <div class="cloneWrap">
+          <ul class="contBox">
+            <li class="left">
+              <a href="#">
+                <p class="img"><img src="./assets/img/mockup_04.png" alt=""></p>
+          
+              </a>
+            </li>
+            <li class="right">
+                            <div class="tit eng1 animate" data-animate="motion" data-splitting>
+
+                Portfolio
+              </div>
+              <div class="txtBox">
+                <p class="eng eng1">
+                  In order to improve understanding of the layout, I personally cloned website, which uses a lot of animation
+                  and various layout.
+                </p>
+                <p class="kor eng3">
+                  box구조
+                </p>
+                <ul class="skill eng1">
+                  <li>Html css MarkUp</li>
+                  <li>JavaScript</li>
+                  <li>PC Web</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </div>    
+    </section>
+    <!-- section04 -->
+
+    <section class="section05">
+      <div class="cloneWrap">
+          <ul class="contBox">
+            <li class="left">
+              <a href="#">
+                <p class="img"><img src="./assets/img/mockup_05.png" alt=""></p>
+              </a>
+            </li>
+            <li class="right">
+                            <div class="tit eng1 animate" data-animate="motion" data-splitting>
+
+                    Portfolio
+                </div>
+              <div class="txtBox">
+                    <p class="eng eng1">
+                        In order to improve understanding of the layout, I personally cloned website, which uses a lot of animation
+                        and various layout.
+                    </p>
+                    <p class="kor eng3">
+                        Box구조와 전체적 레이아웃 제작에 대한 이해 및 실력향상을 위해 국내 기업사이트 중 2023년 트렌드에 맞고 인터렉션 구현이 화려하며 비쥬얼적으로 탁월한 웹사이트를 선정하여 Clone Coding으로
+                        퍼블리싱
+                        실력을 키우기위해 노력하였습니다.
+                    </p>
+                    <ul class="skill eng1">
+                        <li>Html css MarkUp ↗</li>
+                        <li>JavaScript jquery ↗</li>
+                        <li>PC Web ↗</li>
+                    </ul>
+              </div>
+            </li>
+          </ul>
+      </div>    
+    </section>
+    <!-- section05 -->
+
+    <section class="section06">
+      <div class="cloneWrap">
+        <ul class="contBox">
+          <li class="left">
+            <a href="#">
+              <p class="img"><img src="./assets/img/mockup_06.png" alt=""></p>
+            </a>
+          </li>
+          <li class="right">
+                            <div class="tit eng1 animate" data-animate="motion" data-splitting>
+
+              Portfolio
+            </div>
+            <div class="txtBox">
+                <p class="eng eng1">
+                    In order to improve understanding of the layout, I personally cloned website, which uses a lot of animation
+                    and various layout.
+                </p>
+                <p class="kor eng3">
+                    Box구조와 전체적 레이아웃 제작에 대한 이해 및 실력향상을 위해 국내 기업사이트 중 2023년 트렌드에 맞고 인터렉션 구현이 화려하며 비쥬얼적으로 탁월한 웹사이트를 선정하여 Clone
+                    Coding으로
+                    퍼블리싱
+                    실력을 키우기위해 노력하였습니다.
+                </p>
+                <ul class="skill eng1">
+                        <li>Html css MarkUp ↗</li>
+                        <li>JavaScript jquery ↗</li>
+                        <li>PC Web ↗</li>
+                </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
+    <!-- section06 -->
 
-
+    
   </main>
 
 </body>

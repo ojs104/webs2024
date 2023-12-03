@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Noto+Sans+KR&family=Questrial&display=swap');
 /* reset */
 * {
     margin: 0;
@@ -109,7 +109,19 @@ img {
 .en3 {
     color: #DC583B;
 }
+.eng1 {
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: -1px;
+}
 
+.eng2 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: -1px;
+}
+
+.eng3 {
+    font-family: 'Noto Sans KR', sans-serif;
+}
 /* layout */
 body {
     font-family: 'Noto Sans KR', sans-serif;
@@ -308,9 +320,18 @@ body {
 .con03 .textWrap .title {
     font-size: 18px
 }
+.con03 .textWrap .title p{
+    color: #b7ab98;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
 .con03 .textWrap ul li {
    font-size: 100px;
-   line-height: 1.2;
+   line-height: 0.8;
+   color: #b7ab98;
+   font-weight: bold;
+    letter-spacing: -.05em;
+
 }
 .con03 .textWrap ul li .en2{
    padding-left: 5px;
@@ -365,4 +386,158 @@ body {
 .con03 .btnWrap a:hover:before{
     width: 100%;
     height: 100%;
+}
+
+/* simplyScroll */
+.simply-scroll .simply-scroll-clip {overflow: hidden; transform: rotate(5deg) translate(0, 400px) scale(1.1); opacity: 1;}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li {
+    float: left;
+    width: 400px;
+    filter: brightness(50%);
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li img {width: 100%;}
+
+/* simplyScroLL.motion */
+.con03.motion .simply-scroll-clip {
+    transform: rotate(5deg) translate(0%, 400px) scale(1.1); opacity: 1; transition: 1.2; transition-delay: 0.3s;}
+.con03.motion .btnWrap {
+    right: 50%;
+    transition: 1.2s;
+}
+.con03.motion .textWrap ul li p {
+    animation-name : textAni;
+    animation-duration: 1.3s;
+}
+/* portfolio section */
+section {
+    width: 100%;
+    height: 100vh;
+}
+.section01 .cloneWrap {background-color: #5f5c53; color: #fff;}
+.section02 .cloneWrap {background-color: #000; color: #fff;}
+.section03 .cloneWrap {background-color: #222; color: #fff;}
+.section04 .cloneWrap {background-color: #545454; color: #fff;}
+.section05 .cloneWrap {background-color: #c2c2c0; color: #fff;}
+.section06 .cloneWrap {background-color: #fff; color: #000;}
+.cloneWrap {
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    height: 100%;
+}
+.cloneWrap:after {
+    content: '';
+    width: 1px;
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: (-50%, -50%);
+    background-color: rgba(225, 225, 225, 0.5);
+}
+.section06 .cloneWrap:after {
+    background: rgba(0, 0, 0, 0.2);
+}
+.cloneWrap .contBox{
+    display: flex;
+    justify-content: space-between;
+}
+.cloneWrap .contBox li.left {
+    width: 50%;
+}
+.cloneWrap .contBox li.left a {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+.cloneWrap .contBox li.left a p.img {
+    width: 100%;
+}
+.cloneWrap .contBox li.left a p.img img {
+    width: 100%;
+}
+.cloneWrap .contBox li.right {
+    width: 50%;
+    padding: 150px 0 0 100px;
+    box-sizing: border-box;
+}
+.cloneWrap .contBox li.right .tit {
+    font-size: 120px;
+    line-height: 0.9;
+    margin-bottom: 85px;
+}
+.cloneWrap .contBox li.right .tit span {
+    display: block;
+}
+.cloneWrap .contBox li.right .txtBox {
+    width: 60%;
+    line-height: 1.5;
+}
+.cloneWrap .contBox li.right .txtBox .eng{
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+.cloneWrap .contBox li.right .txtBox .kor {
+    font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+.cloneWrap .contBox li.right .txtBox .skill li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+.cloneWrap .contBox li.right .txtBox .skill li:before{
+    content : '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: 0,0,0,0.5;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%)
+
+}
+.section02 .cloneWrap .contBox li.right .txtBox .skill li:before, 
+.section03 .cloneWrap .contBox li.right .txtBox .skill li:before {
+    background-color: rgba(225, 225, 225, 0.5);
+}
+
+/* scrolla.splitting animation */
+.contBox li.right .tit.motion .char {
+    display: inline-block;
+    animation: slide_up 0.4s cubic-bezier(.5,0,.5,1) both;
+    animation-delay: calc(100ms * var(--char-index)) 
+}
+
+@keyframes slide-up {
+    0% {transform: translateY(30px); opacity: 0;}
+    30%{ transform: translateY(30px);
+        opacity: 0;}   
+    
+}
+
+@keyframes slide-up2 {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+}
+
+.cloneWrap .contBox li.right .txtBox.motion .eng {
+    animation: slide_up2 1s;
+}
+.cloneWrap .contBox li.right .txtBox.motion .kor {
+    animation: slide_up2 1.3s;
+}
+.cloneWrap .contBox li.right .txtBox.motion .kor {
+    animation: slide_up2 1.3s;
 }

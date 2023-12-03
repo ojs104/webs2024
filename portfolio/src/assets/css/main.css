@@ -138,8 +138,46 @@ header.active {
 .text6,
 .text7,
 .text8,
-.text9 {
+.text9,
+.text10,
+.text11 {
     line-height: 114%;
     letter-spacing: -4px;
 
+}
+
+/* Experience */
+.con4 {
+    background-image: url('../img/experience-min.png');
+    /* 이미지 경로를 실제 이미지 파일의 경로로 변경하세요 */
+    background-size: cover;
+    /* 배경 이미지를 화면에 맞게 조절합니다 */
+    background-position: center;
+    /* 배경 이미지를 가운데 정렬합니다 */
+    background-repeat: no-repeat;
+    /* 배경 이미지를 반복하지 않습니다 */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 834px;
+}
+
+.con4 .textWrap {
+    text-align: left;
+}
+
+.title h6 {
+    color: #ADA18F;
+    font-weight: bold;
+    font-size: 1vw;
+    letter-spacing: .5em;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.title h1 {
+    font-size: 4vw;
+    letter-spacing: -.05em;
+    font-weight: bold;
+    color: #ADA18F;
 }

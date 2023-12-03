@@ -2,6 +2,7 @@
 $(function () {
     Splitting();
 });
+
 // 02. header영역 스크롤 방향 이벤트
 $(function () {
     var prevScrollTop = 0;
@@ -17,12 +18,7 @@ $(function () {
     })
 });
 
-$(function () {
-    $('.animate').scrolla({
-        mobile: true,
-        once: false
-    })
-});
+
 
 // path 길이
 $(function () {
@@ -32,3 +28,44 @@ $(function () {
     });
 });
 
+/* slimplyScroll */
+$(function () {
+    $(".con03 .list").simplyScroll({
+        speed: 4,
+        pauseOnHover: false,
+        pauseOnTouch: false
+    })
+})
+
+$(function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('section').forEach((section, i) => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top top',
+            pin: true,
+            pinSpacing: false,
+            markers:true 
+        })
+        
+    })
+
+    ScrollTrigger.create({
+        snap: 1 / (section.length -1)
+    })
+})
+
+// a 속성 제거
+$(document).on('click', 'a[href="#"]', function (e) {
+    e.preventDefault();
+    
+})
+
+// scrolla.js 적용
+$(function () {
+    $('.animate').scrolla({
+        mobile: true,
+        once: false
+    })
+});
